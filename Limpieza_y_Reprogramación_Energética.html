@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpieza y Reprogramación Energética · Celeste Universo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mystic: {
+                            50: '#faf7fd',
+                            100: '#f3ebfa',
+                            200: '#e7d6f5',
+                            300: '#d3b7ed',
+                            400: '#b88ee1',
+                            500: '#9b64d3',
+                            600: '#8145be',
+                            700: '#6b339f',
+                            800: '#592d83',
+                            900: '#4a276b',
+                            950: '#2c1243',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f0817;
+            color: #e7d6f5;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(30, 16, 48, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(184, 142, 225, 0.18);
+        }
+
+        .glass-card-hover {
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 142, 225, 0.4);
+            box-shadow: 0 12px 30px -10px rgba(155, 100, 211, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #e7d6f5 50%, #b88ee1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(155,100,211,0.2) 0%, rgba(155,100,211,0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .symptom-card {
+            transition: all 0.25s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .symptom-card:hover {
+            border-color: rgba(184, 142, 225, 0.35);
+            background: rgba(45, 23, 72, 0.45);
+        }
+
+        .symptom-card.selected {
+            background: rgba(155, 100, 211, 0.22);
+            border-color: #b88ee1;
+            box-shadow: 0 0 18px rgba(184, 142, 225, 0.25);
+        }
+
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(155, 100, 211, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 15px 35px -5px rgba(155, 100, 211, 0.6); }
+        }
+
+        @keyframes urgent-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.8); }
+            50% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.7); border-color: rgba(248, 113, 113, 1); }
+        }
+
+        .pulse-btn {
+            animation: subtle-pulse 3s infinite ease-in-out;
+        }
+
+        .urgent-badge {
+            animation: urgent-glow 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative font-sans flex flex-col justify-between">
+
+    <!-- Ambient background glows -->
+    <div class="fixed top-0 left-1/4 glow-effect -translate-y-1/2 -translate-x-1/2"></div>
+    <div class="fixed bottom-0 right-1/4 glow-effect translate-y-1/3 translate-x-1/3"></div>
+
+    <div class="relative z-10">
+        <header class="max-w-4xl mx-auto px-4 pt-12 pb-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-mystic-400/30 text-mystic-300 text-xs sm:text-sm mb-6 tracking-wide">
+                <i data-lucide="sparkles" class="w-4 h-4 text-mystic-300"></i>
+                <span>Terapia Holística y Armonización Vital · Celeste Universo</span>
+            </div>
+            
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gradient mb-6 leading-tight">
+                Limpieza y Reprogramación Energética
+            </h1>
+            
+            <p class="text-base sm:text-lg text-mystic-200 max-w-2xl mx-auto font-light leading-relaxed">
+                Trabajamos con el <strong class="text-white font-medium">Péndulo Hebreo</strong> y el <strong class="text-white font-medium">Péndulo Karnak</strong>, dos herramientas radiestésicas milenarias para limpiar, armonizar y reprogramar tu campo vibracional.
+            </p>
+        </header>
+
+        <main class="max-w-4xl mx-auto px-4 py-4 space-y-8">
+
+            <section class="grid md:grid-cols-2 gap-6">
+                <!-- Péndulo Hebreo -->
+                <div class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-mystic-500/10 rounded-full blur-xl group-hover:bg-mystic-500/20 transition-all"></div>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-mystic-800/80 border border-mystic-400/30 flex items-center justify-center mb-5 text-mystic-300">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-white mb-3">Péndulo Hebreo</h3>
+                        <p class="text-mystic-200 text-sm leading-relaxed mb-4">
+                            Funciona mediante la vibración de las palabras en idioma sagrado hebreo. Permite detectar y transmutar miasmas, larvas astrales y densidades acumuladas en el aura antes de que se consoliden en el plano físico.
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold text-mystic-300 bg-mystic-900/60 border border-mystic-500/20 rounded-lg px-3 py-1.5">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-mystic-300"></i>
+                            <span>Sanación & Diagnóstico Sutil</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Péndulo Karnak -->
+                <div class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-mystic-500/10 rounded-full blur-xl group-hover:bg-mystic-500/20 transition-all"></div>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-mystic-800/80 border border-mystic-400/30 flex items-center justify-center mb-5 text-mystic-300">
+                            <i data-lucide="compass" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-white mb-3">Péndulo Karnak</h3>
+                        <p class="text-mystic-200 text-sm leading-relaxed mb-4">
+                            Inspirado en la geometría sagrada del antiguo Egipto, emite energía de forma constante. Es ideal para trabajos de precisión radiestésica, desbloqueo de proyectos y reprogramación subconsciente.
+                        </p>
+                    </div>
+                    <div class="pt-2">
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold text-mystic-300 bg-mystic-900/60 border border-mystic-500/20 rounded-lg px-3 py-1.5">
+                            <i data-lucide="orbit" class="w-3.5 h-3.5 text-mystic-300"></i>
+                            <span>Geometría & Emisión Egipcia</span>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <p class="text-center text-xs sm:text-sm text-mystic-300/80 italic">
+                * No necesariamente se utilizan ambas herramientas en una sola sesión; se evalúa el campo y se selecciona la combinación adecuada según cada persona.
+            </p>
+
+            <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-8">
+                <div class="grid md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-mystic-500/20">
+                    
+                    <!-- Limpieza -->
+                    <div class="space-y-4 pt-4 md:pt-0">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 rounded-xl bg-mystic-700/30 text-mystic-300">
+                                <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                            </div>
+                            <h2 class="font-serif text-xl font-semibold text-white">🌿 ¿Qué trabajamos en una limpieza?</h2>
+                        </div>
+                        <p class="text-mystic-200 text-sm leading-relaxed">
+                            Nos enfocamos en detectar y liberar cargas externas, densidades acumuladas, interferencias energéticas o desequilibrios en tus chakras que estén drenando tu vitalidad y tranquilidad.
+                        </p>
+                    </div>
+
+                    <!-- Reprogramación -->
+                    <div class="space-y-4 pt-6 md:pt-0 md:pl-8">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 rounded-xl bg-mystic-700/30 text-mystic-300">
+                                <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                            </div>
+                            <h2 class="font-serif text-xl font-semibold text-white">🔮 ¿Qué trabajamos al reprogramar?</h2>
+                        </div>
+                        <p class="text-mystic-200 text-sm leading-relaxed">
+                            Abordamos memorias del subconsciente, patrones heredados, creencias limitantes y emociones estancadas que provocan que ciertas experiencias o bloqueos se repitan continuamente.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Beneficios -->
+                <div class="pt-6 border-t border-mystic-500/20">
+                    <h3 class="text-center font-serif text-base sm:text-lg font-semibold text-mystic-200 mb-6">
+                        Esta sesión te acompaña en procesos de:
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 text-center">
+                        <div class="p-3 rounded-2xl bg-mystic-950/60 border border-mystic-500/15 text-xs text-mystic-200 flex flex-col items-center justify-center gap-2">
+                            <i data-lucide="brain" class="w-5 h-5 text-mystic-300"></i>
+                            <span>Claridad mental</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-mystic-950/60 border border-mystic-500/15 text-xs text-mystic-200 flex flex-col items-center justify-center gap-2">
+                            <i data-lucide="heart-handshake" class="w-5 h-5 text-mystic-300"></i>
+                            <span>Equilibrio emocional</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-mystic-950/60 border border-mystic-500/15 text-xs text-mystic-200 flex flex-col items-center justify-center gap-2">
+                            <i data-lucide="feather" class="w-5 h-5 text-mystic-300"></i>
+                            <span>Liberación de cargas</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-mystic-950/60 border border-mystic-500/15 text-xs text-mystic-200 flex flex-col items-center justify-center gap-2">
+                            <i data-lucide="repeat" class="w-5 h-5 text-mystic-300"></i>
+                            <span>Romper patrones</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-mystic-950/60 border border-mystic-500/15 text-xs text-mystic-200 flex flex-col items-center justify-center gap-2 col-span-2 sm:col-span-1">
+                            <i data-lucide="zap" class="w-5 h-5 text-mystic-300"></i>
+                            <span>Armonía energética</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="text-center space-y-2">
+                    <h2 class="font-serif text-2xl font-bold text-white">¿Sientes que algo frena tu energía?</h2>
+                    <p class="text-mystic-300 text-sm max-w-xl mx-auto">
+                        Marca los aspectos que estás experimentando hoy para generar una lectura diagnóstica lógica y personalizada:
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3" id="symptoms-container">
+                    
+                    <!-- Item 1: Hebreo -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="hebreo" 
+                         data-domain="Vitalidad Physical & Aura"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Cansancio físico, falta de energía o agotamiento constante sin causa clara.</span>
+                    </div>
+
+                    <!-- Item 2: Karnak -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="karnak" 
+                         data-domain="Saturación Mental"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Pesadez mental, sobrepensamiento constante o pensamientos obsesivos.</span>
+                    </div>
+
+                    <!-- Item 3: Hebreo -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="hebreo" 
+                         data-domain="Tensión en el Entorno"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Conflictos recurrentes, ambiente tenso o discusiones frecuentes en tu entorno.</span>
+                    </div>
+
+                    <!-- Item 4: Karnak -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="karnak" 
+                         data-domain="Claridad & Decisiones"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Dificultad para tomar decisiones o parálisis por exceso de dudas.</span>
+                    </div>
+
+                    <!-- Item 5: Karnak -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="karnak" 
+                         data-domain="Desbloqueo de Proyectos"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Estancamiento en metas o la sensación de que "algo invisible" frena tus avances.</span>
+                    </div>
+
+                    <!-- Item 6: Karnak -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="karnak" 
+                         data-domain="Flujo de Abundancia"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Bloqueo económico o la sensación de que el dinero entra y sale sin rendir.</span>
+                    </div>
+
+                    <!-- Item 7: Hebreo -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="hebreo" 
+                         data-domain="Calidad del Sueño"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Sueño intranquilo, despertares nocturnos o levantarte más cansado que al acostarte.</span>
+                    </div>
+
+                    <!-- Item 8: Hebreo -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="hebreo" 
+                         data-domain="Limpieza Espacial"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Sentir pesadez o incomodidad en la energía de tu hogar o lugar de trabajo.</span>
+                    </div>
+
+                    <!-- Item 9: Karnak -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="karnak" 
+                         data-domain="Patrones Subconscientes"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Repetir historias indeseadas en relaciones, proyectos o situaciones personales.</span>
+                    </div>
+
+                    <!-- Item 10: Hebreo -->
+                    <div class="symptom-card glass-card rounded-2xl p-4 flex items-start gap-3 border border-mystic-500/20" 
+                         data-tool="hebreo" 
+                         data-domain="Protección Aúrica"
+                         onclick="toggleSymptom(this)">
+                        <div class="checkbox-icon mt-0.5 text-mystic-400 transition-colors">
+                            <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-mystic-300"></i>
+                        </div>
+                        <span class="text-sm text-mystic-100 font-normal">Alta sensibilidad emocional o tendencia a "absorber" las cargas del resto.</span>
+                    </div>
+
+                </div>
+
+                <div id="selection-feedback" class="hidden transition-all duration-300 pt-2">
+                    
+                    <div class="glass-card rounded-3xl p-6 border border-mystic-400/40 space-y-6 relative overflow-hidden bg-mystic-950/80 shadow-2xl">
+                        
+                        <!-- Header: Title & Energy Load Badge -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-mystic-500/20 pb-4">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-mystic-400 font-semibold">Diagnóstico Radiestésico Personalizado</span>
+                                <h3 id="feedback-summary-title" class="font-serif text-lg font-bold text-white mt-0.5">
+                                    0 Indicadores Detectados
+                                </h3>
+                            </div>
+                            
+                            <div id="load-badge-container">
+                                <!-- Dynamic badge rendered via JS -->
+                            </div>
+                        </div>
+
+                        <!-- Comparative Tool Ratio Bar -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs text-mystic-300 font-medium">
+                                <span id="hebreo-ratio-text" class="flex items-center gap-1">
+                                    <i data-lucide="shield" class="w-3.5 h-3.5 text-mystic-400"></i> Péndulo Hebreo: 0%
+                                </span>
+                                <span id="karnak-ratio-text" class="flex items-center gap-1">
+                                    Péndulo Karnak: 0% <i data-lucide="compass" class="w-3.5 h-3.5 text-mystic-400"></i>
+                                </span>
+                            </div>
+                            <div class="w-full h-2.5 bg-mystic-950 rounded-full overflow-hidden flex border border-mystic-500/30">
+                                <div id="hebreo-bar" class="bg-gradient-to-r from-mystic-600 to-mystic-400 h-full transition-all duration-500" style="width: 50%;"></div>
+                                <div id="karnak-bar" class="bg-gradient-to-r from-purple-400 to-indigo-500 h-full transition-all duration-500" style="width: 50%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Logical Explanation Card -->
+                        <div class="p-5 rounded-2xl bg-mystic-900/60 border border-mystic-400/25 space-y-3">
+                            <div class="flex items-start gap-3">
+                                <div class="p-2.5 rounded-xl bg-mystic-800/90 text-mystic-300 shrink-0 mt-0.5 border border-mystic-400/20">
+                                    <i data-lucide="user-check" class="w-5 h-5"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <h4 id="recommendation-title" class="font-serif text-base font-semibold text-white">
+                                        Lectura de tu Campo Energético
+                                    </h4>
+                                    <p id="recommendation-explanation" class="text-xs sm:text-sm text-mystic-200 leading-relaxed font-light">
+                                        Generando análisis personalizado...
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Affected Domains Tags -->
+                            <div class="pt-3 border-t border-mystic-500/20 flex flex-wrap items-center gap-1.5" id="domains-container">
+                                <!-- Tags injected via JS -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="text-center pt-2 pb-6">
+                <a id="whatsapp-link" 
+                   href="https://wa.me/5491154581020?text=Hola%20Celeste%2C%20quiero%20consultar%20por%20la%20sesi%C3%B3n%20de%20Limpieza%20y%20Reprogramaci%C3%B3n%20Energ%C3%A9tica." 
+                   target="_blank" 
+                   class="pulse-btn inline-flex items-center justify-center gap-3 bg-gradient-to-r from-mystic-600 to-mystic-800 hover:from-mystic-500 hover:to-mystic-700 text-white font-medium text-base sm:text-lg px-8 py-4 rounded-full border border-mystic-300/30 transition-all duration-300 w-full sm:w-auto shadow-lg shadow-mystic-950">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    <span>RESERVAR SESIÓN CON CELESTE</span>
+                </a>
+                <p class="text-xs text-mystic-400 mt-3">
+                    Atención personalizada con Celeste · Reserva fácil y directa vía WhatsApp
+                </p>
+            </section>
+
+        </main>
+
+        <footer class="border-t border-mystic-500/20 py-6 text-center text-xs text-mystic-400 tracking-wider">
+            <p>© Celeste Universo · Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        let hebreoCount = 0;
+        let karnakCount = 0;
+        let selectedDomains = new Set();
+
+        function toggleSymptom(element) {
+            element.classList.toggle('selected');
+            const uncheckIcon = element.querySelector('.uncheck');
+            const checkIcon = element.querySelector('.check');
+            const tool = element.getAttribute('data-tool');
+            const domain = element.getAttribute('data-domain');
+            
+            if (element.classList.contains('selected')) {
+                uncheckIcon.classList.add('hidden');
+                checkIcon.classList.remove('hidden');
+                if (tool === 'hebreo') hebreoCount++;
+                if (tool === 'karnak') karnakCount++;
+                if (domain) selectedDomains.add(domain);
+            } else {
+                uncheckIcon.classList.remove('hidden');
+                checkIcon.classList.add('hidden');
+                if (tool === 'hebreo') hebreoCount--;
+                if (tool === 'karnak') karnakCount--;
+                
+                recheckDomains();
+            }
+
+            updateDiagnosticEngine();
+        }
+
+        function recheckDomains() {
+            selectedDomains.clear();
+            document.querySelectorAll('.symptom-card.selected').forEach(card => {
+                const dom = card.getAttribute('data-domain');
+                if (dom) selectedDomains.add(dom);
+            });
+        }
+
+        function updateDiagnosticEngine() {
+            const total = hebreoCount + karnakCount;
+            const feedbackBox = document.getElementById('selection-feedback');
+            const summaryTitle = document.getElementById('feedback-summary-title');
+            const loadBadgeContainer = document.getElementById('load-badge-container');
+            const hebreoBar = document.getElementById('hebreo-bar');
+            const karnakBar = document.getElementById('karnak-bar');
+            const recTitle = document.getElementById('recommendation-title');
+            const recExplanation = document.getElementById('recommendation-explanation');
+            const domainsContainer = document.getElementById('domains-container');
+            const whatsappLink = document.getElementById('whatsapp-link');
+
+            if (total > 0) {
+                feedbackBox.classList.remove('hidden');
+                summaryTitle.textContent = `${total} ${total === 1 ? 'aspecto detectado' : 'aspectos detectados'}`;
+
+                // 1. Strict Load Level Logic Rules
+                let loadBadgeHTML = "";
+                let loadTextForWA = "";
+
+                if (total <= 2) {
+                    loadBadgeHTML = `
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> CARGA: LEVE
+                        </span>`;
+                    loadTextForWA = "Carga Energética Leve";
+                } else if (total === 3) {
+                    loadBadgeHTML = `
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300 text-xs font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span> CARGA: MODERADA
+                        </span>`;
+                    loadTextForWA = "Carga Energética Moderada";
+                } else { // 4 or more
+                    loadBadgeHTML = `
+                        <span class="urgent-badge inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-red-950/90 border border-red-500 text-red-300 text-xs font-bold tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> ⚠️ CARGA ELEVADA URGENTE
+                        </span>`;
+                    loadTextForWA = "⚠️ CARGA ELEVADA URGENTE";
+                }
+                loadBadgeContainer.innerHTML = loadBadgeHTML;
+
+                // 2. Ratio Tool Percentages
+                const hebreoPct = Math.round((hebreoCount / total) * 100);
+                const karnakPct = 100 - hebreoPct;
+
+                hebreoBar.style.width = `${hebreoPct}%`;
+                karnakBar.style.width = `${karnakPct}%`;
+
+                document.getElementById('hebreo-ratio-text').innerHTML = `<i data-lucide="shield" class="w-3.5 h-3.5 text-mystic-400"></i> Limpieza Aúrica (Hebreo): ${hebreoPct}%`;
+                document.getElementById('karnak-ratio-text').innerHTML = `Reprogramación (Karnak): ${karnakPct}% <i data-lucide="compass" class="w-3.5 h-3.5 text-mystic-400"></i>`;
+
+                // 3. Deeply Convincing, Logical & Personalized Explanation
+                let toolRecommendation = "";
+                if (hebreoCount > karnakCount) {
+                    recTitle.textContent = "Abordaje Sugerido: Purificación & Protección Aúrica";
+                    recExplanation.textContent = `Tu campo energético se encuentra saturado por factores externos, desgaste físico o interferencias del entorno. Esto explica el cansancio y la pesadez que sientes. Trabajando con las ondas de forma del Péndulo Hebreo, Celeste limpiará y sellará tu aura para que recuperes tu vitalidad y tranquilidad.`;
+                    toolRecommendation = "Limpieza con Péndulo Hebreo";
+                } else if (karnakCount > hebreoCount) {
+                    recTitle.textContent = "Abordaje Sugerido: Desbloqueo Subconsciente & Proyectos";
+                    recExplanation.textContent = `El estancamiento que percibes en tus metas, economía o pensamientos no es casualidad; responde a patrones subconscientes o bloqueos de la vibración. A través de la geometría del Péndulo Karnak, Celeste alineará tus frecuencias para liberar las trabas y hacer fluir tus intenciones.`;
+                    toolRecommendation = "Desbloqueo con Péndulo Karnak";
+                } else {
+                    recTitle.textContent = "Abordaje Sugerido: Sesión Dual Integrada (Limpieza + Reprogramación)";
+                    recExplanation.textContent = `Sientes tanto sobrecarga energética física como frenos en tus decisiones y proyectos. En este caso, lo más efectivo y completo es un trabajo combinado: limpiar las densidades del cuerpo aúrico con Péndulo Hebreo y posteriormente reprogramar el subconsciente con Péndulo Karnak.`;
+                    toolRecommendation = "Trabajo Dual Combinado (Hebreo + Karnak)";
+                }
+
+                // 4. Affected Domains Tags
+                let domainsHTML = '<span class="text-xs text-mystic-400 font-medium mr-1">Aspectos a liberar:</span>';
+                selectedDomains.forEach(domain => {
+                    domainsHTML += `<span class="px-2.5 py-1 rounded-md bg-mystic-800/70 border border-mystic-500/25 text-[11px] text-mystic-200">${domain}</span>`;
+                });
+                domainsContainer.innerHTML = domainsHTML;
+
+                // 5. Build dynamic WA Message
+                const domainListStr = Array.from(selectedDomains).join(", ");
+                const customWA = `Hola Celeste, estuve realizando el test en tu web e identifiqué ${total} aspectos en mi energía.\n\n📊 *Resultado de mi Diagnóstico:*\n• Nivel: ${loadTextForWA}\n• Sugerencia: ${toolRecommendation}\n• Aspectos a trabajar: ${domainListStr}\n\nQuisiera consultar disponibilidad de agenda para realizar mi sesión personalizada de Limpieza y Reprogramación Energética.`;
+
+                whatsappLink.href = `https://wa.me/5491154581020?text=${encodeURIComponent(customWA)}`;
+
+                // Refresh Lucide icons
+                lucide.createIcons();
+
+            } else {
+                feedbackBox.classList.add('hidden');
+                const defaultWA = "Hola Celeste, quiero consultar por la sesión de Limpieza y Reprogramación Energética.";
+                whatsappLink.href = `https://wa.me/5491154581020?text=${encodeURIComponent(defaultWA)}`;
+            }
+        }
+    </script>
+</body>
+</html>
