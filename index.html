@@ -22,9 +22,9 @@
             theme: {
                 extend: {
                     colors: {
-                        'rosa-empolvado': '#E8C9D8',
-                        'lavanda-suave': '#CFC2E5',
-                        'lila-pastel': '#BFAED6',
+                        'rosa-empolvado': '#E8BCCE',
+                        'lavanda-suave': '#C8B6E2',
+                        'lila-pastel': '#B399E5',
                         'deep-purple': '#180B2B',
                         'rich-plum': '#2A1245',
                         'purple-badge': '#3B1A60',
@@ -40,17 +40,17 @@
 
     <style>
         :root {
-            --rosa-empolvado: #E8C9D8;
-            --lavanda-suave: #CFC2E5;
-            --lila-pastel: #BFAED6;
+            --rosa-empolvado: #E8BCCE;
+            --lavanda-suave: #C8B6E2;
+            --lila-pastel: #B399E5;
             --deep-purple: #180B2B;
             --rich-plum: #2A1245;
             --purple-badge: #3B1A60;
         }
 
-        /* Mandatory Background Gradient with exact user HEX colors: #E8C9D8, #CFC2E5, #BFAED6 */
+        /* Enhanced Lila Pastel & Rosa Empolvado Background (+1 notch vibrant richness) */
         body {
-            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 50%, #BFAED6 100%);
+            background: linear-gradient(135deg, #E8BCCE 0%, #C8B6E2 45%, #B399E5 100%);
             background-attachment: fixed;
             color: #2A1245;
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -79,21 +79,21 @@
                 radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
                 radial-gradient(2px 2px at 160px 120px, #FFF5FA, rgba(0,0,0,0)),
                 radial-gradient(1.5px 1.5px at 230px 190px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 310px 80px, #E8C9D8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 310px 80px, #E8BCCE, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 370px 150px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 450px 50px, #CFC2E5, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 450px 50px, #C8B6E2, rgba(0,0,0,0)),
                 radial-gradient(1.5px 1.5px at 520px 110px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 600px 170px, #BFAED6, rgba(0,0,0,0));
+                radial-gradient(2px 2px at 600px 170px, #B399E5, rgba(0,0,0,0));
             background-repeat: repeat;
             background-size: 600px 240px;
-            opacity: 0.7;
+            opacity: 0.75;
         }
 
-        /* Frosted Glass Pastel Card with Soft Rosado/Lavanda Blend */
+        /* Frosted Glass Pastel Card */
         .glass-card-pastel {
-            background: linear-gradient(135deg, rgba(255, 245, 250, 0.92) 0%, rgba(248, 232, 242, 0.88) 50%, rgba(235, 226, 247, 0.82) 100%);
+            background: linear-gradient(135deg, rgba(255, 246, 251, 0.94) 0%, rgba(246, 234, 244, 0.90) 50%, rgba(232, 222, 248, 0.85) 100%);
             border: 2px solid #FFFFFF;
-            box-shadow: 0 10px 28px 0 rgba(42, 18, 69, 0.08);
+            box-shadow: 0 10px 30px 0 rgba(42, 18, 69, 0.10);
             border-radius: 1.75rem;
         }
 
@@ -104,15 +104,15 @@
         .glass-card-hover:hover {
             transform: translateY(-4px);
             border-color: #FFFFFF;
-            box-shadow: 0 16px 36px 0 rgba(42, 18, 69, 0.14);
+            box-shadow: 0 16px 36px 0 rgba(42, 18, 69, 0.16);
         }
 
         /* Pastel Icon Container */
         .icon-box-pastel {
-            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 50%, #BFAED6 100%);
+            background: linear-gradient(135deg, #E8BCCE 0%, #C8B6E2 50%, #B399E5 100%);
             border: 2px solid #FFFFFF;
             color: #180B2B;
-            box-shadow: 0 4px 14px rgba(42, 18, 69, 0.10);
+            box-shadow: 0 4px 14px rgba(42, 18, 69, 0.12);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -124,37 +124,37 @@
             transition: all 0.25s ease;
             cursor: pointer;
             user-select: none;
-            background: rgba(255, 248, 252, 0.90);
+            background: rgba(255, 248, 252, 0.92);
             border: 2px solid #FFFFFF;
-            box-shadow: 0 4px 16px rgba(42, 18, 69, 0.06);
+            box-shadow: 0 4px 16px rgba(42, 18, 69, 0.07);
         }
 
         .symptom-card:hover {
             background: #FFFFFF;
-            border-color: #E8C9D8;
+            border-color: #E8BCCE;
             transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(42, 18, 69, 0.12);
+            box-shadow: 0 8px 22px rgba(42, 18, 69, 0.14);
         }
 
         .symptom-card.selected {
-            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 60%, #BFAED6 100%);
+            background: linear-gradient(135deg, #E8BCCE 0%, #C8B6E2 60%, #B399E5 100%);
             border: 2.5px solid #180B2B;
-            box-shadow: 0 8px 26px rgba(42, 18, 69, 0.20);
+            box-shadow: 0 8px 26px rgba(42, 18, 69, 0.22);
         }
 
-        /* Soft Pastel Reservation Button - Gradient of #E8C9D8 -> #BFAED6 with dark high-contrast text */
+        /* Spacious & Elegant Pastel Reservation Button */
         .pastel-btn-cta {
-            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 50%, #BFAED6 100%);
+            background: linear-gradient(135deg, #E8BCCE 0%, #C8B6E2 50%, #B399E5 100%);
             color: #180B2B;
-            border: 2px solid #FFFFFF;
-            box-shadow: 0 8px 25px rgba(42, 18, 69, 0.15);
-            transition: all 0.3s ease;
+            border: 2.5px solid #FFFFFF;
+            box-shadow: 0 10px 28px rgba(42, 18, 69, 0.18);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .pastel-btn-cta:hover {
             transform: scale(1.03) translateY(-2px);
-            box-shadow: 0 14px 34px rgba(42, 18, 69, 0.22);
-            background: linear-gradient(135deg, #F0D5E3 0%, #D8CEEE 50%, #C9BCE1 100%);
+            box-shadow: 0 16px 36px rgba(42, 18, 69, 0.25);
+            background: linear-gradient(135deg, #ECC5D5 0%, #CEBEE6 50%, #BBA3EA 100%);
         }
     </style>
 </head>
@@ -488,17 +488,17 @@
                 </div>
             </section>
 
-            <!-- Main CTA Section - Single Unified WhatsApp Action in Soft Pastel Tone -->
+            <!-- Main CTA Section - Spacious & Elegant Alignment -->
             <section class="text-center pt-4 pb-8 flex flex-col items-center justify-center">
                 <a id="whatsapp-link" 
                    href="https://wa.me/5491154581020?text=Hola%20Celeste%2C%20quiero%20consultar%20por%20la%20sesi%C3%B3n%20de%20Limpieza%20y%20Reprogramaci%C3%B3n%20Energ%C3%A9tica." 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   class="pastel-btn-cta inline-flex items-center justify-center gap-3 font-extrabold text-sm sm:text-lg px-8 py-4.5 rounded-full border-2 border-white transition-all duration-300 w-full sm:w-auto max-w-md shadow-lg text-center leading-tight">
-                    <i data-lucide="message-circle" class="w-6 h-6 shrink-0 text-deep-purple"></i>
+                   class="pastel-btn-cta inline-flex items-center justify-center gap-3.5 font-extrabold text-base sm:text-xl px-10 py-5 sm:px-14 sm:py-5.5 rounded-full border-2 border-white transition-all duration-300 shadow-xl text-center tracking-wide leading-tight min-w-[280px] max-w-lg">
+                    <i data-lucide="message-circle" class="w-6 h-6 sm:w-7 sm:h-7 shrink-0 text-deep-purple"></i>
                     <span>RESERVAR SESIÓN CON CELESTE</span>
                 </a>
-                <p class="text-xs sm:text-sm text-deep-purple font-bold mt-3.5">
+                <p class="text-xs sm:text-sm text-deep-purple font-bold mt-4">
                     Atención personalizada con Celeste · Reserva fácil y directa vía WhatsApp
                 </p>
             </section>
