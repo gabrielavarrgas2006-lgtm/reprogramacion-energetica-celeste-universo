@@ -22,13 +22,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'rosa-pastel-claro': '#FFF0F6',
-                        'rosa-suave': '#FCE7F3',
-                        'lavanda-suave': '#E9D5FF',
-                        'lila-vibrante': '#D8B4FE',
-                        'deep-purple': '#2D124D',
-                        'rich-plum': '#4A206B',
-                        'purple-badge': '#5B21B6',
+                        'rosa-empolvado': '#E8C9D8',
+                        'lavanda-suave': '#CFC2E5',
+                        'lila-pastel': '#BFAED6',
+                        'deep-purple': '#180B2B',
+                        'rich-plum': '#2A1245',
+                        'purple-badge': '#3B1A60',
                     },
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -41,19 +40,19 @@
 
     <style>
         :root {
-            --rosa-pastel-claro: #FFF0F6;
-            --rosa-suave: #FCE7F3;
-            --lavanda-suave: #E9D5FF;
-            --lila-vibrante: #D8B4FE;
-            --deep-purple: #2D124D;
-            --rich-plum: #4A206B;
-            --purple-badge: #5B21B6;
+            --rosa-empolvado: #E8C9D8;
+            --lavanda-suave: #CFC2E5;
+            --lila-pastel: #BFAED6;
+            --deep-purple: #180B2B;
+            --rich-plum: #2A1245;
+            --purple-badge: #3B1A60;
         }
 
+        /* Mandatory Background Gradient with exact user HEX colors: #E8C9D8, #CFC2E5, #BFAED6 */
         body {
-            background: linear-gradient(135deg, #FDF2F8 0%, #FCE7F3 30%, #E9D5FF 65%, #D8B4FE 100%);
+            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 50%, #BFAED6 100%);
             background-attachment: fixed;
-            color: #4A206B;
+            color: #2A1245;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
@@ -62,10 +61,10 @@
 
         h1, h2, h3, .font-heading {
             font-family: 'Outfit', sans-serif;
-            color: #2D124D;
+            color: #180B2B;
         }
 
-        /* Sparkle Starry Overlay */
+        /* Subtle Starry Sparkle Overlay */
         .starry-bg {
             position: fixed;
             top: 0;
@@ -76,25 +75,25 @@
             z-index: 0;
             background-image: 
                 radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 40px 70px, #FCE7F3, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 160px 120px, #F5D0FE, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #FFF0F6, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #FFF5FA, rgba(0,0,0,0)),
                 radial-gradient(1.5px 1.5px at 230px 190px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 310px 80px, #E9D5FF, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 310px 80px, #E8C9D8, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 370px 150px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 450px 50px, #FCE7F3, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 450px 50px, #CFC2E5, rgba(0,0,0,0)),
                 radial-gradient(1.5px 1.5px at 520px 110px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 600px 170px, #E9D5FF, rgba(0,0,0,0));
+                radial-gradient(2px 2px at 600px 170px, #BFAED6, rgba(0,0,0,0));
             background-repeat: repeat;
-            background-size: 650px 250px;
-            opacity: 0.65;
+            background-size: 600px 240px;
+            opacity: 0.7;
         }
 
-        /* Frosted Glass Pastel Card - Enhanced Warm Pink Gradient */
+        /* Frosted Glass Pastel Card with Soft Rosado/Lavanda Blend */
         .glass-card-pastel {
-            background: linear-gradient(135deg, rgba(255, 245, 250, 0.96) 0%, rgba(252, 231, 243, 0.92) 50%, rgba(243, 232, 255, 0.88) 100%);
+            background: linear-gradient(135deg, rgba(255, 245, 250, 0.92) 0%, rgba(248, 232, 242, 0.88) 50%, rgba(235, 226, 247, 0.82) 100%);
             border: 2px solid #FFFFFF;
-            box-shadow: 0 10px 30px 0 rgba(184, 142, 225, 0.16);
+            box-shadow: 0 10px 28px 0 rgba(42, 18, 69, 0.08);
             border-radius: 1.75rem;
         }
 
@@ -105,15 +104,15 @@
         .glass-card-hover:hover {
             transform: translateY(-4px);
             border-color: #FFFFFF;
-            box-shadow: 0 16px 36px 0 rgba(184, 142, 225, 0.25);
+            box-shadow: 0 16px 36px 0 rgba(42, 18, 69, 0.14);
         }
 
-        /* Cute Pastel Icon Box */
+        /* Pastel Icon Container */
         .icon-box-pastel {
-            background: linear-gradient(135deg, #FFF0F6 0%, #FCE7F3 50%, #E9D5FF 100%);
+            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 50%, #BFAED6 100%);
             border: 2px solid #FFFFFF;
-            color: #5B21B6;
-            box-shadow: 0 4px 14px rgba(184, 142, 225, 0.18);
+            color: #180B2B;
+            box-shadow: 0 4px 14px rgba(42, 18, 69, 0.10);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -125,45 +124,37 @@
             transition: all 0.25s ease;
             cursor: pointer;
             user-select: none;
-            background: rgba(255, 245, 250, 0.92);
+            background: rgba(255, 248, 252, 0.90);
             border: 2px solid #FFFFFF;
-            box-shadow: 0 4px 16px rgba(184, 142, 225, 0.10);
+            box-shadow: 0 4px 16px rgba(42, 18, 69, 0.06);
         }
 
         .symptom-card:hover {
             background: #FFFFFF;
-            border-color: #F472B6;
+            border-color: #E8C9D8;
             transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(184, 142, 225, 0.18);
+            box-shadow: 0 8px 22px rgba(42, 18, 69, 0.12);
         }
 
         .symptom-card.selected {
-            background: linear-gradient(135deg, #FFF0F6 0%, #FCE7F3 60%, #F3E8FF 100%);
-            border: 2px solid #8B5CF6;
-            box-shadow: 0 8px 26px rgba(139, 92, 246, 0.22);
+            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 60%, #BFAED6 100%);
+            border: 2.5px solid #180B2B;
+            box-shadow: 0 8px 26px rgba(42, 18, 69, 0.20);
         }
 
-        /* Subtle Pulse CTA */
-        @keyframes soft-pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(91, 33, 182, 0.22); }
-            50% { transform: scale(1.02); box-shadow: 0 14px 34px rgba(91, 33, 182, 0.32); }
+        /* Soft Pastel Reservation Button - Gradient of #E8C9D8 -> #BFAED6 with dark high-contrast text */
+        .pastel-btn-cta {
+            background: linear-gradient(135deg, #E8C9D8 0%, #CFC2E5 50%, #BFAED6 100%);
+            color: #180B2B;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 8px 25px rgba(42, 18, 69, 0.15);
+            transition: all 0.3s ease;
         }
 
-        .pulse-btn {
-            animation: soft-pulse 3s infinite ease-in-out;
-        }
-
-        /* Floating WhatsApp Button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 50;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.06) translateY(-2px);
+        .pastel-btn-cta:hover {
+            transform: scale(1.03) translateY(-2px);
+            box-shadow: 0 14px 34px rgba(42, 18, 69, 0.22);
+            background: linear-gradient(135deg, #F0D5E3 0%, #D8CEEE 50%, #C9BCE1 100%);
         }
     </style>
 </head>
@@ -177,18 +168,18 @@
         <!-- Header / Hero Section -->
         <header class="max-w-4xl mx-auto px-4 pt-8 sm:pt-12 pb-6 text-center">
             
-            <!-- Brand Badge with Clean Circular Logo (Zero Black) -->
-            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-card-pastel text-purple-badge text-xs sm:text-sm font-bold mb-6 tracking-wide shadow-md">
-                <img src="logo.png" alt="Celeste Universo Logo" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white shadow-sm object-cover shrink-0">
-                <span class="text-deep-purple">Terapia Holística y Armonización Vital · Celeste Universo</span>
+            <!-- Brand Badge with Clean Circular Logo -->
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-card-pastel text-deep-purple text-xs sm:text-sm font-bold mb-6 tracking-wide shadow-md">
+                <img src="logo.png" alt="Celeste Universo Logo" class="w-8 h-8 rounded-full border-2 border-white shadow-sm object-cover shrink-0">
+                <span>Terapia Holística y Armonización Vital · Celeste Universo</span>
             </div>
             
-            <h1 class="font-heading text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-deep-purple mb-5 leading-tight drop-shadow-sm">
+            <h1 class="font-heading text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-deep-purple mb-5 leading-tight">
                 Limpieza y Reprogramación Energética
             </h1>
             
             <p class="text-base sm:text-lg text-rich-plum max-w-2xl mx-auto font-semibold leading-relaxed">
-                Sanación integral mediante el <strong class="text-deep-purple font-bold underline decoration-pink-300 decoration-2">Péndulo Hebreo</strong> y el <strong class="text-deep-purple font-bold underline decoration-purple-300 decoration-2">Péndulo Karnak</strong>, herramientas radiestésicas milenarias para limpiar tu aura, elevar tu vibración y liberar trabas subconscientes.
+                Sanación integral mediante el <strong class="text-deep-purple font-bold">Péndulo Hebreo</strong> y el <strong class="text-deep-purple font-bold">Péndulo Karnak</strong>, herramientas radiestésicas milenarias para limpiar tu aura, elevar tu vibración y liberar trabas subconscientes.
             </p>
         </header>
 
@@ -209,8 +200,8 @@
                         </p>
                     </div>
                     <div>
-                        <span class="inline-flex items-center gap-2 text-xs font-bold text-purple-badge bg-white/90 border border-rosa-suave rounded-lg px-3.5 py-2 shadow-sm">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-purple-badge"></i>
+                        <span class="inline-flex items-center gap-2 text-xs font-bold text-deep-purple bg-white/90 border border-rosa-empolvado rounded-lg px-3.5 py-2 shadow-sm">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-deep-purple"></i>
                             <span>Sanación & Diagnóstico Sutil</span>
                         </span>
                     </div>
@@ -228,8 +219,8 @@
                         </p>
                     </div>
                     <div>
-                        <span class="inline-flex items-center gap-2 text-xs font-bold text-purple-badge bg-white/90 border border-rosa-suave rounded-lg px-3.5 py-2 shadow-sm">
-                            <i data-lucide="orbit" class="w-4 h-4 text-purple-badge"></i>
+                        <span class="inline-flex items-center gap-2 text-xs font-bold text-deep-purple bg-white/90 border border-rosa-empolvado rounded-lg px-3.5 py-2 shadow-sm">
+                            <i data-lucide="orbit" class="w-4 h-4 text-deep-purple"></i>
                             <span>Geometría & Emisión Egipcia</span>
                         </span>
                     </div>
@@ -237,13 +228,13 @@
             </section>
 
             <!-- Subtitle note -->
-            <p class="text-center text-xs sm:text-sm text-purple-badge font-bold italic">
+            <p class="text-center text-xs sm:text-sm text-deep-purple font-bold italic">
                 ✨ En cada sesión se evalúa la necesidad de tu campo energético para utilizar la combinación perfecta de ambas herramientas.
             </p>
 
             <!-- Work Scope & Benefits Section -->
             <section class="glass-card-pastel p-6 sm:p-8 space-y-8">
-                <div class="grid md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-purple-badge/15">
+                <div class="grid md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-deep-purple/15">
                     
                     <!-- Limpieza -->
                     <div class="space-y-4 pt-4 md:pt-0">
@@ -274,29 +265,29 @@
                 </div>
 
                 <!-- Benefits Badges -->
-                <div class="pt-6 border-t border-purple-badge/15">
+                <div class="pt-6 border-t border-deep-purple/15">
                     <h3 class="text-center font-heading text-base sm:text-lg font-bold text-deep-purple mb-6">
                         Esta sesión te acompaña en procesos de:
                     </h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 text-center">
-                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-suave text-xs font-bold text-rich-plum flex flex-col items-center justify-center gap-2 shadow-sm">
-                            <i data-lucide="brain" class="w-5 h-5 text-purple-badge"></i>
+                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-empolvado text-xs font-bold text-deep-purple flex flex-col items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="brain" class="w-5 h-5 text-deep-purple"></i>
                             <span>Claridad mental</span>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-suave text-xs font-bold text-rich-plum flex flex-col items-center justify-center gap-2 shadow-sm">
-                            <i data-lucide="heart-handshake" class="w-5 h-5 text-purple-badge"></i>
+                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-empolvado text-xs font-bold text-deep-purple flex flex-col items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="heart-handshake" class="w-5 h-5 text-deep-purple"></i>
                             <span>Equilibrio emocional</span>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-suave text-xs font-bold text-rich-plum flex flex-col items-center justify-center gap-2 shadow-sm">
-                            <i data-lucide="feather" class="w-5 h-5 text-purple-badge"></i>
+                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-empolvado text-xs font-bold text-deep-purple flex flex-col items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="feather" class="w-5 h-5 text-deep-purple"></i>
                             <span>Liberación de cargas</span>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-suave text-xs font-bold text-rich-plum flex flex-col items-center justify-center gap-2 shadow-sm">
-                            <i data-lucide="repeat" class="w-5 h-5 text-purple-badge"></i>
+                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-empolvado text-xs font-bold text-deep-purple flex flex-col items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="repeat" class="w-5 h-5 text-deep-purple"></i>
                             <span>Romper patrones</span>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-suave text-xs font-bold text-rich-plum flex flex-col items-center justify-center gap-2 col-span-2 sm:col-span-1 shadow-sm">
-                            <i data-lucide="zap" class="w-5 h-5 text-purple-badge"></i>
+                        <div class="p-3.5 rounded-2xl bg-white/90 border border-rosa-empolvado text-xs font-bold text-deep-purple flex flex-col items-center justify-center gap-2 col-span-2 sm:col-span-1 shadow-sm">
+                            <i data-lucide="zap" class="w-5 h-5 text-deep-purple"></i>
                             <span>Armonía energética</span>
                         </div>
                     </div>
@@ -312,7 +303,7 @@
                     </p>
                 </div>
 
-                <!-- Symptom Grid (Separated elements) -->
+                <!-- Symptom Grid -->
                 <div class="grid sm:grid-cols-2 gap-3.5" id="symptoms-container">
                     
                     <!-- Item 1: Hebreo -->
@@ -320,9 +311,9 @@
                          data-tool="hebreo" 
                          data-domain="Vitalidad Física & Aura"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Cansancio físico, falta de energía o agotamiento constante sin causa clara.</span>
                     </div>
@@ -332,9 +323,9 @@
                          data-tool="karnak" 
                          data-domain="Saturación Mental"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Pesadez mental, sobrepensamiento constante o pensamientos obsesivos.</span>
                     </div>
@@ -344,9 +335,9 @@
                          data-tool="hebreo" 
                          data-domain="Tensión en el Entorno"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Conflictos recurrentes, ambiente tenso o discusiones frecuentes en tu entorno.</span>
                     </div>
@@ -356,9 +347,9 @@
                          data-tool="karnak" 
                          data-domain="Claridad & Decisiones"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Dificultad para tomar decisiones o parálisis por exceso de dudas.</span>
                     </div>
@@ -368,9 +359,9 @@
                          data-tool="karnak" 
                          data-domain="Desbloqueo de Proyectos"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Estancamiento en metas o la sensación de que "algo invisible" frena tus avances.</span>
                     </div>
@@ -380,9 +371,9 @@
                          data-tool="karnak" 
                          data-domain="Flujo de Abundancia"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Bloqueo económico o la sensación de que el dinero entra y sale sin rendir.</span>
                     </div>
@@ -392,9 +383,9 @@
                          data-tool="hebreo" 
                          data-domain="Calidad del Sueño"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Sueño intranquilo, despertares nocturnos o levantarte más cansado que al acostarte.</span>
                     </div>
@@ -404,9 +395,9 @@
                          data-tool="hebreo" 
                          data-domain="Limpieza Espacial"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Sentir pesadez o incomodidad en la energía de tu hogar o lugar de trabajo.</span>
                     </div>
@@ -416,9 +407,9 @@
                          data-tool="karnak" 
                          data-domain="Patrones Subconscientes"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Repetir historias indeseadas en relaciones, proyectos o situaciones personales.</span>
                     </div>
@@ -428,9 +419,9 @@
                          data-tool="hebreo" 
                          data-domain="Protección Aúrica"
                          onclick="toggleSymptom(this)">
-                        <div class="checkbox-icon mt-0.5 shrink-0 text-purple-badge">
+                        <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                             <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-purple-badge"></i>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                         </div>
                         <span class="text-sm text-rich-plum font-semibold leading-snug">Alta sensibilidad emocional o tendencia a "absorber" las cargas del resto.</span>
                     </div>
@@ -442,9 +433,9 @@
                     <div class="glass-card-pastel p-6 sm:p-7 border border-white space-y-6">
                         
                         <!-- Feedback Header -->
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-purple-badge/15 pb-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-deep-purple/15 pb-4">
                             <div>
-                                <span class="text-xs uppercase tracking-widest text-purple-badge font-extrabold">Diagnóstico Radiestésico Personalizado</span>
+                                <span class="text-xs uppercase tracking-widest text-deep-purple font-extrabold">Diagnóstico Radiestésico Personalizado</span>
                                 <h3 id="feedback-summary-title" class="font-heading text-lg sm:text-xl font-bold text-deep-purple mt-0.5">
                                     0 Aspectos Detectados
                                 </h3>
@@ -459,20 +450,20 @@
                         <div class="space-y-2">
                             <div class="flex justify-between text-xs text-rich-plum font-bold">
                                 <span id="hebreo-ratio-text" class="flex items-center gap-1">
-                                    <i data-lucide="shield" class="w-3.5 h-3.5 text-purple-badge"></i> Péndulo Hebreo: 0%
+                                    <i data-lucide="shield" class="w-3.5 h-3.5 text-deep-purple"></i> Péndulo Hebreo: 0%
                                 </span>
                                 <span id="karnak-ratio-text" class="flex items-center gap-1">
-                                    Péndulo Karnak: 0% <i data-lucide="compass" class="w-3.5 h-3.5 text-purple-badge"></i>
+                                    Péndulo Karnak: 0% <i data-lucide="compass" class="w-3.5 h-3.5 text-deep-purple"></i>
                                 </span>
                             </div>
-                            <div class="w-full h-3 bg-white rounded-full overflow-hidden flex p-0.5 border border-rosa-suave">
-                                <div id="hebreo-bar" class="bg-gradient-to-r from-purple-badge to-fuchsia-400 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
-                                <div id="karnak-bar" class="bg-gradient-to-r from-purple-400 to-deep-purple h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+                            <div class="w-full h-3.5 bg-white/90 rounded-full overflow-hidden flex p-0.5 border border-rosa-empolvado shadow-inner">
+                                <div id="hebreo-bar" class="bg-gradient-to-r from-rosa-empolvado to-lavanda-suave h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+                                <div id="karnak-bar" class="bg-gradient-to-r from-lavanda-suave to-lila-pastel h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
                             </div>
                         </div>
 
                         <!-- Recommendation Box -->
-                        <div class="p-5 rounded-2xl bg-white/95 border border-rosa-suave space-y-3 shadow-sm">
+                        <div class="p-5 rounded-2xl bg-white/95 border border-rosa-empolvado space-y-3 shadow-sm">
                             <div class="flex items-start gap-3.5">
                                 <div class="icon-box-pastel p-2.5 rounded-xl shrink-0 mt-0.5">
                                     <i data-lucide="user-check" class="w-5 h-5"></i>
@@ -488,7 +479,7 @@
                             </div>
 
                             <!-- Affected Domains Tags -->
-                            <div class="pt-3 border-t border-purple-badge/15 flex flex-wrap items-center gap-1.5" id="domains-container">
+                            <div class="pt-3 border-t border-deep-purple/15 flex flex-wrap items-center gap-1.5" id="domains-container">
                                 <!-- Tags injected via JS -->
                             </div>
                         </div>
@@ -497,17 +488,17 @@
                 </div>
             </section>
 
-            <!-- Main CTA Section - Perfect Button Layout & No Wrapping Overflows -->
+            <!-- Main CTA Section - Single Unified WhatsApp Action in Soft Pastel Tone -->
             <section class="text-center pt-4 pb-8 flex flex-col items-center justify-center">
                 <a id="whatsapp-link" 
                    href="https://wa.me/5491154581020?text=Hola%20Celeste%2C%20quiero%20consultar%20por%20la%20sesi%C3%B3n%20de%20Limpieza%20y%20Reprogramaci%C3%B3n%20Energ%C3%A9tica." 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   class="pulse-btn inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-badge via-purple-700 to-deep-purple hover:opacity-95 text-white font-extrabold text-sm sm:text-lg px-6 sm:px-9 py-4 rounded-full border-2 border-white transition-all duration-300 w-full sm:w-auto max-w-md shadow-xl text-center leading-tight">
-                    <i data-lucide="message-circle" class="w-6 h-6 shrink-0"></i>
+                   class="pastel-btn-cta inline-flex items-center justify-center gap-3 font-extrabold text-sm sm:text-lg px-8 py-4.5 rounded-full border-2 border-white transition-all duration-300 w-full sm:w-auto max-w-md shadow-lg text-center leading-tight">
+                    <i data-lucide="message-circle" class="w-6 h-6 shrink-0 text-deep-purple"></i>
                     <span>RESERVAR SESIÓN CON CELESTE</span>
                 </a>
-                <p class="text-xs sm:text-sm text-purple-badge font-bold mt-3.5">
+                <p class="text-xs sm:text-sm text-deep-purple font-bold mt-3.5">
                     Atención personalizada con Celeste · Reserva fácil y directa vía WhatsApp
                 </p>
             </section>
@@ -515,21 +506,10 @@
         </main>
 
         <!-- Footer with Circular Logo Accent -->
-        <footer class="border-t border-purple-badge/15 py-6 text-center text-xs sm:text-sm text-rich-plum font-bold tracking-wider flex items-center justify-center gap-2">
+        <footer class="border-t border-deep-purple/15 py-6 text-center text-xs sm:text-sm text-rich-plum font-bold tracking-wider flex items-center justify-center gap-2">
             <img src="logo.png" alt="Celeste Universo Thumbnail" class="w-6 h-6 rounded-full border border-white shadow-sm object-cover shrink-0">
             <p>© Celeste Universo · Todos los derechos reservados.</p>
         </footer>
-
-        <!-- Floating WhatsApp Action Button (Unified Target) -->
-        <a id="floating-whatsapp-btn"
-           href="https://wa.me/5491154581020?text=Hola%20Celeste%2C%20quiero%20consultar%20por%20la%20sesi%C3%B3n%20de%20Limpieza%20y%20Reprogramaci%C3%B3n%20Energ%C3%A9tica." 
-           target="_blank" 
-           rel="noopener noreferrer"
-           aria-label="Contactar por WhatsApp"
-           class="floating-whatsapp flex items-center gap-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-xs sm:text-sm px-4.5 py-3 rounded-full shadow-2xl border-2 border-white">
-            <i data-lucide="message-circle" class="w-5 h-5"></i>
-            <span class="hidden sm:inline">WhatsApp Celeste</span>
-        </a>
 
     </div>
 
@@ -586,32 +566,31 @@
             const recExplanation = document.getElementById('recommendation-explanation');
             const domainsContainer = document.getElementById('domains-container');
             const whatsappLink = document.getElementById('whatsapp-link');
-            const floatingWhatsappBtn = document.getElementById('floating-whatsapp-btn');
 
             if (total > 0) {
                 feedbackBox.classList.remove('hidden');
                 summaryTitle.textContent = `${total} ${total === 1 ? 'aspecto detectado' : 'aspectos detectados'}`;
 
-                // 1. Strict Load Level Logic Rules with Soft Pastel Badges (Zero Black)
+                // 1. Strict Load Level Logic Rules in Soft Pastel Palette
                 let loadBadgeHTML = "";
                 let loadTextForWA = "";
 
                 if (total <= 2) {
                     loadBadgeHTML = `
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-950 text-xs font-bold shadow-sm">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> CARGA: LEVE
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-rosa-empolvado text-deep-purple text-xs font-bold shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> CARGA: LEVE
                         </span>`;
                     loadTextForWA = "Carga Energética Leve";
                 } else if (total === 3) {
                     loadBadgeHTML = `
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-bold shadow-sm">
-                            <span class="w-2 h-2 rounded-full bg-amber-500"></span> CARGA: MODERADA
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-rosa-empolvado text-deep-purple text-xs font-bold shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span> CARGA: MODERADA
                         </span>`;
                     loadTextForWA = "Carga Energética Moderada";
                 } else { // 4 or more
                     loadBadgeHTML = `
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-fuchsia-100 border border-fuchsia-300 text-fuchsia-950 text-xs font-extrabold tracking-wide shadow-md">
-                            <span class="w-2 h-2 rounded-full bg-fuchsia-500 animate-ping"></span> ⚠️ CARGA ELEVADA URGENTE
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-lila-pastel text-deep-purple text-xs font-extrabold tracking-wide shadow-md">
+                            <span class="w-2.5 h-2.5 rounded-full bg-pink-500 animate-ping"></span> ⚠️ CARGA ELEVADA URGENTE
                         </span>`;
                     loadTextForWA = "⚠️ CARGA ELEVADA URGENTE";
                 }
@@ -624,10 +603,10 @@
                 hebreoBar.style.width = `${hebreoPct}%`;
                 karnakBar.style.width = `${karnakPct}%`;
 
-                document.getElementById('hebreo-ratio-text').innerHTML = `<i data-lucide="shield" class="w-3.5 h-3.5 text-purple-badge"></i> Limpieza Aúrica (Hebreo): ${hebreoPct}%`;
-                document.getElementById('karnak-ratio-text').innerHTML = `Reprogramación (Karnak): ${karnakPct}% <i data-lucide="compass" class="w-3.5 h-3.5 text-purple-badge"></i>`;
+                document.getElementById('hebreo-ratio-text').innerHTML = `<i data-lucide="shield" class="w-3.5 h-3.5 text-deep-purple"></i> Limpieza Aúrica (Hebreo): ${hebreoPct}%`;
+                document.getElementById('karnak-ratio-text').innerHTML = `Reprogramación (Karnak): ${karnakPct}% <i data-lucide="compass" class="w-3.5 h-3.5 text-deep-purple"></i>`;
 
-                // 3. Deeply Convincing, Logical & Personalized Explanation
+                // 3. Personalized Recommendation Text
                 let toolRecommendation = "";
                 if (hebreoCount > karnakCount) {
                     recTitle.textContent = "Abordaje Sugerido: Purificación & Protección Aúrica";
@@ -644,19 +623,18 @@
                 }
 
                 // 4. Affected Domains Tags
-                let domainsHTML = '<span class="text-xs text-purple-badge font-bold mr-1">Aspectos a liberar:</span>';
+                let domainsHTML = '<span class="text-xs text-deep-purple font-bold mr-1">Aspectos a liberar:</span>';
                 selectedDomains.forEach(domain => {
-                    domainsHTML += `<span class="px-2.5 py-1 rounded-md bg-rosa-pastel-claro border border-rosa-suave text-[11px] font-bold text-deep-purple shadow-sm">${domain}</span>`;
+                    domainsHTML += `<span class="px-2.5 py-1 rounded-md bg-white border border-rosa-empolvado text-[11px] font-bold text-deep-purple shadow-sm">${domain}</span>`;
                 });
                 domainsContainer.innerHTML = domainsHTML;
 
-                // 5. Build dynamic WA Message (Single unified target)
+                // 5. Build dynamic WA Message
                 const domainListStr = Array.from(selectedDomains).join(", ");
                 const customWA = `Hola Celeste, estuve realizando el test en tu web e identifiqué ${total} aspectos en mi energía.\n\n📊 *Resultado de mi Diagnóstico:*\n• Nivel: ${loadTextForWA}\n• Sugerencia: ${toolRecommendation}\n• Aspectos a trabajar: ${domainListStr}\n\nQuisiera consultar disponibilidad de agenda para realizar mi sesión personalizada de Limpieza y Reprogramación Energética.`;
 
                 const finalUrl = `https://wa.me/5491154581020?text=${encodeURIComponent(customWA)}`;
                 whatsappLink.href = finalUrl;
-                floatingWhatsappBtn.href = finalUrl;
 
                 // Refresh Lucide icons
                 lucide.createIcons();
@@ -666,7 +644,6 @@
                 const defaultWA = "Hola Celeste, quiero consultar por la sesión de Limpieza y Reprogramación Energética.";
                 const defaultUrl = `https://wa.me/5491154581020?text=${encodeURIComponent(defaultWA)}`;
                 whatsappLink.href = defaultUrl;
-                floatingWhatsappBtn.href = defaultUrl;
             }
         }
     </script>
