@@ -201,23 +201,85 @@
             transform: scale(1.015);
         }
 
-        /* Interactive Silhouette & Chakra Nodes */
+                /* Chakra Node Enhanced Dynamic States & Aura Pulse */
         .chakra-node {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: absolute;
+            background-color: #E2D9F3;
+            opacity: 0.65;
         }
 
-        .chakra-node.active {
-            filter: drop-shadow(0 0 12px rgba(221, 192, 240, 0.95)) drop-shadow(0 0 22px rgba(208, 171, 232, 0.8));
-            transform: scale(1.25);
-        }
-
-        /* Audio Player Simulation Waveform */
-        .wave-bar {
-            width: 3px;
-            background-color: #370F4D;
+        .chakra-ping-ring {
+            display: none;
+            position: absolute;
+            inset: -4px;
             border-radius: 9999px;
-            transition: height 0.2s ease;
+            border: 2px solid currentColor;
+            opacity: 0.8;
+            animation: chakraPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
         }
+
+        @keyframes chakraPing {
+            0% { transform: scale(0.9); opacity: 0.9; }
+            70%, 100% { transform: scale(1.9); opacity: 0; }
+        }
+
+        .chakra-node.active .chakra-ping-ring {
+            display: block;
+        }
+
+        /* Specific Real Chakra Colors with Glowing Shadows */
+        #node-corona.active {
+            background-color: #9333EA !important;
+            color: #9333EA;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.95));
+            transform: translate(-50%, 0) scale(1.35);
+        }
+        #node-tercerojo.active {
+            background-color: #4F46E5 !important;
+            color: #4F46E5;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.95));
+            transform: translate(-50%, 0) scale(1.35);
+        }
+        #node-garganta.active {
+            background-color: #0284C7 !important;
+            color: #0284C7;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(2, 132, 199, 0.95));
+            transform: translate(-50%, 0) scale(1.35);
+        }
+        #node-corazon.active {
+            background-color: #059669 !important;
+            color: #059669;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(5, 150, 105, 0.95));
+            transform: translate(-50%, 0) scale(1.35);
+        }
+        #node-plexo.active {
+            background-color: #D97706 !important;
+            color: #D97706;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.95));
+            transform: translate(-50%, 0) scale(1.35);
+        }
+        #node-sacro.active {
+            background-color: #EA580C !important;
+            color: #EA580C;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(234, 88, 12, 0.95));
+            transform: translate(-50%, 0) scale(1.35);
+        }
+        #node-raiz.active {
+            background-color: #DC2626 !important;
+            color: #DC2626;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.95));
+            transform: translate(-50%, 0) scale(1.35);
+        }
+
+        
 
         /* Luxury Call to Action */
         .btn-luxury-cta {
@@ -749,46 +811,70 @@
                     <!-- Right: Holographic Energy Map & Diagnostic Engine (5 cols) -->
                     <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-8">
                         
-                        <!-- Visual Holographic Silhouette with Dynamic Chakra Nodes -->
-                        <div class="p-6 rounded-3xl bg-white/95 border-2 border-lavanda-suave shadow-lg text-center space-y-4">
-                            <div class="flex items-center justify-between pb-3 border-b border-lavanda-suave/30">
-                                <span class="text-xs uppercase font-extrabold tracking-wider text-deep-purple">
-                                    Mapa Holográfico de Frecuencia
+                                                <!-- Visual Holographic Silhouette with Dynamic Chakra Nodes -->
+                        <div id="silhouette-card" class="p-6 rounded-3xl bg-white/95 border-2 border-lavanda-suave shadow-lg text-center space-y-4 relative overflow-hidden transition-all duration-500">
+                            
+                            <!-- Dynamic Aura Glow Background behind the body -->
+                            <div id="aura-glow-field" class="absolute inset-x-4 top-12 bottom-12 rounded-full transition-all duration-700 pointer-events-none opacity-20 bg-lavanda-suave blur-2xl"></div>
+
+                            <div class="flex items-center justify-between pb-3 border-b border-lavanda-suave/30 relative z-10">
+                                <span class="text-xs uppercase font-extrabold tracking-wider text-deep-purple flex items-center gap-1.5">
+                                    <i data-lucide="scan" class="w-3.5 h-3.5 text-soft-violet"></i>
+                                    <span>Mapa de tu Campo</span>
                                 </span>
-                                <span id="nodes-active-counter" class="text-xs font-bold text-soft-violet bg-lavanda-nieve px-3 py-1 rounded-full border border-lavanda-suave">
+                                <span id="nodes-active-counter" class="text-xs font-bold text-soft-violet bg-lavanda-nieve px-3 py-1 rounded-full border border-lavanda-suave transition-all">
                                     0 Centros Marcados
                                 </span>
                             </div>
 
                             <!-- Interactive SVG Body Graphic with Chakra Nodes -->
-                            <div class="relative w-48 h-72 mx-auto flex items-center justify-center">
+                            <div class="relative w-48 h-72 mx-auto flex items-center justify-center relative z-10">
+                                
+                                <!-- Outer Aura Rings -->
+                                <div id="aura-ring-outer" class="absolute inset-2 rounded-full border border-lavanda-suave/40 transition-all duration-700 pointer-events-none"></div>
+                                <div id="aura-ring-pulse" class="absolute inset-0 rounded-full border-2 border-transparent transition-all duration-700 pointer-events-none"></div>
+
                                 <!-- Base Silhouette Vector -->
-                                <svg viewBox="0 0 100 160" class="w-full h-full text-lavanda-suave/40 drop-shadow-sm">
+                                <svg viewBox="0 0 100 160" class="w-full h-full text-lavanda-suave/60 drop-shadow-sm transition-all duration-500" id="silhouette-body-svg">
                                     <!-- Head -->
-                                    <circle cx="50" cy="22" r="14" fill="currentColor" opacity="0.6"/>
-                                    <!-- Neck & Shoulders -->
-                                    <path d="M43 36 C43 40 40 44 30 48 C20 52 14 62 14 80 L22 82 C24 68 28 60 36 56 L36 95 L44 95 L44 148 L56 148 L56 95 L64 95 L64 56 C72 60 76 68 78 82 L86 80 C86 62 80 52 70 48 C60 44 57 40 57 36 Z" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="50" cy="20" r="13" fill="currentColor" opacity="0.7"/>
+                                    <!-- Torso, Arms & Posture -->
+                                    <path d="M44 32 C44 36 41 40 31 44 C21 48 15 58 15 76 L23 78 C25 65 29 58 37 54 L37 92 L45 92 L45 148 L55 148 L55 92 L63 92 L63 54 C71 58 75 65 77 78 L85 76 C85 58 79 48 69 44 C59 40 56 36 56 32 Z" fill="currentColor" opacity="0.6"/>
                                 </svg>
 
-                                <!-- Chakra Overlay Nodes -->
-                                <!-- 1. Corona -->
-                                <div id="node-corona" class="chakra-node absolute top-[6%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-purple-300 border-2 border-white shadow-xs" title="Chakra Corona"></div>
-                                <!-- 2. Tercer Ojo -->
-                                <div id="node-tercerojo" class="chakra-node absolute top-[16%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-indigo-300 border-2 border-white shadow-xs" title="Tercer Ojo"></div>
-                                <!-- 3. Garganta -->
-                                <div id="node-garganta" class="chakra-node absolute top-[27%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-sky-300 border-2 border-white shadow-xs" title="Garganta"></div>
-                                <!-- 4. Corazón -->
-                                <div id="node-corazon" class="chakra-node absolute top-[38%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-emerald-300 border-2 border-white shadow-xs" title="Corazón"></div>
-                                <!-- 5. Plexo Solar -->
-                                <div id="node-plexo" class="chakra-node absolute top-[48%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-amber-300 border-2 border-white shadow-xs" title="Plexo Solar"></div>
-                                <!-- 6. Sacro -->
-                                <div id="node-sacro" class="chakra-node absolute top-[58%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-300 border-2 border-white shadow-xs" title="Sacro"></div>
-                                <!-- 7. Raíz -->
-                                <div id="node-raiz" class="chakra-node absolute top-[68%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-rose-300 border-2 border-white shadow-xs" title="Raíz"></div>
+                                <!-- Chakra Overlay Nodes (Alineados exactamente al dibujito) -->
+                                <!-- 1. Corona: Tope de la cabeza -->
+                                <div id="node-corona" class="chakra-node absolute top-[5%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Chakra Corona (Saturación Mental)">
+                                    <span class="chakra-ping-ring"></span>
+                                </div>
+                                <!-- 2. Tercer Ojo: Frente / Entrecejo -->
+                                <div id="node-tercerojo" class="chakra-node absolute top-[12%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Tercer Ojo (Claridad e Intuición)">
+                                    <span class="chakra-ping-ring"></span>
+                                </div>
+                                <!-- 3. Garganta: Cuello -->
+                                <div id="node-garganta" class="chakra-node absolute top-[22%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Garganta (Cargas del Entorno / Expresión)">
+                                    <span class="chakra-ping-ring"></span>
+                                </div>
+                                <!-- 4. Corazón: Centro del Pecho -->
+                                <div id="node-corazon" class="chakra-node absolute top-[34%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Corazón (Permeabilidad y Fuga)">
+                                    <span class="chakra-ping-ring"></span>
+                                </div>
+                                <!-- 5. Plexo Solar: Diafragma / Estómago -->
+                                <div id="node-plexo" class="chakra-node absolute top-[46%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Plexo Solar (Vitalidad y Agotamiento)">
+                                    <span class="chakra-ping-ring"></span>
+                                </div>
+                                <!-- 6. Sacro: Bajo Vientre -->
+                                <div id="node-sacro" class="chakra-node absolute top-[57%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Sacro (Desbloqueo de Metas)">
+                                    <span class="chakra-ping-ring"></span>
+                                </div>
+                                <!-- 7. Raíz: Base Pélvica -->
+                                <div id="node-raiz" class="chakra-node absolute top-[67%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Raíz (Sustento y Finanzas)">
+                                    <span class="chakra-ping-ring"></span>
+                                </div>
                             </div>
 
-                            <p class="text-[11px] text-rich-plum/80 font-medium">
-                                Visualización en tiempo real de los centros afectados por sobrecarga sutil.
+                            <p id="silhouette-status-text" class="text-[11px] text-rich-plum/80 font-medium relative z-10 transition-all">
+                                Selecciona síntomas en la lista para ver la reacción de tu campo en tiempo real.
                             </p>
                         </div>
 
@@ -888,63 +974,9 @@
                         </div>
                         <h4 class="font-heading font-bold text-base text-deep-purple">Devolución Privada</h4>
                         <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
-                            Entrega de un audio personal detallando todo lo detectado, lo transmutado y pautas para sostener tu alta frecuencia.
+                            Entrega de tu informe y devolución detallando todo lo detectado, lo transmutado y pautas para sostener tu alta frecuencia.
                         </p>
                     </div>
-                </div>
-
-                <!-- Visual Simulated WhatsApp Voice Note Player -->
-                <div class="p-6 sm:p-7 rounded-3xl bg-white/95 border-2 border-lavanda-suave shadow-md max-w-2xl mx-auto space-y-3">
-                    <div class="flex items-center justify-between pb-2 border-b border-lavanda-suave/30">
-                        <div class="flex items-center gap-3">
-                            <img src="logo.png" alt="Celeste Avatar" class="w-9 h-9 rounded-full border-2 border-white shadow-xs object-cover">
-                            <div>
-                                <h5 class="text-xs font-bold text-deep-purple">Celeste Universo</h5>
-                                <span class="text-[10px] text-soft-violet font-semibold">Devolución de Sesión Individual</span>
-                            </div>
-                        </div>
-                        <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                            Audio Confidencial
-                        </span>
-                    </div>
-
-                    <!-- Simulated Player Controls -->
-                    <div class="flex items-center gap-4 pt-1">
-                        <button class="w-11 h-11 rounded-full bg-deep-purple text-white flex items-center justify-center shrink-0 shadow-sm hover:scale-105 transition-transform" aria-label="Reproducir ejemplo">
-                            <i data-lucide="play" class="w-5 h-5 ml-0.5"></i>
-                        </button>
-                        
-                        <!-- Animated Waveform Visual -->
-                        <div class="flex-grow flex items-center gap-1 h-9 px-2 bg-lavanda-nieve rounded-xl border border-lavanda-suave">
-                            <div class="wave-bar h-3"></div>
-                            <div class="wave-bar h-5"></div>
-                            <div class="wave-bar h-7"></div>
-                            <div class="wave-bar h-4"></div>
-                            <div class="wave-bar h-8"></div>
-                            <div class="wave-bar h-6"></div>
-                            <div class="wave-bar h-3"></div>
-                            <div class="wave-bar h-7"></div>
-                            <div class="wave-bar h-5"></div>
-                            <div class="wave-bar h-8"></div>
-                            <div class="wave-bar h-6"></div>
-                            <div class="wave-bar h-4"></div>
-                            <div class="wave-bar h-7"></div>
-                            <div class="wave-bar h-5"></div>
-                            <div class="wave-bar h-3"></div>
-                            <div class="wave-bar h-6"></div>
-                            <div class="wave-bar h-8"></div>
-                            <div class="wave-bar h-4"></div>
-                            <div class="wave-bar h-5"></div>
-                            <div class="wave-bar h-7"></div>
-                            <div class="wave-bar h-3"></div>
-                        </div>
-
-                        <span class="text-xs font-bold text-deep-purple font-mono">14:20 min</span>
-                    </div>
-
-                    <p class="text-[11px] text-rich-plum/80 text-center font-medium pt-1">
-                        Cada sesión incluye un audio exhaustivo grabado exclusivamente para ti explicando cada hallazgo y resultado.
-                    </p>
                 </div>
             </section>
 
@@ -1361,7 +1393,7 @@
             });
         }
 
-        function updateHolographicNodes() {
+                function updateHolographicNodes() {
             const allChakraIds = ['corona', 'tercerojo', 'garganta', 'corazon', 'plexo', 'sacro', 'raiz'];
             allChakraIds.forEach(id => {
                 const nodeEl = document.getElementById(`node-${id}`);
@@ -1374,10 +1406,59 @@
                 }
             });
 
+            const count = selectedChakras.size;
+            const total = limpiezaCount + reprogCount;
             const counterEl = document.getElementById('nodes-active-counter');
+            const auraGlow = document.getElementById('aura-glow-field');
+            const auraPulse = document.getElementById('aura-ring-pulse');
+            const silhouetteSvg = document.getElementById('silhouette-body-svg');
+            const statusText = document.getElementById('silhouette-status-text');
+
             if (counterEl) {
-                const count = selectedChakras.size;
-                counterEl.textContent = `${count} ${count === 1 ? 'Centro Afectado' : 'Centros Afectados'}`;
+                if (count === 0) {
+                    counterEl.textContent = "0 Centros Marcados";
+                    counterEl.className = "text-xs font-bold text-soft-violet bg-lavanda-nieve px-3 py-1 rounded-full border border-lavanda-suave transition-all";
+                } else if (total < 3) {
+                    counterEl.textContent = `${count} ${count === 1 ? 'Centro Afectado' : 'Centros Afectados'}`;
+                    counterEl.className = "text-xs font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-300 transition-all";
+                } else {
+                    counterEl.textContent = `⚠️ ${count} ${count === 1 ? 'Centro' : 'Centros'} · ATENCIÓN URGENTE`;
+                    counterEl.className = "text-xs font-extrabold text-rose-950 bg-rose-100 px-3 py-1 rounded-full border border-rose-400 transition-all animate-pulse";
+                }
+            }
+
+            // Efecto visual dinámico del aura alineado al dibujito
+            if (auraGlow && auraPulse && silhouetteSvg) {
+                if (total === 0) {
+                    auraGlow.style.opacity = '0.2';
+                    auraGlow.style.background = '#E8D4F5';
+                    auraPulse.style.borderColor = 'transparent';
+                    auraPulse.classList.remove('animate-ping');
+                    silhouetteSvg.style.filter = 'none';
+                    if (statusText) statusText.textContent = "Selecciona síntomas en la lista para ver la reacción de tu campo en tiempo real.";
+                } else if (total === 1) {
+                    auraGlow.style.opacity = '0.45';
+                    auraGlow.style.background = 'radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(232, 212, 245, 0.2) 70%, transparent 100%)';
+                    auraPulse.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                    auraPulse.classList.remove('animate-ping');
+                    silhouetteSvg.style.filter = 'drop-shadow(0 0 6px rgba(16, 185, 129, 0.4))';
+                    if (statusText) statusText.textContent = "1 centro sutil con fuga o congestión energética detectada.";
+                } else if (total === 2) {
+                    auraGlow.style.opacity = '0.65';
+                    auraGlow.style.background = 'radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(221, 192, 240, 0.25) 70%, transparent 100%)';
+                    auraPulse.style.borderColor = 'rgba(245, 158, 11, 0.5)';
+                    auraPulse.classList.remove('animate-ping');
+                    silhouetteSvg.style.filter = 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.5))';
+                    if (statusText) statusText.textContent = "2 centros comprometidos · Desgaste vibracional moderado en tu campo.";
+                } else {
+                    // CON 3 O MÁS: ATENCIÓN URGENTE
+                    auraGlow.style.opacity = '0.9';
+                    auraGlow.style.background = 'radial-gradient(circle, rgba(244, 63, 94, 0.55) 0%, rgba(147, 51, 234, 0.45) 60%, transparent 100%)';
+                    auraPulse.style.borderColor = 'rgba(244, 63, 94, 0.6)';
+                    auraPulse.classList.add('animate-ping');
+                    silhouetteSvg.style.filter = 'drop-shadow(0 0 12px rgba(244, 63, 94, 0.7))';
+                    if (statusText) statusText.textContent = "⚠️ Sobrecarga sutil generalizada: Requiere purificación y reprogramación urgente.";
+                }
             }
         }
 
@@ -1395,28 +1476,29 @@
             if (total > 0) {
                 feedbackBox.classList.remove('hidden');
 
-                // 1. Load Badge Calculation
+                // 1. Load Badge Calculation (Con 3 ya es URGENTE)
                 let loadBadgeHTML = "";
                 let loadTextForWA = "";
 
-                if (total <= 2) {
+                if (total === 1) {
                     loadBadgeHTML = `
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-bold">
                             <span class="w-2 h-2 rounded-full bg-emerald-500"></span> CARGA LEVE
                         </span>`;
                     loadTextForWA = "Carga Sutil Leve";
-                } else if (total === 3) {
+                } else if (total === 2) {
                     loadBadgeHTML = `
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold">
                             <span class="w-2 h-2 rounded-full bg-amber-500"></span> CARGA MODERADA
                         </span>`;
                     loadTextForWA = "Carga Sutil Moderada";
                 } else {
+                    // 3 o más es URGENTE
                     loadBadgeHTML = `
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-100 border border-purple-400 text-purple-950 text-xs font-extrabold tracking-wide">
-                            <span class="w-2 h-2 rounded-full bg-pink-600 animate-ping"></span> CARGA ELEVADA PRIORITARIA
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-400 text-rose-950 text-xs font-extrabold tracking-wide shadow-sm animate-pulse">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-600 animate-ping"></span> ⚠️ ATENCIÓN URGENTE · CARGA ELEVADA
                         </span>`;
-                    loadTextForWA = "Carga Elevada Prioritaria";
+                    loadTextForWA = "Atención Urgente (Carga Elevada)";
                 }
                 loadBadgeContainer.innerHTML = loadBadgeHTML;
 
@@ -1430,9 +1512,13 @@
                 document.getElementById('limpieza-ratio-text').textContent = `Purificación Áurica: ${limpiezaPct}%`;
                 document.getElementById('reprog-ratio-text').textContent = `Reprogramación: ${reprogPct}%`;
 
-                // 3. Personalized Recommendation Text (NO PENDULUMS)
+                // 3. Personalized Recommendation Text
                 let focusRecommendation = "";
-                if (limpiezaCount > reprogCount) {
+                if (total >= 3) {
+                    recTitle.textContent = "Abordaje Prioritario: Purificación Integral & Destrabe Urgente";
+                    recExplanation.textContent = `Has identificado ${total} aspectos críticos activos en tu energía. Cuando se acumulan 3 o más bloqueos simultáneos, el campo áurico se satura y se generan fugas continuas de vitalidad, cansancio pronunciado y trabas en tus proyectos. Es fundamental realizar una sesión individual urgente para purificar, sellar y reprogramar tus frecuencias antes de que el desgaste se profundice.`;
+                    focusRecommendation = "Purificación Profunda y Reprogramación Urgente";
+                } else if (limpiezaCount > reprogCount) {
                     recTitle.textContent = "Abordaje Principal: Purificación Profunda & Sellado Áurico";
                     recExplanation.textContent = `Tu campo energético absorbe sobrecargas externas y desgaste físico, lo que ocasiona la pesadez y el cansancio acumulado. En la sesión, Celeste limpiará y sellará tu aura para que recuperes tu liviandad y bienestar.`;
                     focusRecommendation = "Purificación Áurica y Sellado";
@@ -1455,7 +1541,14 @@
 
                 // 5. Dynamic WhatsApp URL
                 const domainListStr = Array.from(selectedDomains).join(", ");
-                const customWA = `Hola Celeste, estuve completando el test en tu página e identifiqué ${total} aspectos en mi campo energético.\n\n*Resultado de mi Lectura:*\n• Nivel: ${loadTextForWA}\n• Abordaje sugerido: ${focusRecommendation}\n• Aspectos a trabajar: ${domainListStr}\n\nQuisiera consultar disponibilidad para realizar mi sesión individual de Limpieza y Reprogramación Energética.`;
+                const customWA = `Hola Celeste, estuve completando el test en tu página e identifiqué ${total} aspectos en mi campo energético.
+
+*Resultado de mi Lectura:*
+• Nivel: ${loadTextForWA}
+• Abordaje sugerido: ${focusRecommendation}
+• Aspectos a trabajar: ${domainListStr}
+
+Quisiera consultar disponibilidad prioritaria para realizar mi sesión individual de Limpieza y Reprogramación Energética.`;
 
                 const finalUrl = `https://wa.me/5491154581020?text=${encodeURIComponent(customWA)}`;
                 whatsappLink.href = finalUrl;
