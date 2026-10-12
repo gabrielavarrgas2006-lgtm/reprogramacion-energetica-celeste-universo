@@ -10,25 +10,236 @@
     
     <!-- Script de Garantía de Apertura en el Tope (Inicio Siempre) -->
     <script>
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        let limpiezaCount = 0;
+        let reprogCount = 0;
+        let selectedDomains = new Set();
+        let selectedChakras = new Set();
+
+        // Icono vectorial de alerta personalizado (sin emojis genéricos de sistema)
+        function getAlertIconHTML(size = "w-3 h-3", bgGradient = "from-rose-500 to-amber-500") {
+            return `
+                <span class="inline-flex items-center justify-center p-1 rounded-md bg-gradient-to-tr ${bgGradient} text-white shadow-2xs shrink-0">
+                    <svg class="${size}" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd"/>
+                    </svg>
+                </span>
+            `;
         }
-        if (window.location.hash) {
-            try {
-                history.replaceState(null, '', window.location.pathname + window.location.search);
-            } catch (e) {}
+
+        // Selección directa y estable sin movimientos raros
+        function toggleSymptom(element) {
+            element.classList.toggle('selected');
+            const uncheckIcon = element.querySelector('.uncheck');
+            const checkIcon = element.querySelector('.check');
+            const dimension = element.getAttribute('data-dimension');
+            const chakra = element.getAttribute('data-chakra');
+            const domain = element.getAttribute('data-domain');
+            
+            if (element.classList.contains('selected')) {
+                if (uncheckIcon) uncheckIcon.classList.add('hidden');
+                if (checkIcon) checkIcon.classList.remove('hidden');
+                if (dimension === 'limpieza') limpiezaCount++;
+                if (dimension === 'reprogramacion') reprogCount++;
+                if (domain) selectedDomains.add(domain);
+                if (chakra) selectedChakras.add(chakra);
+            } else {
+                if (uncheckIcon) uncheckIcon.classList.remove('hidden');
+                if (checkIcon) checkIcon.classList.add('hidden');
+                if (dimension === 'limpieza') limpiezaCount--;
+                if (dimension === 'reprogramacion') reprogCount--;
+                
+                recheckActiveStates();
+            }
+
+            updateHolographicNodes();
+            updateDiagnosticEngine();
         }
-        window.scrollTo(0, 0);
-        function resetScrollToTop() {
-            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-            if (document.documentElement) document.documentElement.scrollTop = 0;
-            if (document.body) document.body.scrollTop = 0;
+
+        function recheckActiveStates() {
+            selectedDomains.clear();
+            selectedChakras.clear();
+            document.querySelectorAll('.symptom-card.selected').forEach(card => {
+                const dom = card.getAttribute('data-domain');
+                const chak = card.getAttribute('data-chakra');
+                if (dom) selectedDomains.add(dom);
+                if (chak) selectedChakras.add(chak);
+            });
         }
-        document.addEventListener("DOMContentLoaded", resetScrollToTop);
-        window.addEventListener("load", resetScrollToTop);
-        window.addEventListener("pageshow", resetScrollToTop);
-        setTimeout(resetScrollToTop, 50);
-        setTimeout(resetScrollToTop, 200);
+
+        // Enciende los puntos en el cuerpo según la zona anatómica exacta
+        function updateHolographicNodes() {
+            const allChakraIds = ['corona', 'tercerojo', 'garganta', 'corazon', 'plexo', 'sacro', 'raiz'];
+            allChakraIds.forEach(id => {
+                const nodeEl = document.getElementById(`node-${id}`);
+                if (nodeEl) {
+                    if (selectedChakras.has(id)) {
+                        nodeEl.classList.add('active');
+                    } else {
+                        nodeEl.classList.remove('active');
+                    }
+                }
+            });
+
+            const count = selectedChakras.size;
+            const total = limpiezaCount + reprogCount;
+            const counterEl = document.getElementById('nodes-active-counter');
+            const auraGlow = document.getElementById('aura-glow-field');
+            const auraPulse = document.getElementById('aura-ring-pulse');
+            const silhouetteSvg = document.getElementById('silhouette-body-svg');
+            const statusText = document.getElementById('silhouette-status-text');
+
+            if (counterEl) {
+                if (count === 0) {
+                    counterEl.textContent = "0 Centros Marcados";
+                    counterEl.className = "text-xs font-bold text-soft-violet bg-lavanda-nieve px-3 py-1 rounded-full border border-lavanda-suave transition-all";
+                } else if (total < 3) {
+                    counterEl.innerHTML = `${count} ${count === 1 ? 'Centro Afectado' : 'Centros Afectados'}`;
+                    counterEl.className = "text-xs font-bold text-amber-900 bg-amber-50 px-3 py-1 rounded-full border border-amber-300 transition-all";
+                } else {
+                    counterEl.innerHTML = `
+                        <span class="inline-flex items-center gap-1.5">
+                            ${getAlertIconHTML("w-2.5 h-2.5", "from-rose-500 to-amber-500")}
+                            <span>${count} Centros · ATENCIÓN PRIORITARIA</span>
+                        </span>
+                    `;
+                    counterEl.className = "text-xs font-black text-rose-950 bg-rose-100 px-3 py-1 rounded-full border border-rose-300 transition-all shadow-xs animate-pulse";
+                }
+            }
+
+            // Resplandor del aura limpio y estable
+            if (auraGlow && auraPulse && silhouetteSvg) {
+                if (total === 0) {
+                    auraGlow.style.opacity = '0.2';
+                    auraGlow.style.background = '#E8D4F5';
+                    auraPulse.style.borderColor = 'transparent';
+                    auraPulse.classList.remove('animate-ping');
+                    silhouetteSvg.style.filter = 'none';
+                } else if (total === 1) {
+                    auraGlow.style.opacity = '0.45';
+                    auraGlow.style.background = 'radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(232, 212, 245, 0.2) 70%, transparent 100%)';
+                    auraPulse.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                    auraPulse.classList.remove('animate-ping');
+                    silhouetteSvg.style.filter = 'drop-shadow(0 0 6px rgba(16, 185, 129, 0.4))';
+                } else if (total === 2) {
+                    auraGlow.style.opacity = '0.65';
+                    auraGlow.style.background = 'radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(221, 192, 240, 0.25) 70%, transparent 100%)';
+                    auraPulse.style.borderColor = 'rgba(245, 158, 11, 0.5)';
+                    auraPulse.classList.remove('animate-ping');
+                    silhouetteSvg.style.filter = 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.5))';
+                } else {
+                    // 3 o más: Alerta visual intensa
+                    auraGlow.style.opacity = '0.9';
+                    auraGlow.style.background = 'radial-gradient(circle, rgba(244, 63, 94, 0.55) 0%, rgba(147, 51, 234, 0.45) 60%, transparent 100%)';
+                    auraPulse.style.borderColor = 'rgba(244, 63, 94, 0.6)';
+                    auraPulse.classList.add('animate-ping');
+                    silhouetteSvg.style.filter = 'drop-shadow(0 0 12px rgba(244, 63, 94, 0.7))';
+                }
+            }
+
+            if (statusText) {
+                if (total === 0) {
+                    statusText.innerHTML = "Selecciona tus síntomas para visualizar los centros afectados.";
+                } else if (total === 1) {
+                    statusText.innerHTML = "1 centro sutil activo con fuga energética.";
+                } else if (total === 2) {
+                    statusText.innerHTML = "2 centros en fricción energética · Desgaste en curso.";
+                } else {
+                    statusText.innerHTML = `
+                        <span class="inline-flex items-center gap-1.5 font-bold text-rose-900">
+                            ${getAlertIconHTML("w-2.5 h-2.5", "from-rose-500 to-amber-500")}
+                            <span>Sobrecarga crítica: Múltiples fugas y adherencias energéticas detectadas.</span>
+                        </span>
+                    `;
+                }
+            }
+        }
+
+        // Diagnóstico directo de marketing: Asusta con lógica investigada, conciso, menos es más
+        function updateDiagnosticEngine() {
+            const total = limpiezaCount + reprogCount;
+            const feedbackBox = document.getElementById('selection-feedback');
+            const loadBadgeContainer = document.getElementById('load-badge-container');
+            const limpiezaBar = document.getElementById('limpieza-bar');
+            const reprogBar = document.getElementById('reprog-bar');
+            const recTitle = document.getElementById('recommendation-title');
+            const recExplanation = document.getElementById('recommendation-explanation');
+            const whatsappLink = document.getElementById('whatsapp-link');
+            const diagnosticWaButton = document.getElementById('diagnostic-wa-button');
+            const diagnosticWaBtnText = document.getElementById('diagnostic-wa-btn-text');
+
+            if (total > 0) {
+                feedbackBox.classList.remove('hidden');
+
+                // 1. Badge nivel
+                let loadBadgeHTML = "";
+                let loadTextForWA = "";
+                let btnCtaText = "Consultar Disponibilidad con Celeste";
+
+                if (total === 1) {
+                    loadBadgeHTML = `
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-bold shadow-2xs">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> CARGA LEVE
+                        </span>`;
+                    loadTextForWA = "Carga Leve (Fuga Inicial)";
+                } else if (total === 2) {
+                    loadBadgeHTML = `
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold shadow-2xs">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span> CARGA MODERADA
+                        </span>`;
+                    loadTextForWA = "Carga Moderada (Fricción y Desgaste)";
+                } else {
+                    loadBadgeHTML = `
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-400 text-rose-950 text-xs font-black tracking-wide shadow-xs animate-pulse">
+                            ${getAlertIconHTML("w-2.5 h-2.5", "from-rose-500 to-amber-500")}
+                            <span>ATENCIÓN PRIORITARIA · CARGA CRÍTICA</span>
+                        </span>`;
+                    loadTextForWA = "Carga Crítica (Fugas Abiertas y Larvas Energéticas)";
+                    btnCtaText = "Consultar Disponibilidad Urgente con Celeste";
+                }
+                if (loadBadgeContainer) loadBadgeContainer.innerHTML = loadBadgeHTML;
+                if (diagnosticWaBtnText) diagnosticWaBtnText.textContent = btnCtaText;
+
+                // 2. Ratios
+                const limpiezaPct = Math.round((limpiezaCount / total) * 100);
+                const reprogPct = 100 - limpiezaPct;
+                if (limpiezaBar) limpiezaBar.style.width = `${limpiezaPct}%`;
+                if (reprogBar) reprogBar.style.width = `${reprogPct}%`;
+                const lText = document.getElementById('limpieza-ratio-text');
+                const rText = document.getElementById('reprog-ratio-text');
+                if (lText) lText.textContent = `Purificación Áurica: ${limpiezaPct}%`;
+                if (rText) rText.textContent = `Reprogramación: ${reprogPct}%`;
+
+                // 3. Marketing Directo: Asusta con lógica investigada, conciso, menos es más (2-3 frases)
+                if (total >= 3) {
+                    recTitle.textContent = "Fugas Abiertas & Larvas Energéticas Activas";
+                    recExplanation.innerHTML = `Tu campo áurico ha colapsado su blindaje natural. Con ${total} centros comprometidos, existen fisuras profundas donde se han alojado <strong>larvas energéticas y parásitos sutiles</strong> que drenan continuamente tu fuerza vital. <strong>Por eso ningún descanso físico te quita este cansancio ni destraba tus proyectos:</strong> mientras la fuga siga abierta, tu energía se disipa día y noche. Es indispensable realizar una sesión urgente de corte, extracción de larvas, sellado áurico y reprogramación para reactivar tu energía y destrabar tu vida.`;
+                } else if (total === 2) {
+                    recTitle.textContent = "Fricción Energética & Residuos Densos";
+                    recExplanation.innerHTML = `Presentas dos centros vitales en fuga simultánea. Tu aura ha perdido espesor protector, facilitando la adhesión de <strong>miasmas y residuos densos</strong> que consumen silenciosamente tu vitalidad y hacen que todo te cueste el doble. Una sesión individual permite cortar estos lazos sutiles, sellar tu campo y evitar que el estancamiento se profundice.`;
+                } else {
+                    recTitle.textContent = "Pérdida de Blindaje Energético";
+                    recExplanation.innerHTML = `Se detecta una microfisura activa en tu campo sutil. Aunque parece una molestia aislada, una fuga no sellada debilita tu protección áurica y comienza a drenar los demás centros vitales. Una sesión preventiva corta la pérdida de energía de raíz antes de que se consolide un bloqueo mayor.`;
+                }
+
+                // 4. WhatsApp Links
+                const customWA = `Hola Celeste, realicé el test en tu página y obtuve el diagnóstico de ${loadTextForWA}. Siento este cansancio y los bloqueos en mis centros vitales. Quiero consultar disponibilidad para realizar mi sesión individual de Limpieza y Reprogramación Energética con vos.`;
+                const finalUrl = `https://wa.me/5491154581020?text=${encodeURIComponent(customWA)}`;
+                if (whatsappLink) whatsappLink.href = finalUrl;
+                if (diagnosticWaButton) diagnosticWaButton.href = finalUrl;
+
+            } else {
+                feedbackBox.classList.add('hidden');
+                const defaultWA = "Hola Celeste, quiero consultar por la sesión individual de Limpieza y Reprogramación Energética.";
+                const defaultUrl = `https://wa.me/5491154581020?text=${encodeURIComponent(defaultWA)}`;
+                if (whatsappLink) whatsappLink.href = defaultUrl;
+                if (diagnosticWaButton) diagnosticWaButton.href = defaultUrl;
+            }
+
+            lucide.createIcons();
+        }
     </script>
 
     <!-- Google Fonts -->
@@ -201,12 +412,11 @@
             transform: scale(1.015);
         }
 
-        /* Chakra Node Dynamic States: Preserva colores pastel iniciales y se iluminan/mueven al activarse */
+        /* Chakra Node States: Colores pastel nítidos de inicio e iluminación intensa al activarse */
         .chakra-node {
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: absolute;
             opacity: 0.95;
-            z-index: 10;
         }
 
         .chakra-ping-ring {
@@ -228,105 +438,55 @@
             display: block;
         }
 
-        /* Hover preview: El círculo se mueve hacia la sensación con pulso flotante */
-        .chakra-node.preview-motion {
-            transform: translate(-50%, -6px) scale(1.45) !important;
-            filter: drop-shadow(0 0 16px currentColor) !important;
-            z-index: 30 !important;
-            animation: chakraFloatSense 1.1s ease-in-out infinite alternate !important;
-        }
-
-        @keyframes chakraFloatSense {
-            0% { transform: translate(-50%, -3px) scale(1.35); }
-            100% { transform: translate(-50%, -7px) scale(1.52); }
-        }
-
-        /* Movimiento de impacto al seleccionar */
-        .chakra-node.sensation-impact {
-            animation: chakraSensationImpact 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-        }
-
-        @keyframes chakraSensationImpact {
-            0% { transform: translate(-50%, 0) scale(1); }
-            30% { transform: translate(-50%, -8px) scale(1.6); }
-            60% { transform: translate(-50%, 2px) scale(1.2); }
-            100% { transform: translate(-50%, 0) scale(1.35); }
-        }
-
-        /* Tracker que se desliza suavemente por el cuerpo hacia donde se ubica la sensación */
-        #chakra-sensation-tracker {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 32px;
-            height: 32px;
-            border-radius: 9999px;
-            pointer-events: none;
-            transition: top 0.42s cubic-bezier(0.34, 1.35, 0.64, 1), opacity 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            z-index: 20;
-        }
-
-        /* Cuando se activan: Color intenso, resplandor brillante y movimiento armónico de resonancia */
+        /* Cuando se activan: Color intenso, resplandor brillante y elevación centrada */
         #node-corona.active {
             background-color: #9333EA !important;
             color: #9333EA;
             opacity: 1;
-            filter: drop-shadow(0 0 14px rgba(147, 51, 234, 0.95));
+            filter: drop-shadow(0 0 12px rgba(147, 51, 234, 0.95));
             transform: translate(-50%, 0) scale(1.35);
-            animation: chakraResonance 2.4s ease-in-out infinite;
         }
         #node-tercerojo.active {
             background-color: #4F46E5 !important;
             color: #4F46E5;
             opacity: 1;
-            filter: drop-shadow(0 0 14px rgba(79, 70, 229, 0.95));
+            filter: drop-shadow(0 0 12px rgba(79, 70, 229, 0.95));
             transform: translate(-50%, 0) scale(1.35);
-            animation: chakraResonance 2.4s ease-in-out infinite 0.2s;
         }
         #node-garganta.active {
             background-color: #0284C7 !important;
             color: #0284C7;
             opacity: 1;
-            filter: drop-shadow(0 0 14px rgba(2, 132, 199, 0.95));
+            filter: drop-shadow(0 0 12px rgba(2, 132, 199, 0.95));
             transform: translate(-50%, 0) scale(1.35);
-            animation: chakraResonance 2.4s ease-in-out infinite 0.4s;
         }
         #node-corazon.active {
             background-color: #059669 !important;
             color: #059669;
             opacity: 1;
-            filter: drop-shadow(0 0 14px rgba(5, 150, 105, 0.95));
+            filter: drop-shadow(0 0 12px rgba(5, 150, 105, 0.95));
             transform: translate(-50%, 0) scale(1.35);
-            animation: chakraResonance 2.4s ease-in-out infinite 0.6s;
         }
         #node-plexo.active {
             background-color: #D97706 !important;
             color: #D97706;
             opacity: 1;
-            filter: drop-shadow(0 0 14px rgba(217, 119, 6, 0.95));
+            filter: drop-shadow(0 0 12px rgba(217, 119, 6, 0.95));
             transform: translate(-50%, 0) scale(1.35);
-            animation: chakraResonance 2.4s ease-in-out infinite 0.8s;
         }
         #node-sacro.active {
             background-color: #EA580C !important;
             color: #EA580C;
             opacity: 1;
-            filter: drop-shadow(0 0 14px rgba(234, 88, 12, 0.95));
+            filter: drop-shadow(0 0 12px rgba(234, 88, 12, 0.95));
             transform: translate(-50%, 0) scale(1.35);
-            animation: chakraResonance 2.4s ease-in-out infinite 1.0s;
         }
         #node-raiz.active {
             background-color: #DC2626 !important;
             color: #DC2626;
             opacity: 1;
-            filter: drop-shadow(0 0 14px rgba(220, 38, 38, 0.95));
+            filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.95));
             transform: translate(-50%, 0) scale(1.35);
-            animation: chakraResonance 2.4s ease-in-out infinite 1.2s;
-        }
-
-        @keyframes chakraResonance {
-            0%, 100% { transform: translate(-50%, 0) scale(1.35); }
-            50% { transform: translate(-50%, -3px) scale(1.48); }
         }
 
         /* Luxury Call to Action */
@@ -726,55 +886,23 @@
                     <!-- Left: Interactive Checklist (7 cols) -->
                     <div class="lg:col-span-7 space-y-3" id="symptoms-container">
                         
-                        <!-- 1 -->
-                        <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
-                             data-dimension="limpieza" 
-                             data-chakra="plexo"
-                             data-domain="Vitalidad Física & Agotamiento"
-                             onclick="toggleSymptom(this)">
-                            <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
-                                <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                                <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Cansancio corporal o falta de energía persistente sin causa clínica.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Sobrecarga en Plexo Solar · Fuga de vitalidad</span>
-                            </div>
-                        </div>
-
-                        <!-- 2 -->
+                        <!-- 1. Corona / Cabeza -->
                         <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
                              data-dimension="reprogramacion" 
                              data-chakra="corona"
-                             data-domain="Saturación Mental & Sobrepensamiento"
+                             data-domain="Saturación Mental & Insomnio"
                              onclick="toggleSymptom(this)">
                             <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                                 <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
                                 <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                             </div>
                             <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Sobrepensamiento constante, mente acelerada y ruido que no frena.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Saturación en Chakra Corona · Congestión mental</span>
+                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Sobrepensamiento constante, mente acelerada y ruido que no frena ni al dormir.</span>
+                                <span class="text-[11px] text-soft-violet font-medium">Chakra Corona (Cabeza) · Sobrecarga mental y saturación psíquica</span>
                             </div>
                         </div>
 
-                        <!-- 3 -->
-                        <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
-                             data-dimension="limpieza" 
-                             data-chakra="garganta"
-                             data-domain="Tensión Ambiental & Conflictos"
-                             onclick="toggleSymptom(this)">
-                            <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
-                                <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                                <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Ambiente tenso, discusiones recurrentes o incomodidad en el entorno.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Afectación en Chakra Garganta · Carga ambiental</span>
-                            </div>
-                        </div>
-
-                        <!-- 4 -->
+                        <!-- 2. Tercer Ojo / Frente -->
                         <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
                              data-dimension="reprogramacion" 
                              data-chakra="tercerojo"
@@ -785,60 +913,28 @@
                                 <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                             </div>
                             <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Dificultad para tomar decisiones o parálisis por exceso de dudas.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Bloqueo en Tercer Ojo · Falta de claridad intuitiva</span>
+                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Dificultad para tomar decisiones, confusión continua y falta de claridad intuitiva.</span>
+                                <span class="text-[11px] text-soft-violet font-medium">Tercer Ojo (Frente) · Ruido perceptual y dudas constantes</span>
                             </div>
                         </div>
 
-                        <!-- 5 -->
-                        <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
-                             data-dimension="reprogramacion" 
-                             data-chakra="sacro"
-                             data-domain="Desbloqueo de Metas & Proyectos"
-                             onclick="toggleSymptom(this)">
-                            <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
-                                <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                                <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Sensación de que una fuerza invisible frena tus metas o proyectos.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Estancamiento en Chakra Sacro · Creatividad frenada</span>
-                            </div>
-                        </div>
-
-                        <!-- 6 -->
-                        <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
-                             data-dimension="reprogramacion" 
-                             data-chakra="raiz"
-                             data-domain="Flujo de Abundancia & Dinero"
-                             onclick="toggleSymptom(this)">
-                            <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
-                                <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
-                                <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Bloqueo económico o la sensación de que los ingresos se esfuman.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Desalineación en Chakra Raíz · Seguridad y sustento</span>
-                            </div>
-                        </div>
-
-                        <!-- 7 -->
+                        <!-- 3. Garganta / Cuello -->
                         <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
                              data-dimension="limpieza" 
-                             data-chakra="plexo"
-                             data-domain="Calidad del Sueño & Descanso"
+                             data-chakra="garganta"
+                             data-domain="Tensión Ambiental & Expresión"
                              onclick="toggleSymptom(this)">
                             <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
                                 <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
                                 <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                             </div>
                             <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Sueño intranquilo, despertares nocturnos o insomnio continuo.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Sobrecarga en cuerpo sutil nocturno</span>
+                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Ambiente tenso, discusiones recurrentes o nudo al expresar lo que sientes.</span>
+                                <span class="text-[11px] text-soft-violet font-medium">Chakra Garganta (Cuello) · Carga ambiental y lazos tensos</span>
                             </div>
                         </div>
 
-                        <!-- 8 -->
+                        <!-- 4. Corazón / Pecho -->
                         <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
                              data-dimension="limpieza" 
                              data-chakra="corazon"
@@ -849,8 +945,56 @@
                                 <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
                             </div>
                             <div>
-                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Tendencia a absorber las dolencias y angustias de otras personas.</span>
-                                <span class="text-[11px] text-soft-violet font-medium">Permeabilidad en Chakra Corazón · Fuga áurica</span>
+                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Tendencia a absorber las angustias, pesadez y problemas ajenos como propios.</span>
+                                <span class="text-[11px] text-soft-violet font-medium">Chakra Corazón (Pecho) · Permeabilidad áurica y falta de filtro</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. Plexo Solar / Estómago -->
+                        <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
+                             data-dimension="limpieza" 
+                             data-chakra="plexo"
+                             data-domain="Vitalidad Física & Agotamiento"
+                             onclick="toggleSymptom(this)">
+                            <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
+                                <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                                <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Cansancio corporal profundo y pesadez que no se quita con horas de sueño.</span>
+                                <span class="text-[11px] text-soft-violet font-medium">Plexo Solar (Estómago) · Fuga crítica de energía vital</span>
+                            </div>
+                        </div>
+
+                        <!-- 6. Sacro / Bajo Vientre -->
+                        <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
+                             data-dimension="reprogramacion" 
+                             data-chakra="sacro"
+                             data-domain="Desbloqueo de Metas & Proyectos"
+                             onclick="toggleSymptom(this)">
+                            <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
+                                <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                                <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Sensación de que una fuerza invisible frena tus metas, creatividad y avance.</span>
+                                <span class="text-[11px] text-soft-violet font-medium">Chakra Sacro (Bajo Vientre) · Creatividad y proyectos trabados</span>
+                            </div>
+                        </div>
+
+                        <!-- 7. Raíz / Base -->
+                        <div class="symptom-card rounded-2xl p-4 flex items-start gap-3.5" 
+                             data-dimension="reprogramacion" 
+                             data-chakra="raiz"
+                             data-domain="Flujo de Abundancia & Dinero"
+                             onclick="toggleSymptom(this)">
+                            <div class="checkbox-icon mt-0.5 shrink-0 text-deep-purple">
+                                <i data-lucide="circle" class="w-5 h-5 uncheck"></i>
+                                <i data-lucide="check-circle-2" class="w-5 h-5 check hidden text-deep-purple"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-rich-plum font-semibold block leading-snug">Bloqueo económico persistente, ingresos que se esfuman o miedo al sustento.</span>
+                                <span class="text-[11px] text-soft-violet font-medium">Chakra Raíz (Base Pélvica) · Seguridad y sustento material</span>
                             </div>
                         </div>
 
@@ -859,7 +1003,7 @@
                     <!-- Right: Holographic Energy Map & Diagnostic Engine (5 cols) -->
                     <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-8">
                         
-                                                                        <!-- Visual Holographic Silhouette with Dynamic Chakra Nodes -->
+                        <!-- Visual Holographic Silhouette with Dynamic Chakra Nodes -->
                         <div id="silhouette-card" class="p-6 rounded-3xl bg-white/95 border-2 border-lavanda-suave shadow-lg text-center space-y-4 relative overflow-hidden transition-all duration-500">
                             
                             <!-- Dynamic Aura Glow Background behind the body -->
@@ -879,11 +1023,6 @@
                                 <!-- Outer Aura Pulse Ring -->
                                 <div id="aura-ring-pulse" class="absolute inset-0 rounded-full border-2 border-transparent transition-all duration-700 pointer-events-none"></div>
 
-                                <!-- Dynamic Sensation Focal Ring (Se desplaza suavemente hacia donde se siente la sensación) -->
-                                <div id="chakra-sensation-tracker" class="opacity-0 border-2 border-dashed border-soft-violet shadow-sm flex items-center justify-center">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-soft-violet animate-ping"></span>
-                                </div>
-
                                 <!-- Base Silhouette Vector (Exact original muñequito) -->
                                 <svg viewBox="0 0 100 160" class="w-full h-full text-lavanda-suave/40 drop-shadow-sm transition-all duration-500" id="silhouette-body-svg">
                                     <!-- Head -->
@@ -893,32 +1032,32 @@
                                 </svg>
 
                                 <!-- Chakra Overlay Nodes (Con los puntitos de colores exactos y visibles desde el inicio) -->
-                                <!-- 1. Corona -->
-                                <div id="node-corona" class="chakra-node absolute top-[6%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-purple-300 border-2 border-white shadow-xs cursor-pointer" title="Chakra Corona">
+                                <!-- 1. Corona (Cabeza) -->
+                                <div id="node-corona" class="chakra-node absolute top-[6%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-purple-300 border-2 border-white shadow-xs cursor-pointer" title="Chakra Corona (Cabeza)">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 2. Tercer Ojo -->
-                                <div id="node-tercerojo" class="chakra-node absolute top-[16%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-indigo-300 border-2 border-white shadow-xs cursor-pointer" title="Tercer Ojo">
+                                <!-- 2. Tercer Ojo (Frente) -->
+                                <div id="node-tercerojo" class="chakra-node absolute top-[16%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-indigo-300 border-2 border-white shadow-xs cursor-pointer" title="Tercer Ojo (Frente)">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 3. Garganta -->
-                                <div id="node-garganta" class="chakra-node absolute top-[27%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-sky-300 border-2 border-white shadow-xs cursor-pointer" title="Garganta">
+                                <!-- 3. Garganta (Cuello) -->
+                                <div id="node-garganta" class="chakra-node absolute top-[27%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-sky-300 border-2 border-white shadow-xs cursor-pointer" title="Chakra Garganta (Cuello)">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 4. Corazón -->
-                                <div id="node-corazon" class="chakra-node absolute top-[38%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-emerald-300 border-2 border-white shadow-xs cursor-pointer" title="Corazón">
+                                <!-- 4. Corazón (Pecho) -->
+                                <div id="node-corazon" class="chakra-node absolute top-[38%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-emerald-300 border-2 border-white shadow-xs cursor-pointer" title="Chakra Corazón (Pecho)">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 5. Plexo Solar -->
-                                <div id="node-plexo" class="chakra-node absolute top-[48%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-amber-300 border-2 border-white shadow-xs cursor-pointer" title="Plexo Solar">
+                                <!-- 5. Plexo Solar (Estómago) -->
+                                <div id="node-plexo" class="chakra-node absolute top-[48%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-amber-300 border-2 border-white shadow-xs cursor-pointer" title="Plexo Solar (Estómago)">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 6. Sacro -->
-                                <div id="node-sacro" class="chakra-node absolute top-[58%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-300 border-2 border-white shadow-xs cursor-pointer" title="Sacro">
+                                <!-- 6. Sacro (Bajo Vientre) -->
+                                <div id="node-sacro" class="chakra-node absolute top-[58%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-300 border-2 border-white shadow-xs cursor-pointer" title="Chakra Sacro (Bajo Vientre)">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 7. Raíz -->
-                                <div id="node-raiz" class="chakra-node absolute top-[68%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-rose-300 border-2 border-white shadow-xs cursor-pointer" title="Raíz">
+                                <!-- 7. Raíz (Base) -->
+                                <div id="node-raiz" class="chakra-node absolute top-[68%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-rose-300 border-2 border-white shadow-xs cursor-pointer" title="Chakra Raíz (Base Pélvica)">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
                             </div>
@@ -928,55 +1067,42 @@
                             </p>
                         </div>
 
-                        <!-- Dynamic Diagnostic Panel -->
+                        <!-- Dynamic Diagnostic Panel (Marketing directo: asusta con lógica, sin saturar) -->
                         <div id="selection-feedback" class="hidden transition-all duration-300">
-                            <div class="p-6 rounded-3xl bg-white/95 border-2 border-lavanda-suave space-y-5 shadow-lg">
+                            <div class="p-5 sm:p-6 rounded-3xl bg-white/95 border-2 border-lavanda-suave space-y-4 shadow-lg text-left">
                                 
                                 <div class="flex items-center justify-between pb-3 border-b border-lavanda-suave/30 gap-2">
                                     <span class="text-xs uppercase font-extrabold text-deep-purple tracking-wider">Lectura de Diagnóstico</span>
                                     <div id="load-badge-container"></div>
                                 </div>
 
-                                <!-- Focos de Sensación Identificados (Chips dinámicos conectados a lo que seleccionó) -->
-                                <div class="space-y-2 text-left" id="sensation-chips-section">
-                                    <span class="text-[10px] font-black uppercase tracking-widest text-soft-violet block">
-                                        Centros Comprometidos Mapeados:
-                                    </span>
-                                    <div id="active-chakras-details" class="flex flex-col gap-1.5"></div>
-                                </div>
-
-                                <!-- Focus card -->
-                                <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-lavanda-nieve/90 to-white border border-lavanda-suave space-y-2 text-left shadow-2xs">
-                                    <div class="flex items-center gap-2">
-                                        <span id="diagnostic-dot" class="w-2.5 h-2.5 rounded-full bg-soft-violet shrink-0"></span>
-                                        <h5 id="recommendation-title" class="font-heading text-sm font-bold text-deep-purple">
-                                            Análisis de tu Campo
-                                        </h5>
-                                    </div>
-                                    <p id="recommendation-explanation" class="text-xs text-rich-plum font-normal leading-relaxed">
+                                <!-- Focus card: Corto, conciso, de alto impacto -->
+                                <div class="p-4 rounded-2xl bg-gradient-to-br from-lavanda-nieve to-white border border-lavanda-suave space-y-2">
+                                    <h5 id="recommendation-title" class="font-heading text-sm sm:text-base font-extrabold text-deep-purple">
+                                        Análisis de tu Campo
+                                    </h5>
+                                    <p id="recommendation-explanation" class="text-xs sm:text-sm text-rich-plum font-normal leading-relaxed">
                                         Calculando...
                                     </p>
                                 </div>
 
                                 <!-- Progress Ratios -->
-                                <div class="space-y-2">
+                                <div class="space-y-1.5 pt-1">
                                     <div class="flex justify-between text-xs text-rich-plum font-bold">
                                         <span id="limpieza-ratio-text">Purificación Áurica: 0%</span>
                                         <span id="reprog-ratio-text">Reprogramación: 0%</span>
                                     </div>
-                                    <div class="w-full h-3 bg-lavanda-bruma rounded-full overflow-hidden flex border border-lavanda-suave">
+                                    <div class="w-full h-2.5 bg-lavanda-bruma rounded-full overflow-hidden flex border border-lavanda-suave">
                                         <div id="limpieza-bar" class="bg-gradient-to-r from-lila-pastel to-lavanda-suave h-full transition-all duration-500" style="width: 50%;"></div>
                                         <div id="reprog-bar" class="bg-gradient-to-r from-lavanda-suave to-soft-violet h-full transition-all duration-500" style="width: 50%;"></div>
                                     </div>
                                 </div>
 
-                                <div class="flex flex-wrap gap-1.5 pt-1" id="domains-container"></div>
-
                                 <!-- Direct Consultation Action Button inside diagnostic box -->
                                 <div class="pt-2">
-                                    <a id="diagnostic-wa-button" href="#" target="_blank" class="w-full py-3.5 px-5 rounded-2xl font-heading font-extrabold text-xs text-center flex items-center justify-center gap-2 transition-all duration-300 shadow-md bg-gradient-to-r from-deep-purple to-rich-plum text-white hover:opacity-95 active:scale-98">
-                                        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-300"></i>
-                                        <span>Consultar Disponibilidad con Celeste para este Diagnóstico</span>
+                                    <a id="diagnostic-wa-button" href="#" target="_blank" class="w-full py-3.5 px-4 rounded-2xl font-heading font-extrabold text-xs text-center flex items-center justify-center gap-2 transition-all duration-300 shadow-md bg-gradient-to-r from-deep-purple to-rich-plum text-white hover:opacity-95 active:scale-98">
+                                        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-300 shrink-0"></i>
+                                        <span id="diagnostic-wa-btn-text">Consultar Disponibilidad con Celeste</span>
                                     </a>
                                 </div>
                             </div>
