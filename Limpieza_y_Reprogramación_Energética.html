@@ -201,12 +201,11 @@
             transform: scale(1.015);
         }
 
-                /* Chakra Node Enhanced Dynamic States & Aura Pulse */
+                        /* Chakra Node Dynamic States: Preserva colores pastel iniciales y se iluminan al activarse */
         .chakra-node {
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: absolute;
-            background-color: #E2D9F3;
-            opacity: 0.65;
+            opacity: 0.95;
         }
 
         .chakra-ping-ring {
@@ -228,58 +227,56 @@
             display: block;
         }
 
-        /* Specific Real Chakra Colors with Glowing Shadows */
+        /* Cuando se activan: Color intenso, resplandor brillante y elevación */
         #node-corona.active {
             background-color: #9333EA !important;
             color: #9333EA;
             opacity: 1;
-            filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.95));
+            filter: drop-shadow(0 0 12px rgba(147, 51, 234, 0.95));
             transform: translate(-50%, 0) scale(1.35);
         }
         #node-tercerojo.active {
             background-color: #4F46E5 !important;
             color: #4F46E5;
             opacity: 1;
-            filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.95));
+            filter: drop-shadow(0 0 12px rgba(79, 70, 229, 0.95));
             transform: translate(-50%, 0) scale(1.35);
         }
         #node-garganta.active {
             background-color: #0284C7 !important;
             color: #0284C7;
             opacity: 1;
-            filter: drop-shadow(0 0 10px rgba(2, 132, 199, 0.95));
+            filter: drop-shadow(0 0 12px rgba(2, 132, 199, 0.95));
             transform: translate(-50%, 0) scale(1.35);
         }
         #node-corazon.active {
             background-color: #059669 !important;
             color: #059669;
             opacity: 1;
-            filter: drop-shadow(0 0 10px rgba(5, 150, 105, 0.95));
+            filter: drop-shadow(0 0 12px rgba(5, 150, 105, 0.95));
             transform: translate(-50%, 0) scale(1.35);
         }
         #node-plexo.active {
             background-color: #D97706 !important;
             color: #D97706;
             opacity: 1;
-            filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.95));
+            filter: drop-shadow(0 0 12px rgba(217, 119, 6, 0.95));
             transform: translate(-50%, 0) scale(1.35);
         }
         #node-sacro.active {
             background-color: #EA580C !important;
             color: #EA580C;
             opacity: 1;
-            filter: drop-shadow(0 0 10px rgba(234, 88, 12, 0.95));
+            filter: drop-shadow(0 0 12px rgba(234, 88, 12, 0.95));
             transform: translate(-50%, 0) scale(1.35);
         }
         #node-raiz.active {
             background-color: #DC2626 !important;
             color: #DC2626;
             opacity: 1;
-            filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.95));
+            filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.95));
             transform: translate(-50%, 0) scale(1.35);
         }
-
-        
 
         /* Luxury Call to Action */
         .btn-luxury-cta {
@@ -811,16 +808,15 @@
                     <!-- Right: Holographic Energy Map & Diagnostic Engine (5 cols) -->
                     <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-8">
                         
-                                                <!-- Visual Holographic Silhouette with Dynamic Chakra Nodes -->
+                                                                        <!-- Visual Holographic Silhouette with Dynamic Chakra Nodes -->
                         <div id="silhouette-card" class="p-6 rounded-3xl bg-white/95 border-2 border-lavanda-suave shadow-lg text-center space-y-4 relative overflow-hidden transition-all duration-500">
                             
                             <!-- Dynamic Aura Glow Background behind the body -->
                             <div id="aura-glow-field" class="absolute inset-x-4 top-12 bottom-12 rounded-full transition-all duration-700 pointer-events-none opacity-20 bg-lavanda-suave blur-2xl"></div>
 
                             <div class="flex items-center justify-between pb-3 border-b border-lavanda-suave/30 relative z-10">
-                                <span class="text-xs uppercase font-extrabold tracking-wider text-deep-purple flex items-center gap-1.5">
-                                    <i data-lucide="scan" class="w-3.5 h-3.5 text-soft-violet"></i>
-                                    <span>Mapa de tu Campo</span>
+                                <span class="text-xs uppercase font-extrabold tracking-wider text-deep-purple">
+                                    Mapa Holográfico de Frecuencia
                                 </span>
                                 <span id="nodes-active-counter" class="text-xs font-bold text-soft-violet bg-lavanda-nieve px-3 py-1 rounded-full border border-lavanda-suave transition-all">
                                     0 Centros Marcados
@@ -829,52 +825,50 @@
 
                             <!-- Interactive SVG Body Graphic with Chakra Nodes -->
                             <div class="relative w-48 h-72 mx-auto flex items-center justify-center relative z-10">
-                                
-                                <!-- Outer Aura Rings -->
-                                <div id="aura-ring-outer" class="absolute inset-2 rounded-full border border-lavanda-suave/40 transition-all duration-700 pointer-events-none"></div>
+                                <!-- Outer Aura Pulse Ring -->
                                 <div id="aura-ring-pulse" class="absolute inset-0 rounded-full border-2 border-transparent transition-all duration-700 pointer-events-none"></div>
 
-                                <!-- Base Silhouette Vector -->
-                                <svg viewBox="0 0 100 160" class="w-full h-full text-lavanda-suave/60 drop-shadow-sm transition-all duration-500" id="silhouette-body-svg">
+                                <!-- Base Silhouette Vector (Exact original muñequito) -->
+                                <svg viewBox="0 0 100 160" class="w-full h-full text-lavanda-suave/40 drop-shadow-sm transition-all duration-500" id="silhouette-body-svg">
                                     <!-- Head -->
-                                    <circle cx="50" cy="20" r="13" fill="currentColor" opacity="0.7"/>
-                                    <!-- Torso, Arms & Posture -->
-                                    <path d="M44 32 C44 36 41 40 31 44 C21 48 15 58 15 76 L23 78 C25 65 29 58 37 54 L37 92 L45 92 L45 148 L55 148 L55 92 L63 92 L63 54 C71 58 75 65 77 78 L85 76 C85 58 79 48 69 44 C59 40 56 36 56 32 Z" fill="currentColor" opacity="0.6"/>
+                                    <circle cx="50" cy="22" r="14" fill="currentColor" opacity="0.6"/>
+                                    <!-- Neck & Shoulders -->
+                                    <path d="M43 36 C43 40 40 44 30 48 C20 52 14 62 14 80 L22 82 C24 68 28 60 36 56 L36 95 L44 95 L44 148 L56 148 L56 95 L64 95 L64 56 C72 60 76 68 78 82 L86 80 C86 62 80 52 70 48 C60 44 57 40 57 36 Z" fill="currentColor" opacity="0.5"/>
                                 </svg>
 
-                                <!-- Chakra Overlay Nodes (Alineados exactamente al dibujito) -->
-                                <!-- 1. Corona: Tope de la cabeza -->
-                                <div id="node-corona" class="chakra-node absolute top-[5%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Chakra Corona (Saturación Mental)">
+                                <!-- Chakra Overlay Nodes (Con los puntitos de colores exactos y visibles desde el inicio) -->
+                                <!-- 1. Corona -->
+                                <div id="node-corona" class="chakra-node absolute top-[6%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-purple-300 border-2 border-white shadow-xs cursor-pointer" title="Chakra Corona">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 2. Tercer Ojo: Frente / Entrecejo -->
-                                <div id="node-tercerojo" class="chakra-node absolute top-[12%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Tercer Ojo (Claridad e Intuición)">
+                                <!-- 2. Tercer Ojo -->
+                                <div id="node-tercerojo" class="chakra-node absolute top-[16%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-indigo-300 border-2 border-white shadow-xs cursor-pointer" title="Tercer Ojo">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 3. Garganta: Cuello -->
-                                <div id="node-garganta" class="chakra-node absolute top-[22%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Garganta (Cargas del Entorno / Expresión)">
+                                <!-- 3. Garganta -->
+                                <div id="node-garganta" class="chakra-node absolute top-[27%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-sky-300 border-2 border-white shadow-xs cursor-pointer" title="Garganta">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 4. Corazón: Centro del Pecho -->
-                                <div id="node-corazon" class="chakra-node absolute top-[34%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Corazón (Permeabilidad y Fuga)">
+                                <!-- 4. Corazón -->
+                                <div id="node-corazon" class="chakra-node absolute top-[38%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-emerald-300 border-2 border-white shadow-xs cursor-pointer" title="Corazón">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 5. Plexo Solar: Diafragma / Estómago -->
-                                <div id="node-plexo" class="chakra-node absolute top-[46%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Plexo Solar (Vitalidad y Agotamiento)">
+                                <!-- 5. Plexo Solar -->
+                                <div id="node-plexo" class="chakra-node absolute top-[48%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-amber-300 border-2 border-white shadow-xs cursor-pointer" title="Plexo Solar">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 6. Sacro: Bajo Vientre -->
-                                <div id="node-sacro" class="chakra-node absolute top-[57%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Sacro (Desbloqueo de Metas)">
+                                <!-- 6. Sacro -->
+                                <div id="node-sacro" class="chakra-node absolute top-[58%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-300 border-2 border-white shadow-xs cursor-pointer" title="Sacro">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
-                                <!-- 7. Raíz: Base Pélvica -->
-                                <div id="node-raiz" class="chakra-node absolute top-[67%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white shadow-xs cursor-pointer" title="Raíz (Sustento y Finanzas)">
+                                <!-- 7. Raíz -->
+                                <div id="node-raiz" class="chakra-node absolute top-[68%] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-rose-300 border-2 border-white shadow-xs cursor-pointer" title="Raíz">
                                     <span class="chakra-ping-ring"></span>
                                 </div>
                             </div>
 
                             <p id="silhouette-status-text" class="text-[11px] text-rich-plum/80 font-medium relative z-10 transition-all">
-                                Selecciona síntomas en la lista para ver la reacción de tu campo en tiempo real.
+                                Visualización en tiempo real de los centros afectados por sobrecarga sutil.
                             </p>
                         </div>
 
