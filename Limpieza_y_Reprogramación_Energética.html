@@ -187,6 +187,42 @@
             box-shadow: 0 16px 36px rgba(55, 15, 77, 0.12);
         }
 
+        /* Luxury Spiritual Icon Medallion (Elegante, Esotérico y Nítido) */
+        .icon-medallion-luxury {
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto;
+            border-radius: 1.25rem;
+            background: linear-gradient(135deg, #FFF5FA 0%, #F5E8FB 50%, #E8D4F5 100%);
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 6px 18px rgba(55, 15, 77, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0.35rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .icon-medallion-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.95rem;
+            background: #FFFFFF;
+            border: 1.5px solid rgba(232, 212, 245, 0.9);
+            box-shadow: inset 0 2px 6px rgba(243, 232, 250, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #370F4D;
+        }
+
+        .glass-card-luxury:hover .icon-medallion-luxury {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 24px rgba(55, 15, 77, 0.15);
+            border-color: #F8E2EE;
+        }
+
         /* Icon Badge Pill */
         .icon-box-luxury {
             background: linear-gradient(135deg, #FDF0F6 0%, #F8E2EE 50%, #E6D7F4 100%);
@@ -259,6 +295,17 @@
                 background: linear-gradient(135deg, #FDF0F6 0%, #F8E2EE 50%, #E6D7F4 100%) !important;
                 border-color: #FFFFFF !important;
                 color: #370F4D !important;
+            }
+
+            .icon-medallion-luxury {
+                background: linear-gradient(135deg, #FFF5FA 0%, #F5E8FB 50%, #E8D4F5 100%) !important;
+                border-color: #FFFFFF !important;
+            }
+
+            .icon-medallion-inner {
+                background: #FFFFFF !important;
+                color: #370F4D !important;
+                border-color: rgba(232, 212, 245, 0.9) !important;
             }
 
             h1, h2, h3, h4, h5, .font-heading {
@@ -351,13 +398,15 @@
                     </p>
                 </div>
 
-                <!-- 6 Dedicated Luxury Cards Grid (Armónico, Ordenado y con Iconos de Lujo) -->
+                <!-- 6 Dedicated Luxury Cards Grid (Armónico, Ordenado y con Medallones de Lujo) -->
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     
                     <!-- 1. Limpieza del campo áurico -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="sparkles" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="sparkles" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Limpieza del Campo Áurico</h4>
@@ -371,9 +420,11 @@
                     </div>
 
                     <!-- 2. Abordaje de formas y presencias -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="shield" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="flame" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Abordaje de Formas & Presencias</h4>
@@ -382,14 +433,16 @@
                             </p>
                         </div>
                         <span class="text-[11px] font-bold text-soft-violet bg-lavanda-nieve px-3 py-1 rounded-full border border-lavanda-suave">
-                            Liberación Energética
+                            Transmutación Sutil
                         </span>
                     </div>
 
                     <!-- 3. Armonización e irradiación positiva -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="sun" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="sun" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Armonización & Irradiación</h4>
@@ -403,9 +456,11 @@
                     </div>
 
                     <!-- 4. Apertura de caminos generales -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="compass" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="key" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Apertura de Caminos</h4>
@@ -419,9 +474,11 @@
                     </div>
 
                     <!-- 5. Sellado y protección del campo áurico -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="shield-check" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Sellado & Protección Áurica</h4>
@@ -435,9 +492,11 @@
                     </div>
 
                     <!-- 6. Enfoque Personalizado y Amoroso -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="heart-handshake" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="heart-handshake" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Atención Dedicada</h4>
@@ -469,9 +528,11 @@
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     <!-- Beneficio 1 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="feather" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="feather" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Liviandad & Renovación</h4>
@@ -485,9 +546,11 @@
                     </div>
 
                     <!-- Beneficio 2 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="heart" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="heart" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Paz & Armonía Interior</h4>
@@ -501,9 +564,11 @@
                     </div>
 
                     <!-- Beneficio 3 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="sparkles" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="sparkles" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Conexión & Amor Propio</h4>
@@ -517,9 +582,11 @@
                     </div>
 
                     <!-- Beneficio 4 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="sun" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="eye" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Claridad & Vitalidad</h4>
@@ -533,9 +600,11 @@
                     </div>
 
                     <!-- Beneficio 5 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="compass" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="key" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Cierre & Nuevos Caminos</h4>
@@ -549,9 +618,11 @@
                     </div>
 
                     <!-- Beneficio 6 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="shield-check" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Cuidado Espiritual Único</h4>
@@ -594,9 +665,11 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
                     
                     <!-- 1. Pesadez y cansancio -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="feather" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="feather" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Pesadez & Cansancio</h4>
@@ -610,9 +683,11 @@
                     </div>
 
                     <!-- 2. Angustia y emociones intensas -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="heart" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="heart" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Angustia & Emociones</h4>
@@ -626,9 +701,11 @@
                     </div>
 
                     <!-- 3. Falta de claridad -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="eye" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="eye" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Falta de Claridad</h4>
@@ -642,9 +719,11 @@
                     </div>
 
                     <!-- 4. Sensación de estancamiento -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="rotate-cw" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="rotate-cw" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Sensación de Estancamiento</h4>
@@ -658,9 +737,11 @@
                     </div>
 
                     <!-- 5. Desarmonía en tus espacios -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="home" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="home" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Desarmonía en tus Espacios</h4>
@@ -674,9 +755,11 @@
                     </div>
 
                     <!-- 6. Necesidad de soltar y renovar -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="refresh-cw" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="refresh-cw" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Soltar & Renovar</h4>
@@ -690,9 +773,11 @@
                     </div>
 
                     <!-- 7. Deseo de abrir caminos -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="compass" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="key" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Abrir Caminos</h4>
@@ -706,9 +791,11 @@
                     </div>
 
                     <!-- 8. Necesidad de reconectar con vos -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="user-check" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="user-check" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Reconectar con Vos</h4>
@@ -751,9 +838,11 @@
                 <!-- 4 Steps Grid (Diseño de Lujo Armónico y Ordenado) -->
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
                     <!-- Step 1 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave text-deep-purple font-heading font-extrabold text-base flex items-center justify-center shadow-xs">
-                            01
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner font-heading font-extrabold text-base text-deep-purple">
+                                01
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">100% a Distancia</h4>
@@ -767,9 +856,11 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave text-deep-purple font-heading font-extrabold text-base flex items-center justify-center shadow-xs">
-                            02
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner font-heading font-extrabold text-base text-deep-purple">
+                                02
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Durante el Proceso</h4>
@@ -783,9 +874,11 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave text-deep-purple font-heading font-extrabold text-base flex items-center justify-center shadow-xs">
-                            03
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner font-heading font-extrabold text-base text-deep-purple">
+                                03
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Informe en PDF</h4>
@@ -799,9 +892,11 @@
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave text-deep-purple font-heading font-extrabold text-base flex items-center justify-center shadow-xs">
-                            04
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner font-heading font-extrabold text-base text-deep-purple">
+                                04
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Seguimiento Posterior</h4>
@@ -834,9 +929,11 @@
                 <!-- 4 Dedicated Dimension Cards (Sin collage, armónico y de lujo) -->
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
                     <!-- Casa & Espacios -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="home" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="home" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Casa & Espacios</h4>
@@ -850,9 +947,11 @@
                     </div>
 
                     <!-- Trabajo & Negocios -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="briefcase" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="briefcase" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Trabajo & Negocios</h4>
@@ -866,9 +965,11 @@
                     </div>
 
                     <!-- Vínculos & Relaciones -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="heart-handshake" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="heart-handshake" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Vínculos & Relaciones</h4>
@@ -882,9 +983,11 @@
                     </div>
 
                     <!-- Mascotas & Animales -->
-                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3 flex flex-col justify-between h-full">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs p-3">
-                            <i data-lucide="paw-print" class="w-7 h-7 text-deep-purple stroke-[1.8]"></i>
+                    <div class="glass-card-luxury glass-card-hover p-6 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="icon-medallion-luxury">
+                            <div class="icon-medallion-inner">
+                                <i data-lucide="paw-print" class="w-7 h-7 text-deep-purple stroke-[1.9]"></i>
+                            </div>
                         </div>
                         <div class="space-y-1.5">
                             <h4 class="font-heading font-bold text-lg text-deep-purple">Mascotas & Animales</h4>
