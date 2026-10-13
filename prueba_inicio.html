@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="only light light">
+    <meta name="theme-color" content="#F3E8FA">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F3E8FA">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#F3E8FA">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Limpieza Energética Integral · Celeste | Universo Consciente</title>
+    <meta name="description" content="Limpieza, armonización, protección y apertura de caminos con Celeste | Universo Consciente. Trabajo energético personalizado 100% a distancia.">
+    
+    <!-- Script de Garantía de Apertura en el Tope (Inicio Siempre) -->
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        if (window.location.hash) {
+            try {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            } catch (e) {}
+        }
+        window.scrollTo(0, 0);
+        function resetScrollToTop() {
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+            if (document.documentElement) document.documentElement.scrollTop = 0;
+            if (document.body) document.body.scrollTop = 0;
+        }
+        document.addEventListener("DOMContentLoaded", resetScrollToTop);
+        window.addEventListener("load", resetScrollToTop);
+        window.addEventListener("pageshow", resetScrollToTop);
+        setTimeout(resetScrollToTop, 50);
+        setTimeout(resetScrollToTop, 200);
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    screens: {
+                        'xs': '420px',
+                    },
+                    colors: {
+                        'lavanda-suave': '#E8D4F5',
+                        'lila-pastel': '#DDC0F0',
+                        'lavanda-nieve': '#FDF0F6',
+                        'lavanda-bruma': '#F3E8FA',
+                        'lila-profundo': '#370F4D',
+                        'deep-purple': '#370F4D',
+                        'rich-plum': '#2D103F',
+                        'soft-violet': '#5B3782',
+                        'gold-accent': '#C5A880',
+                        'rosa-pastel': '#FDF0F6',
+                        'rosa-borde': '#F0CDE2',
+                        'plum-oscuro': '#370F4D',
+                        'plum-texto': '#2D103F',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root, html, body {
+            color-scheme: only light !important;
+            -webkit-color-scheme: only light !important;
+            forced-color-adjust: none !important;
+            -webkit-forced-color-adjust: none !important;
+        }
+
+        *, *::before, *::after {
+            forced-color-adjust: none !important;
+            -webkit-forced-color-adjust: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            background-color: #F3E8FA;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        :root {
+            --lila-fondo: #F3E8FA;
+            --lila-pastel: #E8D4F5;
+            --rosa-pastel: #FDF0F6;
+            --rosa-borde: #F0CDE2;
+            --plum-oscuro: #370F4D;
+            --plum-texto: #2D103F;
+            --lavanda-suave: #E8D4F5;
+            --deep-purple: #370F4D;
+            --rich-plum: #2D103F;
+        }
+
+        body {
+            background: linear-gradient(135deg, #F3E8FA 0%, #E8D4F5 35%, #DDC0F0 70%, #D0ABE8 100%);
+            background-attachment: fixed;
+            color: #2D103F;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            font-weight: 600;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Outfit', sans-serif;
+            color: #370F4D;
+            font-weight: 800;
+        }
+
+        /* Ethereal Sacred Starfield Overlay (Lluvia de estrellas mágicas) */
+        @keyframes starryRain {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(320px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.45; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+
+        .starry-bg {
+            position: fixed;
+            top: -320px;
+            left: 0;
+            width: 100%;
+            height: calc(100% + 320px);
+            pointer-events: none;
+            z-index: 0;
+            background-image: 
+                radial-gradient(2px 2px at 40px 60px, rgba(255,255,255,0.95), transparent),
+                radial-gradient(3px 3px at 120px 220px, rgba(255,255,255,1), transparent),
+                radial-gradient(1.5px 1.5px at 200px 90px, rgba(255,255,255,0.85), transparent),
+                radial-gradient(3.5px 3.5px at 310px 280px, rgba(255,255,255,1), transparent),
+                radial-gradient(2px 2px at 430px 140px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(3px 3px at 540px 300px, rgba(255,255,255,0.95), transparent),
+                radial-gradient(2px 2px at 660px 180px, rgba(255,255,255,0.85), transparent),
+                radial-gradient(3.5px 3.5px at 760px 240px, rgba(255,255,255,1), transparent);
+            background-repeat: repeat;
+            background-size: 800px 320px;
+            animation: starryRain 18s linear infinite;
+        }
+
+        /* Luxury Frosted Glass Cards (Con el mismo fondo y borde rosa pastel de cursos/tarot) */
+        .glass-card-luxury {
+            background: linear-gradient(135deg, rgba(254, 245, 249, 0.98) 0%, rgba(250, 233, 243, 0.95) 50%, rgba(242, 226, 250, 0.92) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid #F0CDE2;
+            box-shadow: 0 10px 30px rgba(55, 15, 77, 0.08);
+            border-radius: 2rem;
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: #DDC0F0;
+            box-shadow: 0 16px 36px rgba(55, 15, 77, 0.12);
+        }
+
+        /* Single-Layer Pure Icon Badge (Sin doble capa, limpio, elegante y nítido) */
+        .icon-single {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 9999px;
+            background: #FFFFFF;
+            border: 1.5px solid #E8D4F5;
+            box-shadow: 0 3px 10px rgba(55, 15, 77, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #370F4D;
+            margin: 0 auto;
+            flex-shrink: 0;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-luxury:hover .icon-single {
+            transform: translateY(-2px) scale(1.06);
+            border-color: #DDC0F0;
+            box-shadow: 0 8px 18px rgba(55, 15, 77, 0.12);
+            background: #FFFFFF;
+        }
+
+        /* Compact Card Tag Pill (Nunca se estira a lo ancho, siempre compacto) */
+        .card-tag-pill {
+            align-self: center;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: fit-content !important;
+            max-width: 100% !important;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.22rem 0.85rem !important;
+            border-radius: 9999px !important;
+            font-size: 0.7rem !important;
+            font-weight: 700 !important;
+            line-height: 1.25 !important;
+            color: #5B3782 !important;
+            background-color: #F8F0FC !important;
+            border: 1px solid #E8D4F5 !important;
+            box-shadow: 0 1px 2px rgba(55, 15, 77, 0.04) !important;
+            white-space: nowrap !important;
+            letter-spacing: 0.01em !important;
+        }
+
+        .card-tag-pill.tag-left {
+            align-self: flex-start !important;
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        /* Icon Badge Pill */
+        .icon-box-luxury {
+            background: linear-gradient(135deg, #FDF0F6 0%, #F8E2EE 50%, #E6D7F4 100%);
+            border: 1.5px solid #FFFFFF;
+            color: #370F4D;
+            box-shadow: 0 4px 14px rgba(55, 15, 77, 0.08);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.25rem;
+        }
+
+
+
+        /* Luxury Call to Action */
+        .btn-luxury-cta {
+            background: linear-gradient(135deg, #370F4D 0%, #2D103F 100%);
+            color: #FFFFFF !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 14px 32px rgba(55, 15, 77, 0.25);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-luxury-cta:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 18px 40px rgba(55, 15, 77, 0.35);
+            background: linear-gradient(135deg, #2D103F 0%, #1F082E 100%);
+        }
+
+        /* Ambient Glow Spheres */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 212, 245, 0.6) 0%, rgba(221, 192, 240, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+            max-width: 85vw;
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        /* ========================================================== */
+        /* BLINDAJE ABSOLUTO CONTRA EL MODO OSCURO (DARK MODE IMMUNITY) */
+        /* Preserva al 100% la paleta mística pastel en Android, iOS y Chrome */
+        /* ========================================================== */
+        @media (prefers-color-scheme: dark) {
+            :root, html, body {
+                color-scheme: only light !important;
+                -webkit-color-scheme: only light !important;
+                forced-color-adjust: none !important;
+                -webkit-forced-color-adjust: none !important;
+                background-color: #F3E8FA !important;
+                color: #2D103F !important;
+            }
+
+            body {
+                background: linear-gradient(135deg, #F3E8FA 0%, #E8D4F5 35%, #DDC0F0 70%, #D0ABE8 100%) !important;
+                background-attachment: fixed !important;
+                color: #2D103F !important;
+            }
+
+            .glass-card-luxury {
+                background: linear-gradient(135deg, rgba(254, 245, 249, 0.98) 0%, rgba(250, 233, 243, 0.95) 50%, rgba(242, 226, 250, 0.92) 100%) !important;
+                border-color: #F0CDE2 !important;
+                color: #2D103F !important;
+            }
+
+
+
+            .icon-box-luxury {
+                background: linear-gradient(135deg, #FDF0F6 0%, #F8E2EE 50%, #E6D7F4 100%) !important;
+                border-color: #FFFFFF !important;
+                color: #370F4D !important;
+            }
+
+            .icon-single {
+                background: #FFFFFF !important;
+                border-color: #E8D4F5 !important;
+                color: #370F4D !important;
+            }
+
+            h1, h2, h3, h4, h5, .font-heading {
+                color: #370F4D !important;
+            }
+
+            .text-deep-purple {
+                color: #370F4D !important;
+            }
+
+            .text-rich-plum {
+                color: #2D103F !important;
+            }
+
+            .text-soft-violet {
+                color: #5B3782 !important;
+            }
+
+            .btn-luxury-cta {
+                background: linear-gradient(135deg, #370F4D 0%, #2D103F 100%) !important;
+                color: #FFFFFF !important;
+            }
+
+            .bg-lavanda-nieve {
+                background-color: #F8F0FC !important;
+            }
+
+            .border-lavanda-suave {
+                border-color: #E8D4F5 !important;
+            }
+
+            .card-tag-pill {
+                background-color: #F8F0FC !important;
+                color: #5B3782 !important;
+                border-color: #E8D4F5 !important;
+            }
+
+            footer {
+                color: #2D103F !important;
+                border-color: rgba(232, 212, 245, 0.5) !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Starry background pattern -->
+    <div class="starry-bg"></div>
+
+    <!-- Ambient background spheres -->
+    <div class="fixed top-20 left-10 w-[30rem] h-[30rem] ambient-glow -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="fixed bottom-20 right-10 w-[34rem] h-[34rem] ambient-glow translate-x-1/3 translate-y-1/3"></div>
+
+    <div class="relative z-10 flex flex-col min-h-screen justify-between w-full max-w-full overflow-x-hidden">
+
+        <!-- ========================================== -->
+        <!-- HEADER & HERO VISUAL SHOWCASE -->
+        <!-- ========================================== -->
+        <header class="max-w-5xl mx-auto px-4 pt-8 sm:pt-10 pb-2 text-center w-full">
+            
+            <!-- Brand Badge -->
+            <div class="inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2 rounded-full glass-card-luxury text-deep-purple text-xs sm:text-sm font-bold tracking-wide shadow-sm border border-white max-w-full">
+                <img src="logo.png" alt="Celeste | Universo Consciente Logo" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-white shadow-xs object-cover shrink-0">
+                <span class="font-heading tracking-wide uppercase text-[11px] sm:text-xs">Celeste | Universo Consciente</span>
+            </div>
+
+        </header>
+
+        <!-- ========================================== -->
+        <!-- MAIN CONTENT -->
+        <!-- ========================================== -->
+        <main class="max-w-5xl mx-auto px-4 py-4 space-y-14 flex-grow w-full">
+
+                                                            <!-- ========================================== -->
+            <!-- 1. ¿EN QUÉ CONSISTE LA LIMPIEZA ENERGÉTICA INTEGRAL? -->
+            <!-- ========================================== -->
+            <section class="space-y-6">
+                <div class="text-center space-y-4 max-w-3xl mx-auto">
+                    <!-- Ilustración Cósmica de Cabecera (Árbol de la Vida Sagrado - Centrado y Majestuoso) -->
+                    <div class="w-full flex items-center justify-center pt-1 pb-1 sm:pb-3 px-2">
+                        <img src="assets/arbol_cosmico_hero.png" 
+                             alt="Árbol Cósmico de Reprogramación Energética" 
+                             class="w-full max-w-lg sm:max-w-2xl md:max-w-3xl h-auto object-contain select-none transition-transform duration-700 hover:scale-[1.01] filter drop-shadow-[0_4px_24px_rgba(124,77,255,0.09)]">
+                    </div>
+
+                    <!-- Bloque de Título y Propósito -->
+                    <div class="space-y-2.5 max-w-2xl mx-auto">
+                        <span class="text-xs uppercase tracking-widest text-soft-violet font-extrabold">Trabajo Energético Personalizado</span>
+                        <h1 class="font-heading text-2xl sm:text-4xl font-extrabold text-deep-purple">
+                            ¿En qué consiste la limpieza energética integral?
+                        </h1>
+                        <p class="text-sm sm:text-base text-rich-plum/85 font-medium leading-relaxed">
+                            Un trabajo sagrado e individualizado de purificación en los planos sutiles. A través de la labor en el altar y la conexión cuántica a distancia, se disuelven densidades acumuladas e interferencias energéticas para restablecer tu frecuencia original de bienestar, paz y equilibrio.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3 Pilares Fundamentales (Limpio, Equilibrado y Espacioso) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+                    
+                    <!-- Pilar 01 -->
+                    <div class="glass-card-luxury glass-card-hover p-6 sm:p-7 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="space-y-3">
+                            <div class="icon-single">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-deep-purple stroke-[1.9]">
+                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                                    <path d="M12 6.2 Q12 8.4 14.2 8.4 Q12 8.4 12 10.6 Q12 8.4 9.8 8.4 Q12 8.4 12 6.2 Z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg sm:text-xl text-deep-purple">Purificación Áurica</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed font-normal">
+                                Barrido minucioso sobre el campo sutil para disolver densidades acumuladas, memorias de sobrecarga e interferencias que apagan tu vitalidad natural.
+                            </p>
+                        </div>
+                        <span class="card-tag-pill">Campo Sutil & Limpieza</span>
+                    </div>
+
+                    <!-- Pilar 02 -->
+                    <div class="glass-card-luxury glass-card-hover p-6 sm:p-7 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="space-y-3">
+                            <div class="icon-single">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-deep-purple stroke-[1.9]">
+                                    <circle cx="12" cy="12" r="4.8"></circle>
+                                    <path d="M12 9.2 Q12 12 14.8 12 Q12 12 12 14.8 Q12 12 9.2 12 Q12 12 12 9.2 Z"></path>
+                                    <path d="M12 1.5 L13.3 5 L12 6 L10.7 5 Z"></path>
+                                    <path d="M12 22.5 L13.3 19 L12 18 L10.7 19 Z"></path>
+                                    <path d="M1.5 12 L5 13.3 L6 12 L5 10.7 Z"></path>
+                                    <path d="M22.5 12 L19 13.3 L18 12 L19 10.7 Z"></path>
+                                    <line x1="5" y1="5" x2="7.3" y2="7.3"></line>
+                                    <line x1="16.7" y1="16.7" x2="19" y2="19"></line>
+                                    <line x1="5" y1="19" x2="7.3" y2="16.7"></line>
+                                    <line x1="16.7" y1="7.3" x2="19" y2="5"></line>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg sm:text-xl text-deep-purple">Alineación & Frecuencia</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed font-normal">
+                                Calibración y sintonización de tus centros energéticos (chakras) para restablecer el flujo libre de tu fuerza vital y la coherencia interior.
+                            </p>
+                        </div>
+                        <span class="card-tag-pill">Centros Energéticos</span>
+                    </div>
+
+                    <!-- Pilar 03 -->
+                    <div class="glass-card-luxury glass-card-hover p-6 sm:p-7 text-center space-y-3.5 flex flex-col justify-between h-full group">
+                        <div class="space-y-3">
+                            <div class="icon-single">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-deep-purple stroke-[1.9]"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg sm:text-xl text-deep-purple">Sellado & Apertura</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed font-normal">
+                                Consagración de un manto protector que resguarda la armonía alcanzada, previene fugas de vitalidad y destraba tus proyectos.
+                            </p>
+                        </div>
+                        <span class="card-tag-pill">Protección Activa</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 2. ¿QUÉ BENEFICIOS SE BUSCAN CON ESTA SESIÓN? -->
+            <!-- ========================================== -->
+            <section class="space-y-6">
+                <div class="text-center space-y-2.5 max-w-2xl mx-auto">
+                    <span class="text-xs uppercase tracking-widest text-soft-violet font-extrabold">Renovación y Bienestar</span>
+                    <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-deep-purple">
+                        ¿Qué beneficios se buscan con esta sesión?
+                    </h2>
+                    <p class="text-sm sm:text-base text-rich-plum/85 font-medium leading-relaxed">
+                        Cada sesión está concebida para ofrecerte un alivio perceptible en tu cotidianidad y devolverte la calma interna.
+                    </p>
+                </div>
+
+                <!-- 4 Beneficios Esenciales (Grid 2x2 Limpio y Espacioso) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                    
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="feather" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Sensación de Liviandad</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Descarga profunda del peso acumulado en hombros y pecho. Desaparece la sensación de arrastrar un cansancio inexplicable.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="flower-2" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Paz Interior & Calma</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Disolución de la irritabilidad y la tensión reactiva, propiciando serenidad diurna y un descanso nocturno reparador.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="compass" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Claridad Mental & Enfoque</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Despeje de la confusión y la rumiación excesiva para tomar decisiones con certeza y reconectar con tu intuición.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="key-round" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Apertura de Nuevos Caminos</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Desbloqueo de proyectos, finanzas y relaciones que se encontraban trabadas, permitiendo que la energía vuelva a fluir.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 3. IDENTIFICACIÓN Y BIENESTAR -->
+            <!-- ========================================== -->
+            <section class="space-y-6">
+                <div class="text-center space-y-2.5 max-w-2xl mx-auto">
+                    <span class="text-xs uppercase tracking-widest text-soft-violet font-extrabold">Autoevaluación Consciente</span>
+                    <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-deep-purple">
+                        ¿Te sentís identificado con alguna de estas situaciones?
+                    </h2>
+                    <p class="text-sm sm:text-base text-rich-plum/85 font-medium leading-relaxed">
+                        El cuerpo y el campo áurico se expresan cuando están sobrecargados. Si resonás con estas señales, tu energía te pide una pausa de orden y cuidado.
+                    </p>
+                </div>
+
+                <!-- 4 Señales Clave (Grid 2x2 Limpio) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                    
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="battery-charging" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Agotamiento que no cede</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Cansancio físico constante aun después de dormir, pesadez corporal o baja repentina de vitalidad tras interactuar con ciertos entornos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="brain" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Rumiación mental o niebla</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Sobrepensamiento que no frena, dificultad para concentrarte, hipersensibilidad o sensación de estar absorbiendo tensiones ajenas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="home" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Pesadez en el hogar</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                El espacio se siente cargado o tenso, se generan discusiones frecuentes por pequeñeces y cuesta encontrar descanso en casa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="milestone" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Proyectos o trámites trabados</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Sensación de que ponés todo tu esfuerzo pero las cosas se frenan a último momento por obstáculos invisibles o ciclos repetitivos.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mensaje Amoroso de Cierre -->
+                <p class="text-xs sm:text-sm text-center text-rich-plum/85 font-medium max-w-xl mx-auto pt-1">
+                    <span class="font-bold text-deep-purple">Recordá:</span> no estás roto ni hay nada malo en vos. Simplemente tu campo absorbió más densidad de la que puede procesar y merece un alivio consciente.
+                </p>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 4. ¿CÓMO SE REALIZA EL PROCEDIMIENTO? -->
+            <!-- ========================================== -->
+            <section class="space-y-6">
+                <div class="text-center space-y-2.5 max-w-2xl mx-auto">
+                    <span class="text-xs uppercase tracking-widest text-soft-violet font-extrabold">Claridad y Confianza</span>
+                    <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-deep-purple">
+                        ¿Cómo se realiza el procedimiento?
+                    </h2>
+                    <p class="text-sm sm:text-base text-rich-plum/85 font-medium leading-relaxed">
+                        Un proceso transparente, cuidado y 100% a distancia. No requerís interrumpir tus actividades ni conectarte en vivo.
+                    </p>
+                </div>
+
+                <!-- 4 Pasos Secuenciales (Limpio y Proporcional) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
+                    
+                    <div class="glass-card-luxury glass-card-hover p-5 text-left space-y-3 flex flex-col justify-between group">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-deep-purple text-white text-[10px] font-extrabold tracking-wider uppercase">Paso 01</span>
+                                <div class="icon-single !m-0 !w-8 !h-8">
+                                    <i data-lucide="globe" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-deep-purple">100% a Distancia</h3>
+                            <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                                Se realiza mediante tus datos (nombre y fecha de nacimiento). Sin videollamada, continuás tu día con total tranquilidad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 text-left space-y-3 flex flex-col justify-between group">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-deep-purple text-white text-[10px] font-extrabold tracking-wider uppercase">Paso 02</span>
+                                <div class="icon-single !m-0 !w-8 !h-8">
+                                    <i data-lucide="video" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-deep-purple">Fotos & Video en Vivo</h3>
+                            <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                                Transparencia total. Se documenta en tiempo real cada trabajo realizado en el altar sagrado para tu tranquilidad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 text-left space-y-3 flex flex-col justify-between group">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-deep-purple text-white text-[10px] font-extrabold tracking-wider uppercase">Paso 03</span>
+                                <div class="icon-single !m-0 !w-8 !h-8">
+                                    <i data-lucide="file-text" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-deep-purple">Informe en PDF</h3>
+                            <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                                Recibís un documento exclusivo con la lectura detallada de tu campo, lo transmutado y pautas de integración.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 text-left space-y-3 flex flex-col justify-between group">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-deep-purple text-white text-[10px] font-extrabold tracking-wider uppercase">Paso 04</span>
+                                <div class="icon-single !m-0 !w-8 !h-8">
+                                    <i data-lucide="message-circle-heart" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-deep-purple">Seguimiento 1 a 1</h3>
+                            <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                                Recomendaciones prácticas de autocuidado y acompañamiento directo por WhatsApp ante cualquier duda post-sesión.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 5. APERTURA DE CAMINOS EN DIFERENTES ÁMBITOS -->
+            <!-- ========================================== -->
+            <section class="space-y-6">
+                <div class="text-center space-y-2.5 max-w-2xl mx-auto">
+                    <span class="text-xs uppercase tracking-widest text-soft-violet font-extrabold">Armonización Holística</span>
+                    <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-deep-purple">
+                        Apertura de caminos en tus distintos ámbitos
+                    </h2>
+                    <p class="text-sm sm:text-base text-rich-plum/85 font-medium leading-relaxed">
+                        La energía trasciende a la persona: impregna los espacios que habitamos, los proyectos que emprendemos y los seres que nos acompañan.
+                    </p>
+                </div>
+
+                <!-- 4 Ámbitos de Vida (Grid 2x2 Limpio) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                    
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="home" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Hogar & Espacios Sagrados</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Purificación de memorias residuales de conflictos o visitas para que tu casa vuelva a sentirse un templo de descanso, paz y protección.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Trabajo, Finanzas & Proyectos</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Disolución de bloqueos sutiles en negociaciones o emprendimientos para reactivar la circulación de prosperidad y oportunidades.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="users" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Vínculos, Pareja & Familia</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Transmutación de rencores acumulados y corte de cordones densos, favoreciendo el entendimiento mutuo y la comunicación en paz.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 flex items-start gap-4 text-left group">
+                        <div class="icon-single !m-0 shrink-0">
+                            <i data-lucide="paw-print" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-heading font-bold text-base sm:text-lg text-deep-purple">Mascotas & Animales de Compañía</h3>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Los animales absorben sobrecargas de su entorno. Este trabajo les brinda una descarga amorosa, devolviéndoles su serenidad y vitalidad.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 6. RESEÑAS REALES DE CLIENTES (SHOWCASE INTERACTIVO COMPACTO) -->
+            <!-- ========================================== -->
+            <section class="glass-card-luxury p-5 sm:p-8 space-y-6 relative overflow-hidden">
+                <div class="text-center space-y-2.5 max-w-2xl mx-auto">
+                    <div class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-lavanda-suave text-deep-purple shadow-xs max-w-full">
+                        <span class="w-4 h-4 rounded-full bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center text-soft-violet shrink-0">
+                            <i data-lucide="badge-check" class="w-3 h-3 text-soft-violet stroke-[2.2]"></i>
+                        </span>
+                        <span class="font-heading text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-deep-purple">+50 Testimonios Reales Verificados</span>
+                    </div>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-deep-purple">
+                        Lo que sienten quienes ya vivieron su sesión
+                    </h2>
+                    <p class="text-rich-plum/85 text-xs sm:text-sm font-medium leading-relaxed">
+                        Mensajes espontáneos compartidos por WhatsApp tras la limpieza energética y la recepción de su devolución.
+                    </p>
+                </div>
+
+                <!-- Tabs Selector Interactivo -->
+                <div class="flex items-center justify-center gap-2 flex-wrap max-w-xl mx-auto" id="testimonial-tabs">
+                    <button type="button" onclick="switchTestimonial(0)" id="t-tab-0" class="t-tab px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer bg-deep-purple text-white shadow-xs">
+                        Alivio & Livianez
+                    </button>
+                    <button type="button" onclick="switchTestimonial(1)" id="t-tab-1" class="t-tab px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer bg-white text-deep-purple border border-lavanda-suave hover:bg-lavanda-nieve">
+                        Estrés & Destrabe
+                    </button>
+                    <button type="button" onclick="switchTestimonial(2)" id="t-tab-2" class="t-tab px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer bg-white text-deep-purple border border-lavanda-suave hover:bg-lavanda-nieve">
+                        Calidez & Honestidad
+                    </button>
+                    <button type="button" onclick="switchTestimonial(3)" id="t-tab-3" class="t-tab px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer bg-white text-deep-purple border border-lavanda-suave hover:bg-lavanda-nieve">
+                        Vínculos en Paz
+                    </button>
+                </div>
+
+                <!-- Contenedor Spotlight Interactivo (1 Sola Tarjeta Protagonista a la Vez) -->
+                <div class="max-w-3xl mx-auto">
+                    
+                    <!-- Slide 0: Testimonio 1 -->
+                    <div id="t-slide-0" class="t-slide bg-white/95 rounded-2xl sm:rounded-3xl p-5 sm:p-7 border-2 border-lavanda-suave shadow-sm grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-center">
+                        <div class="md:col-span-7 space-y-3 text-left order-2 md:order-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] sm:text-xs font-bold flex items-center gap-1">
+                                    <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                    Mensaje Verificado
+                                </span>
+                                <span class="text-amber-500 text-xs tracking-wider">★★★★★</span>
+                            </div>
+                            <blockquote class="font-heading font-bold text-base sm:text-lg text-deep-purple leading-snug">
+                                “Me siento Mucho Mejor con menos Carga, más alegre me río Sola. Me tomo las Cosas de otra manera ya no estoy todo el día de mal Humor.”
+                            </blockquote>
+                            <p class="text-xs sm:text-sm text-rich-plum/80 font-normal">
+                                Sensación de descompresión emocional y retorno del buen humor cotidiano tras disolver cargas residuales.
+                            </p>
+                            <div class="pt-2.5 border-t border-lavanda-suave/40 flex items-center justify-between text-xs font-semibold text-soft-violet">
+                                <span>Alivio de sobrecarga emocional</span>
+                                <button type="button" onclick="openTestimonialModal('testimonio_1.jpg', 'Testimonio sobre alivio de carga y buen humor')" class="text-deep-purple hover:text-soft-violet flex items-center gap-1 cursor-pointer">
+                                    <span>Ampliar captura</span>
+                                    <i data-lucide="maximize-2" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-5 order-1 md:order-2">
+                            <div class="relative rounded-2xl overflow-hidden border border-lavanda-suave shadow-xs cursor-pointer group/img" onclick="openTestimonialModal('testimonio_1.jpg', 'Testimonio sobre alivio de carga y buen humor')">
+                                <img src="testimonio_1.jpg" alt="Captura real de WhatsApp de consultante" class="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-[1.02]">
+                                <div class="absolute inset-0 bg-deep-purple/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-deep-purple/85 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-xs flex items-center gap-1 shadow-md">
+                                        <i data-lucide="maximize-2" class="w-3 h-3"></i> Ampliar
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1: Testimonio 3 -->
+                    <div id="t-slide-1" class="t-slide hidden bg-white/95 rounded-2xl sm:rounded-3xl p-5 sm:p-7 border-2 border-lavanda-suave shadow-sm grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-center">
+                        <div class="md:col-span-7 space-y-3 text-left order-2 md:order-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] sm:text-xs font-bold flex items-center gap-1">
+                                    <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                    Mensaje Verificado
+                                </span>
+                                <span class="text-amber-500 text-xs tracking-wider">★★★★★</span>
+                            </div>
+                            <blockquote class="font-heading font-bold text-base sm:text-lg text-deep-purple leading-snug">
+                                “Estoy muy relajada, suelo estar a mil muy estresada... me ayuda un montón y no solo eso: muchas cosas me están saliendo bien.”
+                            </blockquote>
+                            <p class="text-xs sm:text-sm text-rich-plum/80 font-normal">
+                                Transición de la tensión y la sobreexigencia a la serenidad profunda y el desbloqueo de situaciones cotidianas.
+                            </p>
+                            <div class="pt-2.5 border-t border-lavanda-suave/40 flex items-center justify-between text-xs font-semibold text-soft-violet">
+                                <span>Relajación profunda & Destrabe</span>
+                                <button type="button" onclick="openTestimonialModal('testimonio_3.jpg', 'Testimonio sobre relajación y destrabe positivo')" class="text-deep-purple hover:text-soft-violet flex items-center gap-1 cursor-pointer">
+                                    <span>Ampliar captura</span>
+                                    <i data-lucide="maximize-2" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-5 order-1 md:order-2">
+                            <div class="relative rounded-2xl overflow-hidden border border-lavanda-suave shadow-xs cursor-pointer group/img" onclick="openTestimonialModal('testimonio_3.jpg', 'Testimonio sobre relajación y destrabe positivo')">
+                                <img src="testimonio_3.jpg" alt="Captura real de WhatsApp de consultante" class="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-[1.02]">
+                                <div class="absolute inset-0 bg-deep-purple/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-deep-purple/85 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-xs flex items-center gap-1 shadow-md">
+                                        <i data-lucide="maximize-2" class="w-3 h-3"></i> Ampliar
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Testimonio 2 -->
+                    <div id="t-slide-2" class="t-slide hidden bg-white/95 rounded-2xl sm:rounded-3xl p-5 sm:p-7 border-2 border-lavanda-suave shadow-sm grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-center">
+                        <div class="md:col-span-7 space-y-3 text-left order-2 md:order-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] sm:text-xs font-bold flex items-center gap-1">
+                                    <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                    Mensaje Verificado
+                                </span>
+                                <span class="text-amber-500 text-xs tracking-wider">★★★★★</span>
+                            </div>
+                            <blockquote class="font-heading font-bold text-base sm:text-lg text-deep-purple leading-snug">
+                                “A vos Cele! Gracias por tu calidez y porque siempre con tus cartas me decis la verdad! Sos un amor.”
+                            </blockquote>
+                            <p class="text-xs sm:text-sm text-rich-plum/80 font-normal">
+                                Honestidad y contención amorosa en cada lectura, sin falsas promesas y con respeto absoluto del proceso.
+                            </p>
+                            <div class="pt-2.5 border-t border-lavanda-suave/40 flex items-center justify-between text-xs font-semibold text-soft-violet">
+                                <span>Acompañamiento cálido & sincero</span>
+                                <button type="button" onclick="openTestimonialModal('testimonio_2.jpg', 'Testimonio sobre calidez y honestidad')" class="text-deep-purple hover:text-soft-violet flex items-center gap-1 cursor-pointer">
+                                    <span>Ampliar captura</span>
+                                    <i data-lucide="maximize-2" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-5 order-1 md:order-2">
+                            <div class="relative rounded-2xl overflow-hidden border border-lavanda-suave shadow-xs cursor-pointer group/img" onclick="openTestimonialModal('testimonio_2.jpg', 'Testimonio sobre calidez y honestidad')">
+                                <img src="testimonio_2.jpg" alt="Captura real de WhatsApp de consultante" class="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-[1.02]">
+                                <div class="absolute inset-0 bg-deep-purple/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-deep-purple/85 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-xs flex items-center gap-1 shadow-md">
+                                        <i data-lucide="maximize-2" class="w-3 h-3"></i> Ampliar
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Testimonio 4 -->
+                    <div id="t-slide-3" class="t-slide hidden bg-white/95 rounded-2xl sm:rounded-3xl p-5 sm:p-7 border-2 border-lavanda-suave shadow-sm grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-center">
+                        <div class="md:col-span-7 space-y-3 text-left order-2 md:order-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] sm:text-xs font-bold flex items-center gap-1">
+                                    <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                                    Mensaje Verificado
+                                </span>
+                                <span class="text-amber-500 text-xs tracking-wider">★★★★★</span>
+                            </div>
+                            <blockquote class="font-heading font-bold text-base sm:text-lg text-deep-purple leading-snug">
+                                “Cele estoy mejor desde lo del péndulo... y tal cual me dijiste: ayer apareció, me escribió como si no pasó nada...”
+                            </blockquote>
+                            <p class="text-xs sm:text-sm text-rich-plum/80 font-normal">
+                                Desbloqueo en canales de comunicación y armonización de vínculos afectivos que se encontraban trabados.
+                            </p>
+                            <div class="pt-2.5 border-t border-lavanda-suave/40 flex items-center justify-between text-xs font-semibold text-soft-violet">
+                                <span>Armonización & Comunicación</span>
+                                <button type="button" onclick="openTestimonialModal('testimonio_4.jpg', 'Testimonio sobre armonización vincular y comunicación')" class="text-deep-purple hover:text-soft-violet flex items-center gap-1 cursor-pointer">
+                                    <span>Ampliar captura</span>
+                                    <i data-lucide="maximize-2" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-5 order-1 md:order-2">
+                            <div class="relative rounded-2xl overflow-hidden border border-lavanda-suave shadow-xs cursor-pointer group/img" onclick="openTestimonialModal('testimonio_4.jpg', 'Testimonio sobre armonización vincular y comunicación')">
+                                <img src="testimonio_4.jpg" alt="Captura real de WhatsApp de consultante" class="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-[1.02]">
+                                <div class="absolute inset-0 bg-deep-purple/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-deep-purple/85 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-xs flex items-center gap-1 shadow-md">
+                                        <i data-lucide="maximize-2" class="w-3 h-3"></i> Ampliar
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botones de Navegación Simple (Anterior / Siguiente) -->
+                <div class="flex items-center justify-center gap-3 pt-1">
+                    <button type="button" onclick="prevTestimonial()" class="px-3.5 py-1.5 rounded-full bg-white border border-lavanda-suave text-deep-purple text-xs font-bold hover:bg-lavanda-nieve transition-colors flex items-center gap-1 cursor-pointer shadow-2xs">
+                        ← Anterior
+                    </button>
+                    <span id="t-counter" class="text-xs font-bold text-soft-violet px-2">1 / 4</span>
+                    <button type="button" onclick="nextTestimonial()" class="px-3.5 py-1.5 rounded-full bg-white border border-lavanda-suave text-deep-purple text-xs font-bold hover:bg-lavanda-nieve transition-colors flex items-center gap-1 cursor-pointer shadow-2xs">
+                        Siguiente →
+                    </button>
+                </div>
+
+                <!-- Nota sutil de privacidad -->
+                <p class="text-[11px] text-center text-rich-plum/70 font-medium pt-1">
+                    100% capturas espontáneas · Privacidad y confidencialidad protegidas en cada proceso.
+                </p>
+            </section>
+
+
+<!-- ========================================== -->
+            <!-- 7. SECCIÓN DE INVERSIÓN Y RESERVA -->
+            <!-- ========================================== -->
+            <section class="w-full max-w-3xl mx-auto pt-4 pb-10 space-y-6">
+                
+                <!-- Main Luxury Pricing Card (A la medida y Proporcional) -->
+                <div class="glass-card-luxury rounded-3xl p-5 sm:p-8 relative overflow-hidden shadow-xl border-2 border-white space-y-5 sm:space-y-6">
+                    
+                    <!-- Top Ribbon & Heading -->
+                    <div class="text-center space-y-2.5">
+                        <div class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-lavanda-suave shadow-xs max-w-full text-center">
+                            <span class="w-2 h-2 rounded-full bg-soft-violet animate-ping shrink-0"></span>
+                            <span class="text-[10px] sm:text-xs font-heading font-extrabold uppercase tracking-wider text-deep-purple leading-snug">
+                                ATENCIÓN PERSONALIZADA 1 A 1 CON CELESTE
+                            </span>
+                        </div>
+                        <h2 class="font-heading text-xl sm:text-3xl font-extrabold text-deep-purple">
+                            Inversión de tu Limpieza Energética Integral
+                        </h2>
+                        <p class="text-xs sm:text-sm text-rich-plum/85 font-medium max-w-lg mx-auto">
+                            Trabajo energético personalizado 100% a distancia, individualizado y adaptado a tus necesidades particulares con informe en PDF y seguimiento continuo.
+                        </p>
+                    </div>
+
+                    <!-- Dual Pricing Cards Grid -->
+                    <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
+                        
+                        <!-- Tarjeta Argentina -->
+                        <div class="p-4 sm:p-5 rounded-2xl bg-white/95 border-2 border-lavanda-suave shadow-xs text-center space-y-3 flex flex-col justify-between">
+                            <div class="space-y-0.5">
+                                <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-wider text-soft-violet">
+                                    Consultantes en Argentina
+                                </span>
+                                <h4 class="font-heading font-bold text-sm sm:text-base text-deep-purple">Tarifa Nacional</h4>
+                            </div>
+                            
+                            <div class="flex items-baseline justify-center gap-1.5 my-1">
+                                <span class="font-heading text-3xl sm:text-4xl font-extrabold text-deep-purple tracking-tight leading-none">
+                                    $50.000
+                                </span>
+                                <span class="text-xs sm:text-sm font-extrabold text-soft-violet">
+                                    ARS
+                                </span>
+                            </div>
+
+                            <div class="p-2 rounded-xl bg-lavanda-nieve border border-lavanda-suave text-[10px] sm:text-[11px] text-deep-purple font-bold">
+                                Transferencia Bancaria · Mercado Pago
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta Exterior -->
+                        <div class="p-4 sm:p-5 rounded-2xl bg-white/95 border-2 border-lila-pastel shadow-xs text-center space-y-3 flex flex-col justify-between">
+                            <div class="space-y-0.5">
+                                <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-wider text-soft-violet">
+                                    Consultantes en el Exterior
+                                </span>
+                                <h4 class="font-heading font-bold text-sm sm:text-base text-deep-purple">Tarifa Internacional</h4>
+                            </div>
+                            
+                            <div class="flex items-baseline justify-center gap-1.5 my-1">
+                                <span class="font-heading text-3xl sm:text-4xl font-extrabold text-deep-purple tracking-tight leading-none">
+                                    USD 65
+                                </span>
+                            </div>
+
+                            <div class="p-2 rounded-xl bg-lavanda-nieve border border-lavanda-suave text-[10px] sm:text-[11px] text-deep-purple font-bold">
+                                Pago Seguro vía PayPal · Western Union
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- What's Included Matrix -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-lavanda-nieve/80 border border-lavanda-suave space-y-3">
+                        <h4 class="font-heading text-xs sm:text-sm font-bold text-deep-purple flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-soft-violet shrink-0"></i>
+                            <span>¿Qué incluye tu limpieza energética integral?</span>
+                        </h4>
+                        
+                        <div class="grid sm:grid-cols-2 gap-2 text-xs text-rich-plum/90 font-medium">
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-deep-purple shrink-0 mt-0.5"></i>
+                                <span>Limpieza energética personalizada.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-deep-purple shrink-0 mt-0.5"></i>
+                                <span>Armonización e irradiación positiva.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-deep-purple shrink-0 mt-0.5"></i>
+                                <span>Apertura de caminos en planos generales.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-deep-purple shrink-0 mt-0.5"></i>
+                                <span>Sellado y protección del campo áurico.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-deep-purple shrink-0 mt-0.5"></i>
+                                <span>Seguimiento con fotografías, videos y comunicación.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-deep-purple shrink-0 mt-0.5"></i>
+                                <span>Informe personalizado en formato PDF.</span>
+                            </div>
+                            <div class="flex items-start gap-2 sm:col-span-2">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-deep-purple shrink-0 mt-0.5"></i>
+                                <span>Comunicación posterior para acompañar tu proceso de integración.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Exclusiva: Un trabajo pensado para vos -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-white/95 border border-lavanda-suave text-center space-y-2.5 shadow-xs max-w-xl mx-auto relative overflow-hidden">
+                        <div class="w-10 h-10 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center text-deep-purple mx-auto">
+                            <i data-lucide="gem" class="w-5 h-5 text-deep-purple stroke-[1.8]"></i>
+                        </div>
+                        <span class="inline-block text-[10px] uppercase font-extrabold tracking-wider text-soft-violet bg-lavanda-nieve px-3 py-0.5 rounded-full border border-lavanda-suave">
+                            Atención Individualizada
+                        </span>
+                        <h4 class="font-heading font-bold text-base text-deep-purple">
+                            Un trabajo pensado para vos
+                        </h4>
+                        <p class="text-xs text-rich-plum/85 leading-relaxed font-normal max-w-lg mx-auto">
+                            Cada persona llega con una historia, una situación y necesidades diferentes. Mi propuesta es ofrecerte un espacio de trabajo energético individualizado, sin fórmulas rígidas ni procedimientos idénticos para todos.
+                        </p>
+                    </div>
+
+                    <!-- Direct Reservation Action Button -->
+                    <div class="flex flex-col items-center justify-center text-center pt-1 space-y-2.5">
+                        <a id="whatsapp-link" 
+                           href="https://wa.me/5491154581020?text=Hola%20Celeste%2C%20quiero%20consultar%20por%20la%20Limpieza%20Energ%C3%A9tica%20Integral." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="btn-luxury-cta inline-flex items-center justify-center gap-2.5 font-heading font-extrabold text-xs xs:text-sm sm:text-base px-6 py-3.5 sm:px-10 sm:py-4 rounded-full border-2 border-white transition-all duration-300 shadow-lg text-center tracking-wide leading-snug w-full sm:w-auto">
+                            <i data-lucide="message-circle" class="w-5 h-5 shrink-0 text-white"></i>
+                            <span>RESERVAR LIMPIEZA ENERGÉTICA CON CELESTE</span>
+                        </a>
+                        <p class="text-[10px] sm:text-[11px] text-deep-purple font-bold">
+                            Atención dedicada 1 a 1 · Cupos limitados por semana para asegurar máxima atención
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================== -->
+        <!-- FOOTER (ORDENADO, ELEGANTE Y RESPONSIVE) -->
+        <!-- ========================================== -->
+        <footer class="border-t border-lavanda-suave/50 py-10 px-4 text-center mt-auto w-full">
+            <div class="max-w-4xl mx-auto flex flex-col items-center justify-center gap-3.5 sm:gap-4">
+                
+                <!-- Brand & Service Header -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-center">
+                    <div class="flex items-center justify-center gap-2.5">
+                        <img src="logo.png" alt="Celeste | Universo Consciente Logo" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white shadow-xs object-cover shrink-0">
+                        <span class="font-heading font-extrabold uppercase text-xs sm:text-sm text-deep-purple tracking-widest">
+                            Celeste | Universo Consciente
+                        </span>
+                    </div>
+                    <span class="hidden sm:inline-block text-soft-violet/50 font-bold select-none">•</span>
+                    <span class="font-heading text-xs sm:text-sm text-soft-violet font-semibold tracking-wide">
+                        Limpieza Energética Integral
+                    </span>
+                </div>
+
+                <!-- Copyright Notice -->
+                <div class="flex items-center justify-center text-[11px] sm:text-xs text-soft-violet/80 font-medium tracking-wide">
+                    <span>© 2026 Celeste | Universo Consciente</span>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL LIGHTBOX PARA AMPLIAR TESTIMONIOS -->
+    <!-- ========================================== -->
+    <div id="testimonial-modal" class="fixed inset-0 z-50 bg-deep-purple/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 transition-all duration-300" onclick="closeTestimonialModal()">
+        <div class="relative max-w-2xl w-full bg-white rounded-3xl p-4 sm:p-6 shadow-2xl border-2 border-lavanda-suave flex flex-col items-center space-y-3" onclick="event.stopPropagation()">
+            <div class="w-full flex items-center justify-between pb-2 border-b border-lavanda-suave/40">
+                <span class="text-xs font-bold text-deep-purple flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-soft-violet shrink-0 stroke-[1.9]"><path d="M12 2 C12 6.8 7.8 11.2 2.5 12 C7.8 12.8 12 17.2 12 22 C12 17.2 16.2 12.8 21.5 12 C16.2 11.2 12 6.8 12 2 Z"></path><path d="M12 8 L14.8 12 L12 16 L9.2 12 Z"></path><path d="M19.5 2.5 v3 M21 4 h-3"></path><circle cx="4.5" cy="19.5" r="1"></circle></svg>
+                    <span>Testimonio Directo de Consultante</span>
+                </span>
+                <button type="button" onclick="closeTestimonialModal()" class="w-8 h-8 rounded-full bg-lavanda-nieve hover:bg-lavanda-suave text-deep-purple flex items-center justify-center font-bold text-sm transition-colors cursor-pointer" aria-label="Cerrar modal">✕</button>
+            </div>
+            <div class="w-full max-h-[75vh] overflow-y-auto rounded-2xl flex items-center justify-center bg-gray-50/50 p-1">
+                <img id="modal-img" src="" alt="Testimonio ampliado" class="w-full h-auto max-h-[70vh] object-contain rounded-xl shadow-xs">
+            </div>
+            <p id="modal-caption" class="text-xs text-center text-rich-plum font-semibold px-2"></p>
+        </div>
+    </div>
+
+        <!-- ========================================== -->
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <!-- ========================================== -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Control de Testimonios Spotlight
+        let currentTestimonialIndex = 0;
+        const totalTestimonials = 4;
+
+        function switchTestimonial(index) {
+            currentTestimonialIndex = index;
+            for (let i = 0; i < totalTestimonials; i++) {
+                const slide = document.getElementById('t-slide-' + i);
+                const tab = document.getElementById('t-tab-' + i);
+                if (slide && tab) {
+                    if (i === index) {
+                        slide.classList.remove('hidden');
+                        slide.classList.add('grid');
+                        tab.className = 't-tab px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer bg-deep-purple text-white shadow-xs';
+                    } else {
+                        slide.classList.add('hidden');
+                        slide.classList.remove('grid');
+                        tab.className = 't-tab px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer bg-white text-deep-purple border border-lavanda-suave hover:bg-lavanda-nieve';
+                    }
+                }
+            }
+            const counter = document.getElementById('t-counter');
+            if (counter) counter.textContent = (index + 1) + ' / ' + totalTestimonials;
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function nextTestimonial() {
+            const next = (currentTestimonialIndex + 1) % totalTestimonials;
+            switchTestimonial(next);
+        }
+
+        function prevTestimonial() {
+            const prev = (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
+            switchTestimonial(prev);
+        }
+
+        // Modal Lightbox para visualización nítida de testimonios en pantalla completa
+        function openTestimonialModal(src, caption) {
+            const modal = document.getElementById('testimonial-modal');
+            const img = document.getElementById('modal-img');
+            const cap = document.getElementById('modal-caption');
+            if (modal && img) {
+                img.src = src;
+                if (cap) cap.textContent = caption || '';
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                if (window.lucide) lucide.createIcons();
+            }
+        }
+
+        function closeTestimonialModal() {
+            const modal = document.getElementById('testimonial-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeTestimonialModal();
+            }
+        });
+    </script>
+</body>
+</html>
