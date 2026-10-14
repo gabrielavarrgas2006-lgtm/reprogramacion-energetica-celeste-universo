@@ -277,6 +277,31 @@
             animation: pulseOrbit 6s ease-in-out infinite;
         }
 
+        /* 3D Stacked Cards & Orbit Motion */
+        .glass-card-stack {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 245, 255, 0.96) 50%, rgba(246, 235, 253, 0.94) 100%);
+            border: 1.5px solid #E8D4F5;
+            box-shadow: 0 10px 25px -5px rgba(55, 15, 77, 0.08), 0 8px 10px -6px rgba(55, 15, 77, 0.04);
+            border-radius: 1.5rem;
+            transform-origin: center top;
+        }
+
+        @keyframes orbitGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-orbit {
+            animation: orbitGlow 22s linear infinite;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); opacity: 0.95; }
+            50% { transform: scale(1.03); opacity: 1; }
+        }
+        .animate-pulse-gentle {
+            animation: gentlePulse 3.5s ease-in-out infinite;
+        }
+
         /* Luxury Call to Action */
         .btn-luxury-cta {
             background: linear-gradient(135deg, #370F4D 0%, #2D103F 100%);
@@ -491,7 +516,7 @@
             </section>
 
             <!-- ========================================== -->
-            <!-- 2. ¿QUÉ BENEFICIOS SE BUSCAN CON ESTA SESIÓN? (CICLO CIRCULAR CONTINUO) -->
+            <!-- 2. ¿QUÉ BENEFICIOS SE BUSCAN CON ESTA SESIÓN? (ÓRBITA Y TARJETAS EN MOVIMIENTO) -->
             <!-- ========================================== -->
             <section class="space-y-6">
                 <div class="text-center space-y-2.5 max-w-2xl mx-auto">
@@ -504,256 +529,166 @@
                     </p>
                 </div>
 
-                <!-- CONTENEDOR CICLO DE RENOVACIÓN (ARMONIOSO, LIMPIO Y SIN BORDES SOBRESALIENTES) -->
-                <div class="relative py-2 sm:py-4">
-
-                    <!-- VISTA ESCRITORIO (md en adelante): 3 Columnas Proporcionadas con Rueda Central Sagrada -->
-                    <div class="hidden md:grid md:grid-cols-12 gap-6 lg:gap-8 items-center max-w-4xl mx-auto">
+                <!-- CONTENEDOR CENTRAL: ÓRBITA SAGRADA Y TARJETAS APILADAS CON MOVIMIENTO -->
+                <div class="flex flex-col items-center select-none py-2 sm:py-4">
+                    
+                    <!-- Órbita Circular con los 4 Nodos en 360° (Giro suave con flechas curvas) -->
+                    <div class="relative w-60 h-60 sm:w-68 sm:h-68 flex items-center justify-center mb-6">
                         
-                        <!-- COLUMNA IZQUIERDA: Fase 01 y Fase 04 -->
-                        <div class="md:col-span-4 space-y-6">
+                        <!-- Anillo SVG Rotatorio con Flechas Curvas (Giro Suave Continuo) -->
+                        <svg class="absolute inset-0 w-full h-full animate-orbit pointer-events-none" viewBox="0 0 260 260" fill="none">
+                            <!-- Órbita punteada -->
+                            <circle cx="130" cy="130" r="105" stroke="#7C4DFF" stroke-width="1.8" stroke-dasharray="5 7" opacity="0.35"/>
                             
-                            <!-- 01 · Liviandad (Arriba Izq) -->
-                            <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 text-left transition-all">
-                                <div class="flex items-center justify-between mb-2.5">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="icon-single shrink-0">
-                                            <i data-lucide="feather" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                        </div>
-                                        <span class="font-heading font-bold text-sm sm:text-base text-deep-purple">Sensación de Liviandad</span>
-                                    </div>
-                                    <span class="text-[10px] font-extrabold text-white bg-soft-violet px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-2xs">
-                                        <span>01</span>
-                                        <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                                    </span>
-                                </div>
-                                <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
-                                    Descarga profunda del peso acumulado en hombros y pecho. Desaparece el cansancio inexplicable.
-                                </p>
-                            </div>
+                            <!-- Arco 1: Norte a Este -->
+                            <path d="M 130 25 A 105 105 0 0 1 235 130" stroke="#7C4DFF" stroke-width="2.5" stroke-linecap="round"/>
+                            <polygon points="235,138 243,126 231,128" fill="#7C4DFF"/>
 
-                            <!-- 04 · Apertura (Abajo Izq) -->
-                            <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 text-left transition-all">
-                                <div class="flex items-center justify-between mb-2.5">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="icon-single shrink-0">
-                                            <i data-lucide="key-round" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                        </div>
-                                        <span class="font-heading font-bold text-sm sm:text-base text-deep-purple">Apertura de Caminos</span>
-                                    </div>
-                                    <span class="text-[10px] font-extrabold text-white bg-soft-violet px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-2xs">
-                                        <span>04</span>
-                                        <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                                    </span>
-                                </div>
-                                <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
-                                    Desbloqueo de proyectos, finanzas y relaciones, permitiendo que la energía vuelva a fluir libremente.
-                                </p>
-                            </div>
+                            <!-- Arco 2: Este a Sur -->
+                            <path d="M 235 130 A 105 105 0 0 1 130 235" stroke="#7C4DFF" stroke-width="2.5" stroke-linecap="round"/>
+                            <polygon points="122,235 134,243 132,231" fill="#7C4DFF"/>
 
+                            <!-- Arco 3: Sur a Oeste -->
+                            <path d="M 130 235 A 105 105 0 0 1 25 130" stroke="#7C4DFF" stroke-width="2.5" stroke-linecap="round"/>
+                            <polygon points="25,122 17,134 29,132" fill="#7C4DFF"/>
+
+                            <!-- Arco 4: Oeste a Norte -->
+                            <path d="M 25 130 A 105 105 0 0 1 130 25" stroke="#7C4DFF" stroke-width="2.5" stroke-linecap="round"/>
+                            <polygon points="138,25 126,17 128,29" fill="#7C4DFF"/>
+                        </svg>
+
+                        <!-- Núcleo Central de Sanación (Sin la palabra ciclo) -->
+                        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white/95 backdrop-blur-md border border-lavanda-suave shadow-md flex flex-col items-center justify-center p-2 text-center animate-pulse-gentle z-0">
+                            <div class="w-7 h-7 rounded-full bg-lavanda-nieve flex items-center justify-center text-soft-violet mb-1 shadow-2xs">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-soft-violet shrink-0 stroke-[1.9]"><path d="M12 2 C12 6.8 7.8 11.2 2.5 12 C7.8 12.8 12 17.2 12 22 C12 17.2 16.2 12.8 21.5 12 C16.2 11.2 12 6.8 12 2 Z"></path><path d="M12 8 L14.8 12 L12 16 L9.2 12 Z"></path><path d="M19.5 2.5 v3 M21 4 h-3"></path><circle cx="4.5" cy="19.5" r="1"></circle></svg>
+                            </div>
+                            <span class="font-heading font-extrabold text-[11px] sm:text-xs text-deep-purple leading-tight">Sanación</span>
+                            <span class="text-[9px] text-rich-plum/70 font-semibold">Energética</span>
                         </div>
 
-                        <!-- COLUMNA CENTRAL: LA RUEDA CIRCULAR SAGRADA (LIMPIA, VISIBLE Y FLUIDA) -->
-                        <div class="md:col-span-4 flex items-center justify-center p-2">
-                            <div class="relative w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center">
-                                
-                                <!-- SVG de la Rueda con 4 Flechas Curvas que Giran en Ciclo -->
-                                <svg class="w-full h-full" viewBox="0 0 260 260" fill="none">
-                                    <!-- Anillo base exterior suave -->
-                                    <circle cx="130" cy="130" r="105" stroke="#E8D4F5" stroke-width="2" stroke-dasharray="6 6"/>
+                        <!-- Los 4 Nodos Cíclicos Alrededor del Círculo (Clickeables e Interactivos) -->
+                        <!-- Nodo 0: Norte (Liviandad) -->
+                        <button type="button" onclick="goToBenefitStep(0)" id="wheel-node-0" class="absolute top-1 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white border-2 border-soft-violet shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer z-10 scale-110 bg-lavanda-nieve" title="Sensación de Liviandad" aria-label="Fase 1: Sensación de Liviandad">
+                            <i data-lucide="feather" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </button>
 
-                                    <!-- Arco 1: Arriba Izquierda a Arriba Derecha (01 -> 02) -->
-                                    <path d="M 65 75 A 100 100 0 0 1 195 75" stroke="#7C4DFF" stroke-width="3" stroke-linecap="round"/>
-                                    <polygon points="202,75 190,67 192,79" fill="#7C4DFF"/>
+                        <!-- Nodo 1: Este (Calma) -->
+                        <button type="button" onclick="goToBenefitStep(1)" id="wheel-node-1" class="absolute right-1 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border-2 border-lavanda-suave shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer z-10" title="Paz Interior & Calma" aria-label="Fase 2: Paz Interior & Calma">
+                            <i data-lucide="flower-2" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </button>
 
-                                    <!-- Arco 2: Arriba Derecha a Abajo Derecha (02 -> 03) -->
-                                    <path d="M 225 105 A 100 100 0 0 1 225 155" stroke="#7C4DFF" stroke-width="3" stroke-linecap="round"/>
-                                    <polygon points="225,162 233,150 221,152" fill="#7C4DFF"/>
+                        <!-- Nodo 2: Sur (Claridad) -->
+                        <button type="button" onclick="goToBenefitStep(2)" id="wheel-node-2" class="absolute bottom-1 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white border-2 border-lavanda-suave shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer z-10" title="Claridad Mental & Enfoque" aria-label="Fase 3: Claridad Mental & Enfoque">
+                            <i data-lucide="compass" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </button>
 
-                                    <!-- Arco 3: Abajo Derecha a Abajo Izquierda (03 -> 04) -->
-                                    <path d="M 195 185 A 100 100 0 0 1 65 185" stroke="#7C4DFF" stroke-width="3" stroke-linecap="round"/>
-                                    <polygon points="58,185 70,193 68,181" fill="#7C4DFF"/>
+                        <!-- Nodo 3: Oeste (Apertura) -->
+                        <button type="button" onclick="goToBenefitStep(3)" id="wheel-node-3" class="absolute left-1 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border-2 border-lavanda-suave shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer z-10" title="Apertura de Nuevos Caminos" aria-label="Fase 4: Apertura de Nuevos Caminos">
+                            <i data-lucide="key-round" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
+                        </button>
 
-                                    <!-- Arco 4: Abajo Izquierda a Arriba Izquierda (04 -> 01) -->
-                                    <path d="M 35 155 A 100 100 0 0 1 35 105" stroke="#7C4DFF" stroke-width="3" stroke-linecap="round"/>
-                                    <polygon points="35,98 27,110 39,108" fill="#7C4DFF"/>
+                    </div>
 
-                                    <!-- Círculo interior decorativo con halo -->
-                                    <circle cx="130" cy="130" r="70" fill="#FAF5FF" stroke="#E8D4F5" stroke-width="2"/>
-                                    <circle cx="130" cy="130" r="60" fill="#FFFFFF" filter="drop-shadow(0 6px 16px rgba(55,15,77,0.08))"/>
-                                </svg>
-
-                                <!-- Contenido Central del Círculo -->
-                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-3 pointer-events-none">
-                                    <div class="w-8 h-8 rounded-full bg-lavanda-nieve flex items-center justify-center text-soft-violet mb-1 shadow-2xs">
-                                        <svg class="w-4 h-4 text-soft-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    <!-- CONTENEDOR DE TARJETAS APILADAS ("Una encima de otra con efecto 3D") -->
+                    <div class="relative w-full max-w-md h-[180px] sm:h-[190px]">
+                        
+                        <!-- Tarjeta 0: Liviandad -->
+                        <div id="stack-card-0" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-30 opacity-100 scale-100 translate-y-0" onclick="nextBenefitStep()">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
+                                        <i data-lucide="feather" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
                                     </div>
-                                    <span class="text-[9px] font-extrabold uppercase tracking-widest text-soft-violet">Ciclo</span>
-                                    <span class="font-heading font-extrabold text-xs lg:text-sm text-deep-purple">Renovación</span>
-                                    <span class="text-[8px] lg:text-[9px] text-rich-plum/70 font-semibold mt-0.5">Flujo Continuo</span>
+                                    <div>
+                                        <span class="text-[10px] uppercase font-bold tracking-wider text-soft-violet block">Fase 1 de 4</span>
+                                        <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple">Sensación de Liviandad</h3>
+                                    </div>
                                 </div>
-
+                                <span class="text-xs font-bold text-soft-violet bg-lavanda-nieve px-2 py-0.5 rounded-full border border-lavanda-suave">01</span>
                             </div>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Descarga profunda del peso acumulado en hombros y pecho. Desaparece la sensación de arrastrar un cansancio inexplicable.
+                            </p>
                         </div>
 
-                        <!-- COLUMNA DERECHA: Fase 02 y Fase 03 -->
-                        <div class="md:col-span-4 space-y-6">
-                            
-                            <!-- 02 · Calma (Arriba Der) -->
-                            <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 text-left transition-all">
-                                <div class="flex items-center justify-between mb-2.5">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="icon-single shrink-0">
-                                            <i data-lucide="flower-2" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                        </div>
-                                        <span class="font-heading font-bold text-sm sm:text-base text-deep-purple">Paz Interior & Calma</span>
+                        <!-- Tarjeta 1: Paz Interior & Calma -->
+                        <div id="stack-card-1" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-20 opacity-70 scale-[0.96] translate-y-3.5" onclick="nextBenefitStep()">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
+                                        <i data-lucide="flower-2" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
                                     </div>
-                                    <span class="text-[10px] font-extrabold text-white bg-soft-violet px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-2xs">
-                                        <span>02</span>
-                                        <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                                    </span>
-                                </div>
-                                <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
-                                    Disolución de la irritabilidad y la tensión reactiva, propiciando serenidad diurna y descanso reparador.
-                                </p>
-                            </div>
-
-                            <!-- 03 · Enfoque (Abajo Der) -->
-                            <div class="glass-card-luxury glass-card-hover p-5 sm:p-6 text-left transition-all">
-                                <div class="flex items-center justify-between mb-2.5">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="icon-single shrink-0">
-                                            <i data-lucide="compass" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                        </div>
-                                        <span class="font-heading font-bold text-sm sm:text-base text-deep-purple">Claridad Mental & Enfoque</span>
+                                    <div>
+                                        <span class="text-[10px] uppercase font-bold tracking-wider text-soft-violet block">Fase 2 de 4</span>
+                                        <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple">Paz Interior & Calma</h3>
                                     </div>
-                                    <span class="text-[10px] font-extrabold text-white bg-soft-violet px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-2xs">
-                                        <span>03</span>
-                                        <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                                    </span>
                                 </div>
-                                <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
-                                    Despeje de la confusión y la rumiación excesiva para tomar decisiones con certeza y reconectar con la intuición.
-                                </p>
+                                <span class="text-xs font-bold text-soft-violet bg-lavanda-nieve px-2 py-0.5 rounded-full border border-lavanda-suave">02</span>
                             </div>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Disolución de la irritabilidad y la tensión reactiva, propiciando serenidad diurna y un descanso nocturno reparador.
+                            </p>
+                        </div>
 
+                        <!-- Tarjeta 2: Claridad Mental & Enfoque -->
+                        <div id="stack-card-2" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-10 opacity-40 scale-[0.92] translate-y-7" onclick="nextBenefitStep()">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
+                                        <i data-lucide="compass" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] uppercase font-bold tracking-wider text-soft-violet block">Fase 3 de 4</span>
+                                        <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple">Claridad Mental & Enfoque</h3>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold text-soft-violet bg-lavanda-nieve px-2 py-0.5 rounded-full border border-lavanda-suave">03</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Despeje de la confusión y la rumiación excesiva para tomar decisiones con certeza y reconectar con tu intuición.
+                            </p>
+                        </div>
+
+                        <!-- Tarjeta 3: Apertura de Nuevos Caminos -->
+                        <div id="stack-card-3" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-0 opacity-0 scale-[0.88] translate-y-10 pointer-events-none" onclick="nextBenefitStep()">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
+                                        <i data-lucide="key-round" class="w-4 h-4 text-deep-purple stroke-[1.9]"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] uppercase font-bold tracking-wider text-soft-violet block">Fase 4 de 4</span>
+                                        <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple">Apertura de Nuevos Caminos</h3>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold text-soft-violet bg-lavanda-nieve px-2 py-0.5 rounded-full border border-lavanda-suave">04</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-rich-plum/85 leading-relaxed">
+                                Desbloqueo de proyectos, finanzas y relaciones que se encontraban trabadas, permitiendo que la energía vuelva a fluir libremente.
+                            </p>
                         </div>
 
                     </div>
 
-                    <!-- VISTA TELÉFONO MÓVIL (md:hidden): Cadena Cíclica Limpia y Espaciosa -->
-                    <div class="block md:hidden space-y-3 relative max-w-sm mx-auto">
+                    <!-- Controles Inferiores con Flechas Cíclicas y Puntos -->
+                    <div class="flex items-center justify-center gap-4 mt-8">
+                        <button type="button" onclick="prevBenefitStep()" class="w-8 h-8 rounded-full bg-white border border-lavanda-suave text-deep-purple flex items-center justify-center shadow-xs hover:bg-lavanda-nieve cursor-pointer transition-colors" aria-label="Fase anterior">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                        </button>
                         
-                        <!-- Rueda Compacta de Ciclo en Móvil -->
-                        <div class="flex items-center justify-center mb-3">
-                            <span class="px-3.5 py-1 rounded-full bg-white/95 border border-lavanda-suave text-soft-violet font-extrabold text-[11px] flex items-center gap-1.5 shadow-xs uppercase tracking-wider">
-                                <svg class="w-3.5 h-3.5 text-soft-violet animate-spin-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                                <span>Ciclo de Renovación Continua</span>
-                            </span>
+                        <div class="flex items-center gap-2">
+                            <button type="button" onclick="goToBenefitStep(0)" id="b-dot-0" class="w-6 h-2 rounded-full bg-soft-violet transition-all" aria-label="Ir a fase 1"></button>
+                            <button type="button" onclick="goToBenefitStep(1)" id="b-dot-1" class="w-2 h-2 rounded-full bg-lavanda-suave transition-all" aria-label="Ir a fase 2"></button>
+                            <button type="button" onclick="goToBenefitStep(2)" id="b-dot-2" class="w-2 h-2 rounded-full bg-lavanda-suave transition-all" aria-label="Ir a fase 3"></button>
+                            <button type="button" onclick="goToBenefitStep(3)" id="b-dot-3" class="w-2 h-2 rounded-full bg-lavanda-suave transition-all" aria-label="Ir a fase 4"></button>
                         </div>
 
-                        <!-- 01 · Liviandad -->
-                        <div class="glass-card-luxury p-4 relative shadow-sm">
-                            <div class="flex items-start gap-3.5">
-                                <div class="icon-single shrink-0">
-                                    <i data-lucide="feather" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                </div>
-                                <div class="space-y-1 flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <h3 class="font-heading font-bold text-sm text-deep-purple">Sensación de Liviandad</h3>
-                                        <span class="text-[9px] font-extrabold text-white bg-soft-violet px-2 py-0.5 rounded-full">Fase 01</span>
-                                    </div>
-                                    <p class="text-xs text-rich-plum/85 leading-relaxed">
-                                        Descarga profunda del peso acumulado en hombros y pecho. Desaparece el cansancio inexplicable.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Flecha Conectora 01 -> 02 -->
-                        <div class="flex justify-center items-center py-0.5">
-                            <div class="w-6 h-6 rounded-full bg-white border border-lavanda-suave flex items-center justify-center text-soft-violet shadow-2xs">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-                        </div>
-
-                        <!-- 02 · Paz Interior -->
-                        <div class="glass-card-luxury p-4 relative shadow-sm">
-                            <div class="flex items-start gap-3.5">
-                                <div class="icon-single shrink-0">
-                                    <i data-lucide="flower-2" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                </div>
-                                <div class="space-y-1 flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <h3 class="font-heading font-bold text-sm text-deep-purple">Paz Interior & Calma</h3>
-                                        <span class="text-[9px] font-extrabold text-white bg-soft-violet px-2 py-0.5 rounded-full">Fase 02</span>
-                                    </div>
-                                    <p class="text-xs text-rich-plum/85 leading-relaxed">
-                                        Disolución de la irritabilidad y la tensión reactiva, propiciando serenidad diurna y descanso reparador.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Flecha Conectora 02 -> 03 -->
-                        <div class="flex justify-center items-center py-0.5">
-                            <div class="w-6 h-6 rounded-full bg-white border border-lavanda-suave flex items-center justify-center text-soft-violet shadow-2xs">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-                        </div>
-
-                        <!-- 03 · Enfoque -->
-                        <div class="glass-card-luxury p-4 relative shadow-sm">
-                            <div class="flex items-start gap-3.5">
-                                <div class="icon-single shrink-0">
-                                    <i data-lucide="compass" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                </div>
-                                <div class="space-y-1 flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <h3 class="font-heading font-bold text-sm text-deep-purple">Claridad Mental & Enfoque</h3>
-                                        <span class="text-[9px] font-extrabold text-white bg-soft-violet px-2 py-0.5 rounded-full">Fase 03</span>
-                                    </div>
-                                    <p class="text-xs text-rich-plum/85 leading-relaxed">
-                                        Despeje de la confusión y la rumiación excesiva para tomar decisiones con certeza y reconectar con la intuición.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Flecha Conectora 03 -> 04 -->
-                        <div class="flex justify-center items-center py-0.5">
-                            <div class="w-6 h-6 rounded-full bg-white border border-lavanda-suave flex items-center justify-center text-soft-violet shadow-2xs">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-                        </div>
-
-                        <!-- 04 · Apertura -->
-                        <div class="glass-card-luxury p-4 relative shadow-sm">
-                            <div class="flex items-start gap-3.5">
-                                <div class="icon-single shrink-0">
-                                    <i data-lucide="key-round" class="w-5 h-5 text-deep-purple stroke-[1.9]"></i>
-                                </div>
-                                <div class="space-y-1 flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <h3 class="font-heading font-bold text-sm text-deep-purple">Apertura de Nuevos Caminos</h3>
-                                        <span class="text-[9px] font-extrabold text-white bg-soft-violet px-2 py-0.5 rounded-full">Fase 04</span>
-                                    </div>
-                                    <p class="text-xs text-rich-plum/85 leading-relaxed">
-                                        Desbloqueo de proyectos, finanzas y relaciones, permitiendo que la energía vuelva a fluir libremente.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bucle de Cierre Cíclico hacia el Inicio -->
-                        <div class="flex items-center justify-center pt-2">
-                            <div class="px-3.5 py-1.5 rounded-full bg-white/95 border border-lavanda-suave shadow-xs flex items-center gap-1.5 text-[11px] font-bold text-deep-purple text-center">
-                                <svg class="w-4 h-4 text-soft-violet shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                                <span>El ciclo se retroalimenta en equilibrio continuo</span>
-                            </div>
-                        </div>
-
+                        <button type="button" onclick="nextBenefitStep()" class="w-8 h-8 rounded-full bg-white border border-lavanda-suave text-deep-purple flex items-center justify-center shadow-xs hover:bg-lavanda-nieve cursor-pointer transition-colors" aria-label="Siguiente fase">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                        </button>
                     </div>
+
+                    <p class="text-[11px] text-rich-plum/60 mt-3 font-medium text-center">Toca la tarjeta o los puntos de la órbita para avanzar en el flujo continuo</p>
 
                 </div>
             </section>
@@ -1420,6 +1355,79 @@
             const prev = (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
             switchTestimonial(prev);
         }
+
+        // Control de Tarjetas Apiladas Cíclicas de Beneficios (Efecto 3D y Órbita)
+        let currentBenefitIndex = 0;
+        const totalBenefitCards = 4;
+        let benefitTimer = null;
+
+        function updateBenefitStack() {
+            for (let i = 0; i < totalBenefitCards; i++) {
+                const card = document.getElementById('stack-card-' + i);
+                const node = document.getElementById('wheel-node-' + i);
+                const dot = document.getElementById('b-dot-' + i);
+
+                if (!card || !node || !dot) continue;
+
+                const diff = (i - currentBenefitIndex + totalBenefitCards) % totalBenefitCards;
+
+                // Base style
+                card.className = "glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out";
+
+                if (diff === 0) {
+                    // Frente (activa)
+                    card.classList.add('z-30', 'opacity-100', 'scale-100', 'translate-y-0');
+                    node.classList.remove('border-lavanda-suave', 'scale-100', 'bg-white');
+                    node.classList.add('border-soft-violet', 'scale-115', 'shadow-md', 'bg-lavanda-nieve');
+                    dot.className = "w-6 h-2 rounded-full bg-soft-violet transition-all";
+                } else if (diff === 1) {
+                    // Segunda en la pila
+                    card.classList.add('z-20', 'opacity-70', 'scale-[0.96]', 'translate-y-3.5');
+                    node.classList.remove('border-soft-violet', 'scale-115', 'shadow-md', 'bg-lavanda-nieve');
+                    node.classList.add('border-lavanda-suave', 'scale-100', 'bg-white');
+                    dot.className = "w-2 h-2 rounded-full bg-lavanda-suave transition-all";
+                } else if (diff === 2) {
+                    // Tercera en la pila
+                    card.classList.add('z-10', 'opacity-40', 'scale-[0.92]', 'translate-y-7');
+                    node.classList.remove('border-soft-violet', 'scale-115', 'shadow-md', 'bg-lavanda-nieve');
+                    node.classList.add('border-lavanda-suave', 'scale-100', 'bg-white');
+                    dot.className = "w-2 h-2 rounded-full bg-lavanda-suave transition-all";
+                } else {
+                    // Oculta en cola
+                    card.classList.add('z-0', 'opacity-0', 'scale-[0.88]', 'translate-y-10', 'pointer-events-none');
+                    node.classList.remove('border-soft-violet', 'scale-115', 'shadow-md', 'bg-lavanda-nieve');
+                    node.classList.add('border-lavanda-suave', 'scale-100', 'bg-white');
+                    dot.className = "w-2 h-2 rounded-full bg-lavanda-suave transition-all";
+                }
+            }
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function nextBenefitStep() {
+            currentBenefitIndex = (currentBenefitIndex + 1) % totalBenefitCards;
+            updateBenefitStack();
+            restartBenefitTimer();
+        }
+
+        function prevBenefitStep() {
+            currentBenefitIndex = (currentBenefitIndex - 1 + totalBenefitCards) % totalBenefitCards;
+            updateBenefitStack();
+            restartBenefitTimer();
+        }
+
+        function goToBenefitStep(idx) {
+            currentBenefitIndex = idx;
+            updateBenefitStack();
+            restartBenefitTimer();
+        }
+
+        function restartBenefitTimer() {
+            clearInterval(benefitTimer);
+            benefitTimer = setInterval(nextBenefitStep, 6500);
+        }
+
+        // Iniciar temporizador de rotación continua
+        restartBenefitTimer();
 
         // Modal Lightbox para visualización nítida de testimonios en pantalla completa
         function openTestimonialModal(src, caption) {
