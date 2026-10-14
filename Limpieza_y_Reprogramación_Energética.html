@@ -277,7 +277,7 @@
             animation: pulseOrbit 6s ease-in-out infinite;
         }
 
-        /* 3D Stacked Cards & Orbit Motion */
+                /* 3D Stacked Cards & Orbit Motion con Brillitos Místicos */
         .glass-card-stack {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 245, 255, 0.96) 50%, rgba(246, 235, 253, 0.94) 100%);
             border: 1.5px solid #E8D4F5;
@@ -301,6 +301,16 @@
         .animate-pulse-gentle {
             animation: gentlePulse 3.5s ease-in-out infinite;
         }
+
+        /* Brillitos cósmicos sutiles */
+        @keyframes twinkleGlow {
+            0%, 100% { opacity: 0.2; transform: scale(0.65); filter: drop-shadow(0 0 2px rgba(124, 77, 255, 0.2)); }
+            50% { opacity: 1; transform: scale(1.3) rotate(20deg); filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.8)); }
+        }
+        .animate-twinkle-1 { animation: twinkleGlow 2.4s ease-in-out infinite; }
+        .animate-twinkle-2 { animation: twinkleGlow 3.2s ease-in-out infinite 0.9s; }
+        .animate-twinkle-3 { animation: twinkleGlow 2.8s ease-in-out infinite 1.6s; }
+
 
         /* Luxury Call to Action */
         .btn-luxury-cta {
@@ -516,7 +526,7 @@
             </section>
 
             <!-- ========================================== -->
-            <!-- 2. ¿QUÉ BENEFICIOS SE BUSCAN CON ESTA SESIÓN? (ÓRBITA Y TARJETAS EN MOVIMIENTO) -->
+            <!-- 2. ¿QUÉ BENEFICIOS SE BUSCAN CON ESTA SESIÓN? (ÓRBITA CON BRILLITOS Y TARJETAS APILADAS) -->
             <!-- ========================================== -->
             <section class="space-y-6">
                 <div class="text-center space-y-2.5 max-w-2xl mx-auto">
@@ -529,12 +539,52 @@
                     </p>
                 </div>
 
-                <!-- CONTENEDOR CENTRAL: ÓRBITA SAGRADA Y TARJETAS APILADAS CON MOVIMIENTO -->
+                <!-- CONTENEDOR CENTRAL: ÓRBITA CON BRILLITOS SUTILES Y TARJETAS APILADAS -->
                 <div class="flex flex-col items-center select-none py-2 sm:py-4">
                     
-                    <!-- Órbita Circular con los 4 Nodos en 360° (Giro suave con flechas curvas) -->
-                    <div class="relative w-60 h-60 sm:w-68 sm:h-68 flex items-center justify-center mb-6">
+                    <!-- Órbita Circular con los 4 Nodos y Brillitos Flotantes en 360° -->
+                    <div class="relative w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center mb-6">
                         
+                        <!-- Brillitos Cósmicos Flotantes Alrededor de la Órbita -->
+                        <div class="absolute inset-0 pointer-events-none">
+                            <!-- Brillito 1 (Superior Derecha) -->
+                            <div class="absolute top-3 right-12 animate-twinkle-1">
+                                <svg class="w-3.5 h-3.5 text-soft-violet" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0 Q12 12 0 12 Q12 12 12 24 Q12 12 24 12 Q12 12 12 0Z"/>
+                                </svg>
+                            </div>
+                            <!-- Brillito 2 (Extremo Derecho) -->
+                            <div class="absolute top-1/2 -right-1 animate-twinkle-2">
+                                <svg class="w-2.5 h-2.5 text-soft-violet/80" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0 Q12 12 0 12 Q12 12 12 24 Q12 12 24 12 Q12 12 12 0Z"/>
+                                </svg>
+                            </div>
+                            <!-- Brillito 3 (Inferior Derecha) -->
+                            <div class="absolute bottom-5 right-10 animate-twinkle-3">
+                                <svg class="w-2 h-2 text-soft-violet/75" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0 Q12 12 0 12 Q12 12 12 24 Q12 12 24 12 Q12 12 12 0Z"/>
+                                </svg>
+                            </div>
+                            <!-- Brillito 4 (Inferior Izquierda) -->
+                            <div class="absolute bottom-6 left-8 animate-twinkle-1">
+                                <svg class="w-3 h-3 text-soft-violet" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0 Q12 12 0 12 Q12 12 12 24 Q12 12 24 12 Q12 12 12 0Z"/>
+                                </svg>
+                            </div>
+                            <!-- Brillito 5 (Superior Izquierda) -->
+                            <div class="absolute top-7 left-10 animate-twinkle-2">
+                                <svg class="w-2.5 h-2.5 text-soft-violet/70" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0 Q12 12 0 12 Q12 12 12 24 Q12 12 24 12 Q12 12 12 0Z"/>
+                                </svg>
+                            </div>
+                            <!-- Brillito 6 (Cerca del Núcleo Central) -->
+                            <div class="absolute top-1/3 left-1/4 animate-twinkle-3">
+                                <svg class="w-2 h-2 text-soft-violet/60" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0 Q12 12 0 12 Q12 12 12 24 Q12 12 24 12 Q12 12 12 0Z"/>
+                                </svg>
+                            </div>
+                        </div>
+
                         <!-- Anillo SVG Rotatorio con Flechas Curvas (Giro Suave Continuo) -->
                         <svg class="absolute inset-0 w-full h-full animate-orbit pointer-events-none" viewBox="0 0 260 260" fill="none">
                             <!-- Órbita punteada -->
@@ -555,6 +605,12 @@
                             <!-- Arco 4: Oeste a Norte -->
                             <path d="M 25 130 A 105 105 0 0 1 130 25" stroke="#7C4DFF" stroke-width="2.5" stroke-linecap="round"/>
                             <polygon points="138,25 126,17 128,29" fill="#7C4DFF"/>
+
+                            <!-- Micro-estrellitas fijas en la órbita -->
+                            <circle cx="190" cy="50" r="1.5" fill="#7C4DFF"/>
+                            <circle cx="210" cy="210" r="1.5" fill="#7C4DFF"/>
+                            <circle cx="50" cy="210" r="1.5" fill="#7C4DFF"/>
+                            <circle cx="70" cy="50" r="1.5" fill="#7C4DFF"/>
                         </svg>
 
                         <!-- Núcleo Central de Sanación (Sin la palabra ciclo) -->
@@ -593,7 +649,7 @@
                     <div class="relative w-full max-w-md h-[180px] sm:h-[190px]">
                         
                         <!-- Tarjeta 0: Liviandad -->
-                        <div id="stack-card-0" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-30 opacity-100 scale-100 translate-y-0" onclick="nextBenefitStep()">
+                        <div id="stack-card-0" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-30 opacity-100 scale-100 translate-y-0" onclick="handleCardClick(0)">
                             <div class="flex items-center justify-between mb-2.5">
                                 <div class="flex items-center gap-3">
                                     <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
@@ -612,7 +668,7 @@
                         </div>
 
                         <!-- Tarjeta 1: Paz Interior & Calma -->
-                        <div id="stack-card-1" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-20 opacity-70 scale-[0.96] translate-y-3.5" onclick="nextBenefitStep()">
+                        <div id="stack-card-1" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-20 opacity-70 scale-[0.96] translate-y-3.5" onclick="handleCardClick(1)">
                             <div class="flex items-center justify-between mb-2.5">
                                 <div class="flex items-center gap-3">
                                     <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
@@ -631,7 +687,7 @@
                         </div>
 
                         <!-- Tarjeta 2: Claridad Mental & Enfoque -->
-                        <div id="stack-card-2" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-10 opacity-40 scale-[0.92] translate-y-7" onclick="nextBenefitStep()">
+                        <div id="stack-card-2" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-10 opacity-40 scale-[0.92] translate-y-7" onclick="handleCardClick(2)">
                             <div class="flex items-center justify-between mb-2.5">
                                 <div class="flex items-center gap-3">
                                     <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
@@ -650,7 +706,7 @@
                         </div>
 
                         <!-- Tarjeta 3: Apertura de Nuevos Caminos -->
-                        <div id="stack-card-3" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-0 opacity-0 scale-[0.88] translate-y-10 pointer-events-none" onclick="nextBenefitStep()">
+                        <div id="stack-card-3" class="glass-card-stack p-5 sm:p-6 text-left absolute inset-0 cursor-pointer transition-all duration-500 ease-out z-0 opacity-0 scale-[0.88] translate-y-10 pointer-events-none" onclick="handleCardClick(3)">
                             <div class="flex items-center justify-between mb-2.5">
                                 <div class="flex items-center gap-3">
                                     <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center shadow-xs">
@@ -672,7 +728,7 @@
 
                     <!-- Controles Inferiores con Flechas Cíclicas y Puntos -->
                     <div class="flex items-center justify-center gap-4 mt-8">
-                        <button type="button" onclick="prevBenefitStep()" class="w-8 h-8 rounded-full bg-white border border-lavanda-suave text-deep-purple flex items-center justify-center shadow-xs hover:bg-lavanda-nieve cursor-pointer transition-colors" aria-label="Fase anterior">
+                        <button type="button" onclick="prevBenefitStep()" id="benefit-prev-btn" class="w-8 h-8 rounded-full bg-white border border-lavanda-suave text-deep-purple flex items-center justify-center shadow-xs hover:bg-lavanda-nieve cursor-pointer transition-all opacity-30 cursor-not-allowed pointer-events-none" aria-label="Fase anterior">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
                         
@@ -683,12 +739,12 @@
                             <button type="button" onclick="goToBenefitStep(3)" id="b-dot-3" class="w-2 h-2 rounded-full bg-lavanda-suave transition-all" aria-label="Ir a fase 4"></button>
                         </div>
 
-                        <button type="button" onclick="nextBenefitStep()" class="w-8 h-8 rounded-full bg-white border border-lavanda-suave text-deep-purple flex items-center justify-center shadow-xs hover:bg-lavanda-nieve cursor-pointer transition-colors" aria-label="Siguiente fase">
+                        <button type="button" onclick="nextBenefitStep()" id="benefit-next-btn" class="w-8 h-8 rounded-full bg-white border border-lavanda-suave text-deep-purple flex items-center justify-center shadow-xs hover:bg-lavanda-nieve cursor-pointer transition-all" aria-label="Siguiente fase">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                         </button>
                     </div>
 
-                    <p class="text-[11px] text-rich-plum/60 mt-3 font-medium text-center">Toca la tarjeta o los puntos de la órbita para avanzar en el flujo continuo</p>
+                    <p class="text-[11px] text-rich-plum/60 mt-3 font-medium text-center">Avanza en las fases o retrocede con las flechas según tu ritmo</p>
 
                 </div>
             </section>
@@ -1356,7 +1412,7 @@
             switchTestimonial(prev);
         }
 
-        // Control de Tarjetas Apiladas Cíclicas de Beneficios (Efecto 3D y Órbita)
+        // Control de Tarjetas Apiladas de Beneficios (Progresión Lineal con Parada en lo Último)
         let currentBenefitIndex = 0;
         const totalBenefitCards = 4;
         let benefitTimer = null;
@@ -1400,33 +1456,89 @@
                     dot.className = "w-2 h-2 rounded-full bg-lavanda-suave transition-all";
                 }
             }
+
+            // Actualizar botones de navegación: desactivar según extremos
+            const prevBtn = document.getElementById('benefit-prev-btn');
+            const nextBtn = document.getElementById('benefit-next-btn');
+
+            if (prevBtn) {
+                if (currentBenefitIndex === 0) {
+                    prevBtn.classList.add('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+                    prevBtn.classList.remove('opacity-100', 'cursor-pointer', 'hover:bg-lavanda-nieve');
+                } else {
+                    prevBtn.classList.remove('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+                    prevBtn.classList.add('opacity-100', 'cursor-pointer', 'hover:bg-lavanda-nieve');
+                }
+            }
+
+            if (nextBtn) {
+                if (currentBenefitIndex === totalBenefitCards - 1) {
+                    nextBtn.classList.add('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+                    nextBtn.classList.remove('opacity-100', 'cursor-pointer', 'hover:bg-lavanda-nieve');
+                } else {
+                    nextBtn.classList.remove('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+                    nextBtn.classList.add('opacity-100', 'cursor-pointer', 'hover:bg-lavanda-nieve');
+                }
+            }
+
             if (window.lucide) lucide.createIcons();
         }
 
+        // Avanzar: se detiene al llegar a lo último (Fase 4), no vuelve al inicio
         function nextBenefitStep() {
-            currentBenefitIndex = (currentBenefitIndex + 1) % totalBenefitCards;
-            updateBenefitStack();
-            restartBenefitTimer();
+            if (currentBenefitIndex < totalBenefitCards - 1) {
+                currentBenefitIndex++;
+                updateBenefitStack();
+                if (currentBenefitIndex === totalBenefitCards - 1) {
+                    // Se queda en la última fase fija sin bucle
+                    clearInterval(benefitTimer);
+                    benefitTimer = null;
+                } else {
+                    restartBenefitTimer();
+                }
+            } else {
+                clearInterval(benefitTimer);
+                benefitTimer = null;
+            }
         }
 
+        // Retroceder: permite volver a las fases anteriores
         function prevBenefitStep() {
-            currentBenefitIndex = (currentBenefitIndex - 1 + totalBenefitCards) % totalBenefitCards;
-            updateBenefitStack();
-            restartBenefitTimer();
+            if (currentBenefitIndex > 0) {
+                currentBenefitIndex--;
+                updateBenefitStack();
+                // Al retroceder manualmente, pausamos el temporizador para lectura tranquila
+                clearInterval(benefitTimer);
+                benefitTimer = null;
+            }
+        }
+
+        // Clic en tarjeta: avanza solo si no está en la última fase
+        function handleCardClick(idx) {
+            if (currentBenefitIndex < totalBenefitCards - 1) {
+                nextBenefitStep();
+            }
         }
 
         function goToBenefitStep(idx) {
             currentBenefitIndex = idx;
             updateBenefitStack();
-            restartBenefitTimer();
+            if (idx === totalBenefitCards - 1) {
+                clearInterval(benefitTimer);
+                benefitTimer = null;
+            } else {
+                restartBenefitTimer();
+            }
         }
 
         function restartBenefitTimer() {
             clearInterval(benefitTimer);
-            benefitTimer = setInterval(nextBenefitStep, 6500);
+            if (currentBenefitIndex < totalBenefitCards - 1) {
+                benefitTimer = setInterval(nextBenefitStep, 6500);
+            }
         }
 
-        // Iniciar temporizador de rotación continua
+        // Iniciar temporizador de avance suave inicial
         restartBenefitTimer();
 
         // Modal Lightbox para visualización nítida de testimonios en pantalla completa
