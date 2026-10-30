@@ -403,7 +403,11 @@
                 color: #FFFFFF !important;
             }
 
-            .bg-lavanda-nieve {
+            .bg-white, .bg-white\/95, .bg-white\/90, .bg-white\/85, .bg-white\/80 {
+                background-color: #FFFFFF !important;
+            }
+
+            .bg-lavanda-nieve, .bg-lavanda-nieve\/75, .bg-lavanda-nieve\/80 {
                 background-color: #F8F0FC !important;
             }
 
@@ -846,7 +850,7 @@
             </section>
 
             <!-- ========================================== -->
-            <!-- 4. ¿CÓMO SE REALIZA EL PROCEDIMIENTO? (LÍNEA DE TIEMPO CONECTADA) -->
+            <!-- 4. ¿CÓMO SE REALIZA EL PROCEDIMIENTO? (LÍNEA DE TIEMPO CONECTADA IGUAL EN CELULAR Y PC) -->
             <!-- ========================================== -->
             <section class="space-y-7 sm:space-y-8">
                 <div class="text-center space-y-2.5 max-w-2xl mx-auto">
@@ -859,76 +863,73 @@
                     </p>
                 </div>
 
-                <!-- Sendero / Línea de Tiempo Continua (Camino Vertical Conectado en Celular y Horizontal en Desktop) -->
+                <!-- Sendero / Línea de Tiempo con Medallones Centrados (Mismo diseño visual en Celular y PC) -->
                 <div class="relative max-w-4xl mx-auto pt-1 sm:pt-2">
                     
-                    <!-- Línea Conectora Vertical (Celular y Tablet) -->
-                    <div class="lg:hidden absolute top-8 bottom-8 left-7 -translate-x-1/2 w-0.5 bg-gradient-to-b from-soft-violet/45 via-soft-violet/35 to-lavanda-suave z-0"></div>
+                    <!-- Línea Conectora Horizontal Superior -->
+                    <div class="absolute top-9 sm:top-11 left-[14%] right-[14%] h-0.5 bg-gradient-to-r from-lavanda-suave via-soft-violet/50 to-lavanda-suave z-0"></div>
 
-                    <!-- Línea Conectora Horizontal (Desktop) -->
-                    <div class="hidden lg:block absolute top-11 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-lavanda-suave via-soft-violet/50 to-lavanda-suave z-0"></div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 relative z-10">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6 relative z-10 items-stretch">
                         
                         <!-- Nodo Paso 1 -->
-                        <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-3.5 sm:gap-4 lg:gap-3.5 relative">
+                        <div class="flex flex-col items-center text-center gap-2.5 sm:gap-3.5 relative h-full">
                             <div class="relative shrink-0 z-10">
-                                <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
-                                    <i data-lucide="globe" class="w-4 h-4 lg:w-5 lg:h-5 text-deep-purple stroke-[1.9]"></i>
-                                    <span class="text-[8px] lg:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 1</span>
+                                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
+                                    <i data-lucide="globe" class="w-4 h-4 sm:w-5 sm:h-5 text-deep-purple stroke-[1.9]"></i>
+                                    <span class="text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 1</span>
                                 </div>
                             </div>
-                            <div class="bg-white/90 backdrop-blur-xs rounded-2xl p-3.5 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full">
-                                <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple mb-1">100% a Distancia</h3>
-                                <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                            <div class="bg-white/95 backdrop-blur-xs rounded-2xl p-3 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full flex flex-col justify-start">
+                                <h3 class="font-heading font-bold text-xs sm:text-base text-deep-purple mb-1">100% a Distancia</h3>
+                                <p class="text-[11px] sm:text-xs text-rich-plum/85 leading-relaxed font-normal">
                                     No necesitás trasladarte ni interrumpir tus actividades. Podés continuar con tu día con total tranquilidad.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Nodo Paso 2 -->
-                        <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-3.5 sm:gap-4 lg:gap-3.5 relative">
+                        <div class="flex flex-col items-center text-center gap-2.5 sm:gap-3.5 relative h-full">
                             <div class="relative shrink-0 z-10">
-                                <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
-                                    <i data-lucide="video" class="w-4 h-4 lg:w-5 lg:h-5 text-deep-purple stroke-[1.9]"></i>
-                                    <span class="text-[8px] lg:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 2</span>
+                                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
+                                    <i data-lucide="video" class="w-4 h-4 sm:w-5 sm:h-5 text-deep-purple stroke-[1.9]"></i>
+                                    <span class="text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 2</span>
                                 </div>
                             </div>
-                            <div class="bg-white/90 backdrop-blur-xs rounded-2xl p-3.5 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full">
-                                <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple mb-1">Durante el Proceso</h3>
-                                <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                            <div class="bg-white/95 backdrop-blur-xs rounded-2xl p-3 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full flex flex-col justify-start">
+                                <h3 class="font-heading font-bold text-xs sm:text-base text-deep-purple mb-1">Durante el Proceso</h3>
+                                <p class="text-[11px] sm:text-xs text-rich-plum/85 leading-relaxed font-normal">
                                     Mantenemos comunicación mediante fotografías, videos y actualizaciones para que conozcas el desarrollo de tu sesión.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Nodo Paso 3 -->
-                        <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-3.5 sm:gap-4 lg:gap-3.5 relative">
+                        <div class="flex flex-col items-center text-center gap-2.5 sm:gap-3.5 relative h-full">
                             <div class="relative shrink-0 z-10">
-                                <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
-                                    <i data-lucide="file-text" class="w-4 h-4 lg:w-5 lg:h-5 text-deep-purple stroke-[1.9]"></i>
-                                    <span class="text-[8px] lg:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 3</span>
+                                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
+                                    <i data-lucide="file-text" class="w-4 h-4 sm:w-5 sm:h-5 text-deep-purple stroke-[1.9]"></i>
+                                    <span class="text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 3</span>
                                 </div>
                             </div>
-                            <div class="bg-white/90 backdrop-blur-xs rounded-2xl p-3.5 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full">
-                                <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple mb-1">Informe en PDF</h3>
-                                <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                            <div class="bg-white/95 backdrop-blur-xs rounded-2xl p-3 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full flex flex-col justify-start">
+                                <h3 class="font-heading font-bold text-xs sm:text-base text-deep-purple mb-1">Informe en PDF</h3>
+                                <p class="text-[11px] sm:text-xs text-rich-plum/85 leading-relaxed font-normal">
                                     Al finalizar, recibís un informe personalizado en formato PDF con la devolución completa del trabajo realizado.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Nodo Paso 4 -->
-                        <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-3.5 sm:gap-4 lg:gap-3.5 relative">
+                        <div class="flex flex-col items-center text-center gap-2.5 sm:gap-3.5 relative h-full">
                             <div class="relative shrink-0 z-10">
-                                <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
-                                    <i data-lucide="message-circle-heart" class="w-4 h-4 lg:w-5 lg:h-5 text-deep-purple stroke-[1.9]"></i>
-                                    <span class="text-[8px] lg:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 4</span>
+                                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-soft-violet shadow-md flex flex-col items-center justify-center">
+                                    <i data-lucide="message-circle-heart" class="w-4 h-4 sm:w-5 sm:h-5 text-deep-purple stroke-[1.9]"></i>
+                                    <span class="text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider text-soft-violet mt-0.5">Paso 4</span>
                                 </div>
                             </div>
-                            <div class="bg-white/90 backdrop-blur-xs rounded-2xl p-3.5 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full">
-                                <h3 class="font-heading font-bold text-sm sm:text-base text-deep-purple mb-1">Acompañamiento</h3>
-                                <p class="text-xs text-rich-plum/85 leading-relaxed font-normal">
+                            <div class="bg-white/95 backdrop-blur-xs rounded-2xl p-3 sm:p-4 border border-lavanda-suave shadow-2xs flex-1 w-full flex flex-col justify-start">
+                                <h3 class="font-heading font-bold text-xs sm:text-base text-deep-purple mb-1">Acompañamiento</h3>
+                                <p class="text-[11px] sm:text-xs text-rich-plum/85 leading-relaxed font-normal">
                                     Seguimos en contacto después de la sesión para brindarte recomendaciones simples y acompañarte en tu proceso.
                                 </p>
                             </div>
@@ -970,7 +971,7 @@
                         </div>
 
                         <!-- Lista Dividida con Líneas Sutiles (Sin repetir cajas sueltas) -->
-                        <div class="lg:col-span-7 bg-white/90 rounded-2xl p-4 sm:p-6 border border-lavanda-suave divide-y divide-lavanda-suave/60">
+                        <div class="lg:col-span-7 bg-white/95 rounded-2xl p-4 sm:p-6 border border-lavanda-suave divide-y divide-lavanda-suave/60">
                             
                             <div class="pb-3.5 flex items-start gap-3 sm:gap-3.5 text-left">
                                 <div class="w-9 h-9 rounded-xl bg-lavanda-nieve border border-lavanda-suave flex items-center justify-center text-deep-purple shrink-0 mt-0.5">
@@ -1027,7 +1028,7 @@
             </section>
 
             <!-- ========================================== -->
-            <!-- 6. +50 TESTIMONIOS REALES VERIFICADOS (ESCENARIO CREATIVO EN ABANICO 3D + MINIATURAS) -->
+            <!-- 6. +50 TESTIMONIOS REALES VERIFICADOS (ESCENARIO CREATIVO EN ABANICO 3D IGUAL EN CELULAR Y PC) -->
             <!-- ========================================== -->
             <section class="py-4 space-y-5 sm:space-y-6 relative">
                 
@@ -1047,120 +1048,115 @@
                     </p>
                 </div>
 
-                <!-- ESCENARIO INTERACTIVO EN ABANICO (Coverflow Creativo adaptado a Celular y Desktop) -->
+                <!-- ESCENARIO INTERACTIVO EN ABANICO (Visible con las 3 tarjetas en abanico tanto en Celular como en PC) -->
                 <div class="max-w-4xl mx-auto space-y-4 sm:space-y-5">
                     
-                    <!-- Visor Principal con Fotos Laterales en Perspectiva -->
-                    <div class="relative flex items-center justify-center px-1 sm:px-10 py-2 select-none overflow-hidden sm:overflow-visible">
+                    <!-- Visor Principal con Fotos Laterales en Perspectiva (Visible en Celular y PC) -->
+                    <div class="relative flex items-center justify-center px-3 sm:px-10 py-2 select-none">
                         
-                        <!-- Tarjeta Lateral Izquierda (Previa en Abanico) -->
-                        <div id="fan-prev-card" onclick="prevTestimonial()" class="hidden sm:flex flex-col w-60 lg:w-64 h-60 lg:h-64 rounded-3xl bg-white/85 border-2 border-lavanda-suave p-3 shadow-md cursor-pointer transition-all duration-500 -rotate-6 -translate-x-5 scale-90 opacity-65 hover:opacity-95 hover:scale-95 z-10 shrink-0">
-                            <div class="text-[10px] font-bold text-soft-violet pb-1.5 mb-1.5 border-b border-lavanda-suave/40 flex items-center justify-between">
+                        <!-- Tarjeta Lateral Izquierda (Previa en Abanico: visible también en Celular asomando a la izquierda) -->
+                        <div id="fan-prev-card" onclick="prevTestimonial()" class="flex flex-col w-28 sm:w-60 lg:w-64 h-44 sm:h-60 lg:h-64 rounded-2xl sm:rounded-3xl bg-white/90 border-2 border-lavanda-suave p-1.5 sm:p-3 shadow-md cursor-pointer transition-all duration-500 -rotate-6 -mr-10 sm:-mr-6 scale-90 opacity-75 hover:opacity-95 hover:scale-95 z-10 shrink-0">
+                            <div class="text-[8px] sm:text-[10px] font-bold text-soft-violet pb-1 sm:pb-1.5 mb-1 sm:mb-1.5 border-b border-lavanda-suave/40 flex items-center justify-between">
                                 <span id="fan-prev-label">Anterior</span>
-                                <span>← Ver</span>
+                                <span class="hidden sm:inline">← Ver</span>
                             </div>
-                            <div class="flex-1 rounded-2xl overflow-hidden bg-[#fceef5] flex items-center justify-center">
+                            <div class="flex-1 rounded-xl sm:rounded-2xl overflow-hidden bg-[#fceef5] flex items-center justify-center">
                                 <img id="fan-prev-img" src="testimonio_4.jpg" alt="Testimonio anterior" class="w-full h-full object-contain">
                             </div>
                         </div>
 
-                        <!-- Marco Central Protagonista (Con Bordes en Abanico en Celular y Ventana Verificada) -->
-                        <div class="relative z-20 w-full max-w-lg mx-auto">
-                            
-                            <!-- Aletas decorativas de abanico en Celular (dan efecto 3D sin ocupar ancho extra) -->
-                            <div class="sm:hidden absolute inset-0 bg-white/60 border border-lavanda-suave rounded-3xl -rotate-2 scale-[0.97] -z-10 shadow-xs pointer-events-none"></div>
-                            <div class="sm:hidden absolute inset-0 bg-white/60 border border-lavanda-suave rounded-3xl rotate-2 scale-[0.97] -z-10 shadow-xs pointer-events-none"></div>
-
-                            <div class="bg-white rounded-3xl p-3 sm:p-4 border-2 border-white shadow-xl sm:shadow-2xl transition-all duration-300">
+                        <!-- Marco Central Protagonista -->
+                        <div class="relative z-20 w-[78%] sm:w-full max-w-lg shrink-0">
+                            <div class="bg-white rounded-3xl p-2.5 sm:p-4 border-2 border-white shadow-2xl transition-all duration-300">
                                 
                                 <!-- Barra Superior Estilo Chat Verificado con Foto de Celeste -->
-                                <div class="flex items-center justify-between gap-2 px-2.5 sm:px-3.5 py-2 mb-2.5 rounded-2xl bg-gradient-to-r from-lavanda-nieve via-white to-lavanda-nieve border border-lavanda-suave">
-                                    <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                <div class="flex items-center justify-between gap-1.5 sm:gap-2 px-2 sm:px-3.5 py-1.5 sm:py-2 mb-2 sm:mb-2.5 rounded-2xl bg-gradient-to-r from-lavanda-nieve via-white to-lavanda-nieve border border-lavanda-suave">
+                                    <div class="flex items-center gap-2 sm:gap-3 min-w-0">
                                         <div class="relative shrink-0">
-                                            <img src="celeste_perfil.jpg" alt="Celeste" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover object-top border-2 border-soft-violet shadow-xs">
-                                            <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center"></span>
+                                            <img src="celeste_perfil.jpg" alt="Celeste" class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover object-top border-2 border-soft-violet shadow-xs">
+                                            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center"></span>
                                         </div>
                                         <div class="text-left min-w-0">
-                                            <div class="flex items-center gap-1.5">
-                                                <span class="text-[10px] font-extrabold text-soft-violet bg-white px-2 py-0.5 rounded-full border border-lavanda-suave shrink-0" id="fan-main-num">01</span>
-                                                <span class="font-heading font-extrabold text-xs sm:text-sm text-deep-purple block leading-tight truncate" id="fan-main-title">Alivio y Buen Ánimo</span>
+                                            <div class="flex items-center gap-1 sm:gap-1.5">
+                                                <span class="text-[9px] sm:text-[10px] font-extrabold text-soft-violet bg-white px-1.5 sm:px-2 py-0.5 rounded-full border border-lavanda-suave shrink-0" id="fan-main-num">01</span>
+                                                <span class="font-heading font-extrabold text-[11px] sm:text-sm text-deep-purple block leading-tight truncate" id="fan-main-title">Alivio y Buen Ánimo</span>
                                             </div>
-                                            <span class="text-[10px] text-emerald-700 font-bold flex items-center gap-1 leading-tight mt-0.5">
+                                            <span class="text-[9px] sm:text-[10px] text-emerald-700 font-bold flex items-center gap-1 leading-tight mt-0.5">
                                                 <i data-lucide="check-check" class="w-3 h-3 text-emerald-600 shrink-0"></i>
                                                 <span class="truncate">Mensaje compartido a Celeste</span>
                                             </span>
                                         </div>
                                     </div>
-                                    <span class="text-amber-500 text-[11px] sm:text-sm tracking-widest font-bold shrink-0">★★★★★</span>
+                                    <span class="text-amber-500 text-[10px] sm:text-sm tracking-widest font-bold shrink-0">★★★★★</span>
                                 </div>
 
                                 <!-- Imagen Central Grande y Nítida (Proporción exacta 4:3 de las capturas) -->
                                 <div class="relative rounded-2xl overflow-hidden border border-lavanda-suave bg-[#fceef5] cursor-pointer group/main" onclick="openCurrentTestimonialModal()">
                                     <img id="fan-main-img" src="testimonio_1.jpg" alt="Captura real de WhatsApp" class="w-full aspect-[4/3] max-h-72 object-contain mx-auto transition-transform duration-500 group-hover/main:scale-[1.02]">
-                                    <div class="absolute bottom-2.5 right-2.5 bg-deep-purple/90 backdrop-blur-xs text-white text-[10px] sm:text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg group-hover/main:bg-soft-violet transition-colors">
+                                    <div class="absolute bottom-2 right-2 sm:bottom-2.5 sm:right-2.5 bg-deep-purple/90 backdrop-blur-xs text-white text-[9px] sm:text-[11px] font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center gap-1 shadow-lg group-hover/main:bg-soft-violet transition-colors">
                                         <i data-lucide="maximize-2" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
                                         <span>Ampliar</span>
                                     </div>
                                 </div>
 
                                 <!-- Controles Rápidos Dentro del Marco -->
-                                <div class="flex items-center justify-between pt-3 px-0.5 sm:px-1">
-                                    <button type="button" onclick="prevTestimonial()" class="px-3.5 py-1.5 rounded-full bg-lavanda-nieve hover:bg-lavanda-suave text-deep-purple text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer">
+                                <div class="flex items-center justify-between pt-2.5 sm:pt-3 px-0.5 sm:px-1">
+                                    <button type="button" onclick="prevTestimonial()" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-lavanda-nieve hover:bg-lavanda-suave text-deep-purple text-[11px] sm:text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer">
                                         ← Anterior
                                     </button>
-                                    <span id="t-counter" class="text-xs font-extrabold text-soft-violet">Foto 1 de 4</span>
-                                    <button type="button" onclick="nextTestimonial()" class="px-3.5 py-1.5 rounded-full bg-lavanda-nieve hover:bg-lavanda-suave text-deep-purple text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer">
+                                    <span id="t-counter" class="text-[11px] sm:text-xs font-extrabold text-soft-violet">Foto 1 de 4</span>
+                                    <button type="button" onclick="nextTestimonial()" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-lavanda-nieve hover:bg-lavanda-suave text-deep-purple text-[11px] sm:text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer">
                                         Siguiente →
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Tarjeta Lateral Derecha (Siguiente en Abanico) -->
-                        <div id="fan-next-card" onclick="nextTestimonial()" class="hidden sm:flex flex-col w-60 lg:w-64 h-60 lg:h-64 rounded-3xl bg-white/85 border-2 border-lavanda-suave p-3 shadow-md cursor-pointer transition-all duration-500 rotate-6 translate-x-5 scale-90 opacity-65 hover:opacity-95 hover:scale-95 z-10 shrink-0">
-                            <div class="text-[10px] font-bold text-soft-violet pb-1.5 mb-1.5 border-b border-lavanda-suave/40 flex items-center justify-between">
+                        <!-- Tarjeta Lateral Derecha (Siguiente en Abanico: visible también en Celular asomando a la derecha) -->
+                        <div id="fan-next-card" onclick="nextTestimonial()" class="flex flex-col w-28 sm:w-60 lg:w-64 h-44 sm:h-60 lg:h-64 rounded-2xl sm:rounded-3xl bg-white/90 border-2 border-lavanda-suave p-1.5 sm:p-3 shadow-md cursor-pointer transition-all duration-500 rotate-6 -ml-10 sm:-ml-6 scale-90 opacity-75 hover:opacity-95 hover:scale-95 z-10 shrink-0">
+                            <div class="text-[8px] sm:text-[10px] font-bold text-soft-violet pb-1 sm:pb-1.5 mb-1 sm:mb-1.5 border-b border-lavanda-suave/40 flex items-center justify-between">
                                 <span id="fan-next-label">Siguiente</span>
-                                <span>Ver →</span>
+                                <span class="hidden sm:inline">Ver →</span>
                             </div>
-                            <div class="flex-1 rounded-2xl overflow-hidden bg-[#fceef5] flex items-center justify-center">
+                            <div class="flex-1 rounded-xl sm:rounded-2xl overflow-hidden bg-[#fceef5] flex items-center justify-center">
                                 <img id="fan-next-img" src="testimonio_2.jpg" alt="Testimonio siguiente" class="w-full h-full object-contain">
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- TIRA ORGANIZADA DE LAS 4 FOTOS EN MINIATURA (2x2 en Celular, 4 en línea en Desktop) -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3.5 max-w-3xl mx-auto">
+                    <!-- TIRA ORGANIZADA DE LAS 4 FOTOS EN MINIATURA (Las 4 en una sola fila tanto en Celular como en PC) -->
+                    <div class="grid grid-cols-4 gap-1.5 sm:gap-3.5 max-w-3xl mx-auto">
                         
-                        <button type="button" onclick="switchTestimonial(0)" id="t-thumb-0" class="p-2 rounded-2xl bg-white border-2 border-deep-purple shadow-md scale-[1.02] transition-all cursor-pointer text-left flex items-center gap-2 sm:gap-2.5">
-                            <img src="testimonio_1.jpg" alt="Miniatura 1" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
-                            <div class="min-w-0">
-                                <span class="text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 01</span>
-                                <span class="font-heading font-bold text-[11px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Alivio y Ánimo</span>
+                        <button type="button" onclick="switchTestimonial(0)" id="t-thumb-0" class="p-1.5 sm:p-2 rounded-2xl bg-white border-2 border-deep-purple shadow-md scale-[1.02] transition-all cursor-pointer text-center sm:text-left flex flex-col sm:flex-row items-center gap-1 sm:gap-2.5">
+                            <img src="testimonio_1.jpg" alt="Miniatura 1" class="w-full sm:w-12 h-11 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
+                            <div class="min-w-0 w-full">
+                                <span class="text-[9px] sm:text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 01</span>
+                                <span class="font-heading font-bold text-[10px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Alivio y Ánimo</span>
                             </div>
                         </button>
 
-                        <button type="button" onclick="switchTestimonial(1)" id="t-thumb-1" class="p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-left flex items-center gap-2 sm:gap-2.5 opacity-80 hover:opacity-100">
-                            <img src="testimonio_2.jpg" alt="Miniatura 2" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
-                            <div class="min-w-0">
-                                <span class="text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 02</span>
-                                <span class="font-heading font-bold text-[11px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Calidez y Verdad</span>
+                        <button type="button" onclick="switchTestimonial(1)" id="t-thumb-1" class="p-1.5 sm:p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-center sm:text-left flex flex-col sm:flex-row items-center gap-1 sm:gap-2.5 opacity-80 hover:opacity-100">
+                            <img src="testimonio_2.jpg" alt="Miniatura 2" class="w-full sm:w-12 h-11 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
+                            <div class="min-w-0 w-full">
+                                <span class="text-[9px] sm:text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 02</span>
+                                <span class="font-heading font-bold text-[10px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Calidez y Verdad</span>
                             </div>
                         </button>
 
-                        <button type="button" onclick="switchTestimonial(2)" id="t-thumb-2" class="p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-left flex items-center gap-2 sm:gap-2.5 opacity-80 hover:opacity-100">
-                            <img src="testimonio_3.jpg" alt="Miniatura 3" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
-                            <div class="min-w-0">
-                                <span class="text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 03</span>
-                                <span class="font-heading font-bold text-[11px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Calma y Apertura</span>
+                        <button type="button" onclick="switchTestimonial(2)" id="t-thumb-2" class="p-1.5 sm:p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-center sm:text-left flex flex-col sm:flex-row items-center gap-1 sm:gap-2.5 opacity-80 hover:opacity-100">
+                            <img src="testimonio_3.jpg" alt="Miniatura 3" class="w-full sm:w-12 h-11 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
+                            <div class="min-w-0 w-full">
+                                <span class="text-[9px] sm:text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 03</span>
+                                <span class="font-heading font-bold text-[10px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Calma y Apertura</span>
                             </div>
                         </button>
 
-                        <button type="button" onclick="switchTestimonial(3)" id="t-thumb-3" class="p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-left flex items-center gap-2 sm:gap-2.5 opacity-80 hover:opacity-100">
-                            <img src="testimonio_4.jpg" alt="Miniatura 4" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
-                            <div class="min-w-0">
-                                <span class="text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 04</span>
-                                <span class="font-heading font-bold text-[11px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Vínculos en Paz</span>
+                        <button type="button" onclick="switchTestimonial(3)" id="t-thumb-3" class="p-1.5 sm:p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-center sm:text-left flex flex-col sm:flex-row items-center gap-1 sm:gap-2.5 opacity-80 hover:opacity-100">
+                            <img src="testimonio_4.jpg" alt="Miniatura 4" class="w-full sm:w-12 h-11 sm:h-12 rounded-xl object-cover border border-lavanda-suave shrink-0">
+                            <div class="min-w-0 w-full">
+                                <span class="text-[9px] sm:text-[10px] font-extrabold text-soft-violet block leading-tight">Foto 04</span>
+                                <span class="font-heading font-bold text-[10px] sm:text-xs text-deep-purple truncate block leading-tight mt-0.5">Vínculos en Paz</span>
                             </div>
                         </button>
 
@@ -1172,16 +1168,16 @@
 
 
 <!-- ========================================== -->
-            <!-- 7. SECCIÓN DE INVERSIÓN Y RESERVA (REDISEÑADA Y PERFECCIONADA) -->
+            <!-- 7. SECCIÓN DE INVERSIÓN Y RESERVA (MISMA ESTRUCTURA VISUAL EN CELULAR Y PC) -->
             <!-- ========================================== -->
             <section class="w-full max-w-3xl mx-auto pt-4 pb-10 space-y-6">
                 
                 <!-- Main Luxury Pricing Card -->
-                <div class="glass-card-luxury rounded-3xl p-5 sm:p-8 relative overflow-hidden shadow-xl border-2 border-white space-y-6 sm:space-y-7">
+                <div class="glass-card-luxury rounded-3xl p-4 sm:p-8 relative overflow-hidden shadow-xl border-2 border-white space-y-5 sm:space-y-7">
                     
                     <!-- Top Ribbon & Heading -->
                     <div class="text-center space-y-2.5">
-                        <div class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white border border-lavanda-suave shadow-xs max-w-full text-center">
+                        <div class="inline-flex items-center justify-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white border border-lavanda-suave shadow-xs max-w-full text-center">
                             <span class="w-2 h-2 rounded-full bg-soft-violet animate-ping shrink-0"></span>
                             <span class="text-[10px] sm:text-xs font-heading font-extrabold uppercase tracking-wider text-deep-purple leading-snug">
                                 ATENCIÓN PERSONALIZADA 1 A 1 CON CELESTE
@@ -1195,59 +1191,59 @@
                         </p>
                     </div>
 
-                    <!-- Dual Pricing Cards Grid (Estilizadas y Destacadas) -->
-                    <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                    <!-- Dual Pricing Cards Grid (Las 2 tarjetas lado a lado tanto en Celular como en PC) -->
+                    <div class="grid grid-cols-2 gap-2.5 sm:gap-5">
                         
                         <!-- Tarjeta Argentina -->
-                        <div class="p-5 sm:p-6 rounded-2xl bg-white/95 border border-lavanda-suave border-t-4 border-t-soft-violet shadow-sm text-center space-y-3.5 flex flex-col justify-between relative overflow-hidden">
+                        <div class="p-3 sm:p-6 rounded-2xl bg-white/95 border border-lavanda-suave border-t-4 border-t-soft-violet shadow-sm text-center space-y-2.5 sm:space-y-3.5 flex flex-col justify-between relative overflow-hidden">
                             <div class="space-y-1">
-                                <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-lavanda-nieve border border-lavanda-suave text-[10px] uppercase font-extrabold tracking-wider text-soft-violet">
-                                    <i data-lucide="map-pin" class="w-3 h-3 text-soft-violet"></i>
-                                    Consultantes en Argentina
+                                <span class="inline-flex items-center justify-center gap-1 px-2 sm:px-3 py-0.5 rounded-full bg-lavanda-nieve border border-lavanda-suave text-[8px] sm:text-[10px] uppercase font-extrabold tracking-wider text-soft-violet">
+                                    <i data-lucide="map-pin" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-soft-violet shrink-0"></i>
+                                    <span>Argentina</span>
                                 </span>
-                                <h4 class="font-heading font-bold text-sm sm:text-base text-deep-purple pt-0.5">Tarifa Nacional</h4>
+                                <h4 class="font-heading font-bold text-xs sm:text-base text-deep-purple pt-0.5">Tarifa Nacional</h4>
                             </div>
                             
-                            <div class="py-2 px-3 rounded-2xl bg-gradient-to-b from-lavanda-nieve/60 to-white border border-lavanda-suave/60">
-                                <div class="flex items-baseline justify-center gap-1.5">
-                                    <span class="font-heading text-3xl sm:text-4xl font-extrabold text-deep-purple tracking-tight leading-none">
+                            <div class="py-2 px-1.5 sm:px-3 rounded-xl sm:rounded-2xl bg-gradient-to-b from-lavanda-nieve/60 to-white border border-lavanda-suave/60">
+                                <div class="flex items-baseline justify-center gap-1">
+                                    <span class="font-heading text-xl sm:text-4xl font-extrabold text-deep-purple tracking-tight leading-none">
                                         $50.000
                                     </span>
-                                    <span class="text-xs sm:text-sm font-extrabold text-soft-violet">
+                                    <span class="text-[10px] sm:text-sm font-extrabold text-soft-violet">
                                         ARS
                                     </span>
                                 </div>
-                                <span class="block text-[10px] text-rich-plum/70 font-semibold mt-1">Sesión completa personalizada</span>
+                                <span class="block text-[9px] sm:text-[10px] text-rich-plum/70 font-semibold mt-1">Sesión personalizada</span>
                             </div>
 
-                            <div class="p-2.5 rounded-xl bg-lavanda-nieve border border-lavanda-suave text-[11px] text-deep-purple font-bold flex items-center justify-center gap-1.5">
-                                <i data-lucide="landmark" class="w-3.5 h-3.5 text-soft-violet shrink-0"></i>
-                                <span>Transferencia Bancaria · Mercado Pago</span>
+                            <div class="p-2 sm:p-2.5 rounded-xl bg-lavanda-nieve border border-lavanda-suave text-[9px] sm:text-[11px] text-deep-purple font-bold flex items-center justify-center gap-1 leading-tight">
+                                <i data-lucide="landmark" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-soft-violet shrink-0 hidden sm:inline"></i>
+                                <span>Transferencia · Mercado Pago</span>
                             </div>
                         </div>
 
                         <!-- Tarjeta Exterior -->
-                        <div class="p-5 sm:p-6 rounded-2xl bg-white/95 border border-lavanda-suave border-t-4 border-t-soft-violet shadow-sm text-center space-y-3.5 flex flex-col justify-between relative overflow-hidden">
+                        <div class="p-3 sm:p-6 rounded-2xl bg-white/95 border border-lavanda-suave border-t-4 border-t-soft-violet shadow-sm text-center space-y-2.5 sm:space-y-3.5 flex flex-col justify-between relative overflow-hidden">
                             <div class="space-y-1">
-                                <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-lavanda-nieve border border-lavanda-suave text-[10px] uppercase font-extrabold tracking-wider text-soft-violet">
-                                    <i data-lucide="globe" class="w-3 h-3 text-soft-violet"></i>
-                                    Consultantes en el Exterior
+                                <span class="inline-flex items-center justify-center gap-1 px-2 sm:px-3 py-0.5 rounded-full bg-lavanda-nieve border border-lavanda-suave text-[8px] sm:text-[10px] uppercase font-extrabold tracking-wider text-soft-violet">
+                                    <i data-lucide="globe" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-soft-violet shrink-0"></i>
+                                    <span>Exterior</span>
                                 </span>
-                                <h4 class="font-heading font-bold text-sm sm:text-base text-deep-purple pt-0.5">Tarifa Internacional</h4>
+                                <h4 class="font-heading font-bold text-xs sm:text-base text-deep-purple pt-0.5">Tarifa Internacional</h4>
                             </div>
                             
-                            <div class="py-2 px-3 rounded-2xl bg-gradient-to-b from-lavanda-nieve/60 to-white border border-lavanda-suave/60">
-                                <div class="flex items-baseline justify-center gap-1.5">
-                                    <span class="font-heading text-3xl sm:text-4xl font-extrabold text-deep-purple tracking-tight leading-none">
+                            <div class="py-2 px-1.5 sm:px-3 rounded-xl sm:rounded-2xl bg-gradient-to-b from-lavanda-nieve/60 to-white border border-lavanda-suave/60">
+                                <div class="flex items-baseline justify-center gap-1">
+                                    <span class="font-heading text-xl sm:text-4xl font-extrabold text-deep-purple tracking-tight leading-none">
                                         USD 65
                                     </span>
                                 </div>
-                                <span class="block text-[10px] text-rich-plum/70 font-semibold mt-1">Sesión completa personalizada</span>
+                                <span class="block text-[9px] sm:text-[10px] text-rich-plum/70 font-semibold mt-1">Sesión personalizada</span>
                             </div>
 
-                            <div class="p-2.5 rounded-xl bg-lavanda-nieve border border-lavanda-suave text-[11px] text-deep-purple font-bold flex items-center justify-center gap-1.5">
-                                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-soft-violet shrink-0"></i>
-                                <span>Pago Seguro vía PayPal · Western Union</span>
+                            <div class="p-2 sm:p-2.5 rounded-xl bg-lavanda-nieve border border-lavanda-suave text-[9px] sm:text-[11px] text-deep-purple font-bold flex items-center justify-center gap-1 leading-tight">
+                                <i data-lucide="shield-check" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-soft-violet shrink-0 hidden sm:inline"></i>
+                                <span>PayPal · Western Union</span>
                             </div>
                         </div>
 
@@ -1255,7 +1251,7 @@
 
                     <!-- ¿Qué incluye tu sesión? (Grilla de Cápsulas Organizadas) -->
                     <div class="p-4 sm:p-6 rounded-2xl bg-lavanda-nieve/75 border border-lavanda-suave space-y-3.5">
-                        <div class="flex items-center justify-center sm:justify-start gap-2.5">
+                        <div class="flex items-center justify-start gap-2.5">
                             <div class="w-9 h-9 rounded-full bg-white border-2 border-lavanda-suave flex items-center justify-center text-deep-purple shadow-xs shrink-0">
                                 <!-- Lupa Creativa con Corazón en Vector SVG -->
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="none" class="w-5 h-5">
@@ -1471,9 +1467,9 @@
                 const thumb = document.getElementById('t-thumb-' + i);
                 if (thumb) {
                     if (i === index) {
-                        thumb.className = 'p-2 rounded-2xl bg-white border-2 border-deep-purple shadow-md scale-[1.02] transition-all cursor-pointer text-left flex items-center gap-2 sm:gap-2.5';
+                        thumb.className = 'p-1.5 sm:p-2 rounded-2xl bg-white border-2 border-deep-purple shadow-md scale-[1.02] transition-all cursor-pointer text-center sm:text-left flex flex-col sm:flex-row items-center gap-1 sm:gap-2.5';
                     } else {
-                        thumb.className = 'p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-left flex items-center gap-2 sm:gap-2.5 opacity-80 hover:opacity-100';
+                        thumb.className = 'p-1.5 sm:p-2 rounded-2xl bg-white/80 border-2 border-lavanda-suave hover:bg-white transition-all cursor-pointer text-center sm:text-left flex flex-col sm:flex-row items-center gap-1 sm:gap-2.5 opacity-80 hover:opacity-100';
                     }
                 }
             }
